@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Car from './Car/Car';
+// import fetchData from '../services/request';
 
 class App extends Component {
   state = { 
@@ -30,7 +31,10 @@ class App extends Component {
         console.warn(`Wystąpił błąd nr: ${error}`)
     });
 
+    // const singleCar = await fetchData(dataFromResponse);
+
  } 
+
   render() { 
 
     const {car} = this.state

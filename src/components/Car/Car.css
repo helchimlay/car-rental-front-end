@@ -1,0 +1,145 @@
+main {
+    margin: 0 50px 0 50px;
+    
+}
+
+main section:not(.other-info) {
+    margin-top: 60px;
+}
+
+main h3 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+main p {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+main .sides, main .other-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+main .introduction {
+    display: grid;
+    text-align: left;
+    grid-template-columns: auto auto;
+}
+
+.photos {
+    overflow: hidden;
+    height: auto;
+}
+
+.owl-nav {
+    font-size: 50px;
+}
+
+main .introduction img {
+    height: auto;
+}
+
+main .car-info {
+    padding-left: 20px;
+}
+
+main ul li {
+    font-size: 18px;
+    display: inline;
+}
+
+main ul li.details-list:before {
+    content: "• ";
+    margin-left: 10px;
+  } 
+
+main .price > span:nth-child(1){
+    margin-top: 30px;
+    color: rgb(182, 9, 43);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main .price > span:nth-child(2) {
+    color:rgb(23, 23, 99);
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+main .car-info h2 {
+    font-size: 30px;
+    color: rgb(23, 23, 99);
+}
+
+main .other-info p {
+    padding: 0 40px 0 40px;
+}
+
+iframe {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border: none;
+    display: block;
+    margin: 0 auto;
+
+}
+
+main .container {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+main button {
+    margin-top: 30px;
+}
+
+main button.button-first {
+    background-color: rgb(23, 23, 99);
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: rgb(23, 23, 99);
+}
+
+main button.button-second {
+    color: rgb(23, 23, 99);
+    font-size: 18px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: rgb(23, 23, 99);
+}
+
+main button.button-second:hover, main button.button-first:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 991.5px) {
+
+    main .introduction, main .sides, main .other-info {
+        grid-template-columns: auto;
+    }
+
+    main .car-info {
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    main .car-content, main .video, main .other-info {
+        text-align: center;
+    }
+
+}
