@@ -1,0 +1,96 @@
+main {
+    margin: 0 50px 0 50px;
+    
+}
+
+main .introduction, main .sides, main .other-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+main section {
+    margin-top: 60px;
+}
+
+main .other-info p {
+    padding: 0 40px 0 40px;
+}
+
+main .car-info h2:nth-child(2) {
+    margin-top: 30px;
+    color: black;
+}
+
+.photos {
+    overflow: hidden;
+    height: auto;
+}
+
+main img {
+    height: auto;
+}
+
+main .car-info h2 {
+    font-size: 30px;
+    color: rgb(23, 23, 99);
+}
+
+main .car-info {
+    padding-left: 20px;
+}
+
+main h3 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+main p {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+main .video iframe {
+    width: 100%;
+    margin-top: 30px;
+}
+
+main button {
+    margin-top: 30px;
+}
+
+main button.button-first {
+    background-color: rgb(23, 23, 99);
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: rgb(23, 23, 99);
+}
+
+main button.button-second {
+    color: rgb(23, 23, 99);
+    font-size: 18px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: rgb(23, 23, 99);
+}
+
+main button.button-second:hover, main button.button-first:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 991.5px) {
+
+    main .introduction, main .sides, main .other-info {
+        grid-template-columns: auto;
+    }
+
+    main .car-info {
+        margin-top: 30px;
+    }
+
+}

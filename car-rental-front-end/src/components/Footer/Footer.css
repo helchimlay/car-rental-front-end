@@ -1,0 +1,33 @@
+footer {
+    background-color: rgb(23, 23, 99);
+    width: 100%;
+    color: rgb(233, 233, 206);
+    padding: 30px 0 30px 0;
+    margin-top: 30px;
+}
+
+.footer-info {
+    margin: 0 50px 0 50px;
+}
+
+footer h3{
+    margin-top: 20px;
+}
+footer p {
+    margin-top: 10px;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright p {
+    padding: 50px 0 30px 0;
+}
+
+@media only screen and (max-width: 767.5px) {
+    footer {
+        text-align: center;
+    }
+    
+}
