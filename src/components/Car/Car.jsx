@@ -1,8 +1,8 @@
-import React from 'react';
-import './Car.css';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import React from "react";
+import "./Car.css";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 
 const Car = (props) => {
@@ -27,7 +27,7 @@ const Car = (props) => {
         <main>
             <section className="introduction">
                 <div className="photos">
-                    <OwlCarousel className='owl-theme owl-carousel' items="1" loop nav>
+                    <OwlCarousel className="owl-theme owl-carousel" items="1" loop nav>
                         {car_details && car_details.images.map((item,index) => 
                         <div key={index} className="item">
                             <img src={item.src} alt={item.alt} />
@@ -40,17 +40,17 @@ const Car = (props) => {
                     <span>
                         <ul>
                             <li>{car_details.year_of_production}</li>
-                            <li className='details-list'>{car_details.mileage} km</li>
-                            <li className='details-list'>{car_details.fuel}</li>
+                            <li className="details-list">{car_details.mileage} km</li>
+                            <li className="details-list">{car_details.fuel}</li>
                         </ul>
                     </span>
-                    <p className='price'>
+                    <p className="price">
                         <span>{car_details.price} PLN</span>
-                        <span><a href="#">Oblicz {'>'}</a></span> <br />
+                        <span><a href="#">Oblicz {">"}</a></span> <br />
                         {car_details.to_negotiate ? <small>Do negocjacji</small> : null}
                     </p>
                     <h3>Opis:</h3>
-                    <p className='car-description'>{car_details.description}</p>
+                    <p className="car-description">{car_details.description}</p>
                 </div>
             </section>
 
@@ -83,7 +83,7 @@ const Car = (props) => {
             </section>
             <section className="car-equipment">
                 <h3>Wyposażenie:</h3>
-                    <ol className='list-equipment'>
+                    <ol className="list-equipment">
                         {car_equipment && car_equipment.map((item,index) =>
                             <li key={index}><p >{item}</p></li>
                         )}
@@ -102,12 +102,12 @@ const Car = (props) => {
                     <div className="left">
                         <h3>Dowiedz się na jakiej zasadzie produkt jest wyceniany</h3>
                         <p>Analizujemy wszystkie cechy pojazdu i porównujemy je z podobnymi ogłoszeniami. Jeżeli chcesz dowiedzieć się więcej kliknij w przycisk!</p>
-                        <button className='button-first'>Nasz kalkulator</button>
+                        <button className="button-first">Nasz kalkulator</button>
                     </div>
                     <div className="right">
                         <h3>Zasięgnij rady eksperta</h3>
                         <p>Zadaj nam pytanie a my postaramy się na nie odpowiedzieć. Możesz również umówić się na oględziny pojazdu oraz na jazdę próbną!</p>
-                        <button className='button-second'>Skontaktuj się z nami</button>
+                        <button className="button-second">Skontaktuj się z nami</button>
                     </div>
             </section>  
         

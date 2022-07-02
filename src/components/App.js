@@ -10,16 +10,12 @@ class App extends Component {
     car: null
  } 
 
-
-
  componentWillMount() {
-
     request().then(response => {
         this.setState({
             car: response.data
         })
     })
-    
  } 
 
   render() { 
