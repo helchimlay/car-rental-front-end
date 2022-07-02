@@ -36,7 +36,7 @@ const Car = (props) => {
                     </OwlCarousel>
                 </div>
                 <div className="car-info">
-                    <h2>{car_details.brand} {car_details.model} {car_details.generate} {car_details.year_of_production}</h2>
+                    <h2>{car_details.brand} {car_details.model} {car_details.generate}</h2>
                     <span>
                         <ul>
                             <li>{car_details.year_of_production}</li>
