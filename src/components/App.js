@@ -3,47 +3,33 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Car from './Car/Car';
-// import fetchData from '../services/request';
+import request from '../services/request';
 
 class App extends Component {
   state = { 
     car: null
  } 
 
- componentDidMount() {
-    fetch('./jsons/cars_data.json')
-    .then((response) => {
-        if(response.ok) {
-            return response;
-        } else {
-            throw Error(`Wystąpił błąd nr: ${response.status}`)
-        }
-    })
-    .then((response) => {
-        return response.json();
-    })
-    .then((response) => {
+
+
+ componentWillMount() {
+
+    request().then(response => {
         this.setState({
-            car: response
+            car: response.data
         })
     })
-    .catch((error) => {
-        console.warn(`Wystąpił błąd nr: ${error}`)
-    });
-
-    // const singleCar = await fetchData(dataFromResponse);
-
+    
  } 
 
   render() { 
-
     const {car} = this.state
 
     return (
 
       <>
         <Header/>
-        {car && <Car car={car}/>}
+        {car && <Car car={car} />}
         <Footer/>
     </>
 

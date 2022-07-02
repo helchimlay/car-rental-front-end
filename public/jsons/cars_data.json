@@ -1,48 +1,54 @@
-{
-    "id": 1,
-    "brand": "Volkswagen",
-    "model": "Passat",
-    "generate": "B8",
-    "year_of_production": "2018",
-    "mileage": "60000",
-    "displacement": "1998",
-    "fuel": "diesel",
-    "power": "190",
-    "drive": "4x4",
-    "number_of_doors": "5",
-    "number_of_places": "5",
-    "color": "black",
-    "country_of_origin": "Polska",
-    "first_registration": "01/05/2018",
-    "car_condition": "używany",
-    "description": "Sprzedam Volkswagen Passat B8, jestem jego pierwszym właścicielem. Samochód ma około 60 000 przebiegu, jest w stanie dobrym. Kupiony został w Polsce, jest w 100% bezwypadkowy. Wszystkie elementy nadwozia są w oryginalnym lakierze.",
-    "images": [
-        {
-            "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG",
-            "alt": "Passat B8 zdjęcie"
-        },
-        {
-            "src": "https://image.ceneostatic.pl/data/products/66662506/i-volkswagen-passat-b8-2017-180km-kombi-szary.jpg",
-            "alt": "Passat B8 zdjęcie"
-        },
-        {
-            "src": "https://img.tipcars.com/fotky_velke/40297404_1/1560508195/E/volkswagen-passat-b8-2-0-tdi-dsg-navigace.jpg",
-            "alt": "Passat B8 zdjęcie"
-        },
-        {
-            "src": "https://motogaraz.in/wp-content/uploads/2019/03/passat-b8-comfortline-17.jpg",
-            "alt": "Passat B8 zdjęcie"
-        },
-        {
-            "src": "https://bi.im-g.pl/im/c9/14/10/z16860617AMP,Volkswagen-Passat-B8.jpg",
-            "alt": "Passat B8 zdjęcie"
-        },
-        {
-            "src": "https://a.allegroimg.com/original/118cf3/0db17caa4355b83ce5e262e691cc",
-            "alt": "Passat B8 zdjęcie"
-        }
-    ],
-    "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
-    "price": "40 000"
+{   
+    "car_details": {
+        "id": 1,
+        "brand": "Volkswagen",
+        "model": "Passat",
+        "generate": "B8",
+        "year_of_production": "2018",
+        "mileage": "60 000",
+        "displacement": "1998",
+        "fuel": "diesel",
+        "power": "190",
+        "drive": "4x4",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "black",
+        "country_of_origin": "Polska",
+        "first_registration": "01/05/2018",
+        "car_condition": "używany",
+        "description": "Sprzedam Volkswagen Passat B8, jestem jego pierwszym właścicielem. Samochód ma około 60 000 przebiegu, jest w stanie dobrym. Kupiony został w Polsce, jest w 100% bezwypadkowy. Wszystkie elementy nadwozia są w oryginalnym lakierze.",
+        "images": [
+            {
+                "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG",
+                "alt": "Passat B8 zdjęcie"
+            },
+            {
+                "src": "https://image.ceneostatic.pl/data/products/66662506/i-volkswagen-passat-b8-2017-180km-kombi-szary.jpg",
+                "alt": "Passat B8 zdjęcie"
+            },
+            {
+                "src": "https://img.tipcars.com/fotky_velke/40297404_1/1560508195/E/volkswagen-passat-b8-2-0-tdi-dsg-navigace.jpg",
+                "alt": "Passat B8 zdjęcie"
+            },
+            {
+                "src": "https://motogaraz.in/wp-content/uploads/2019/03/passat-b8-comfortline-17.jpg",
+                "alt": "Passat B8 zdjęcie"
+            },
+            {
+                "src": "https://bi.im-g.pl/im/c9/14/10/z16860617AMP,Volkswagen-Passat-B8.jpg",
+                "alt": "Passat B8 zdjęcie"
+            },
+            {
+                "src": "https://a.allegroimg.com/original/118cf3/0db17caa4355b83ce5e262e691cc",
+                "alt": "Passat B8 zdjęcie"
+            }
+        ],
+        "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
+        "price": "40 000",
+        "to_negotiate": true
+    },
+    "car_equipment": ["Interfejs Bluuetooth", "Zestaw głośnomówiący", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (dwustrefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "Asystent świateł drogowych","System Start/Stop", "Oświetlenie wnętrza LED", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania"]
+
+    
 
 }

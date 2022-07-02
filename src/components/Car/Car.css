@@ -17,29 +17,47 @@ main p {
     margin-top: 30px;
 }
 
-main .sides, main .other-info {
+main .other-info {
     display: grid;
     grid-template-columns: auto auto;
     text-align: center;
 }
 
-main .introduction {
+main .introduction, main .sides {
     display: grid;
     text-align: left;
     grid-template-columns: auto auto;
 }
 
-.photos {
+main .list-equipment {
+    list-style-type: none;
+}
+
+main ol.list-equipment p:before {
+    content: "- "
+}
+
+main .sides, main .car-description, main .list-equipment {
+    padding-left: 30px;
+}
+
+main .photos {
     overflow: hidden;
     height: auto;
 }
 
 .owl-nav {
-    font-size: 50px;
+    color: rgb(23, 23, 99);
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 20px;
 }
 
-main .introduction img {
-    height: auto;
+
+.owl-nav > button:hover {
+    background-color: transparent!important;
+    opacity: 0.9;
+    color: rgb(23, 23, 99)!important;
 }
 
 main .car-info {
@@ -76,6 +94,10 @@ main .car-info h2 {
 
 main .other-info p {
     padding: 0 40px 0 40px;
+}
+
+main .price small {
+    color: gray;
 }
 
 iframe {
@@ -127,6 +149,8 @@ main button.button-second:hover, main button.button-first:hover {
     opacity: 0.9;
 }
 
+
+
 @media only screen and (max-width: 991.5px) {
 
     main .introduction, main .sides, main .other-info {
@@ -138,8 +162,12 @@ main button.button-second:hover, main button.button-first:hover {
         text-align: left;
     }
 
-    main .car-content, main .video, main .other-info {
+    main .car-details, main .video, main .other-info, main .car-equipment, main .sides  {
         text-align: center;
+    }
+
+    main .sides, main .car-description, main .list-equipment {
+        padding-left: 0;
     }
 
 }
