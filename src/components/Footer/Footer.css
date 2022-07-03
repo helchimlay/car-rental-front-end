@@ -4,7 +4,6 @@ footer {
     width: 100%;
     color: rgb(233, 233, 206);
     padding: 30px 0 30px 0;
-    margin-top: 100px;
 }
 
 .footer-info {
@@ -13,7 +12,10 @@ footer {
 
 footer h2 {
     background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233,233,206));
+    font-variant: small-caps;
+    
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

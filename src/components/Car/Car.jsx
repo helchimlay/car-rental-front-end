@@ -47,7 +47,7 @@ const Car = (props) => {
                     <p className="price">
                         <span>{car_details.price} PLN</span>
                         <span><a href="#">Oblicz {">"}</a></span> <br />
-                        {car_details.to_negotiate ? <small>Do negocjacji</small> : null}
+                        <small>{car_details.to_negotiate ? "Do negocjacji, " : null}Kategoria cenowa: </small>
                     </p>
                     <h3>Opis:</h3>
                     <p className="car-description">{car_details.description}</p>
@@ -59,7 +59,6 @@ const Car = (props) => {
 
                     <div className="sides">
                         <div className="left">
-                            <p><b>Kategoria:</b></p>
                             <p><b>Marka:</b> {car_details.brand}</p>
                             <p><b>Model:</b> {car_details.model}</p>
                             <p><b>Generacja:</b> {car_details.generate}</p>
@@ -67,10 +66,10 @@ const Car = (props) => {
                             <p><b>Przebieg:</b> {car_details.mileage} km</p>
                             <p><b>Pojemność skokowa:</b> {car_details.displacement} cm<sup>3</sup></p>
                             <p><b>Rodzaj paliwa:</b> {car_details.fuel}</p>
+                            <p><b>Moc:</b> {car_details.power}</p>
 
                         </div>
                         <div className="right">
-                            <p><b>Moc:</b> {car_details.power}</p>
                             <p><b>Napęd:</b> {car_details.drive}</p>
                             <p><b>Liczba drzwi:</b> {car_details.number_of_doors}</p>
                             <p><b>Liczba miejsc:</b> {car_details.number_of_places}</p>
