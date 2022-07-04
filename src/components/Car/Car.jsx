@@ -24,7 +24,7 @@ const Car = (props) => {
 
     return ( 
 
-        <main>
+        <main className="car">
             <section className="introduction">
                 <div className="photos">
                     <OwlCarousel className="owl-theme owl-carousel" items="1" loop nav>
