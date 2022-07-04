@@ -2,6 +2,7 @@
     "cars_data": [
         {
             "id": 0,
+            "slug": "volkswagen-passat-b8",
             "car_details": {
                 "brand": "Volkswagen",
                 "model": "Passat",
@@ -54,6 +55,7 @@
 
         {
             "id": 1,
+            "slug": "audi-a6-c7",
             "car_details": {
                 "brand": "Audi",
                 "model": "A6",
@@ -101,6 +103,7 @@
         },
         {
             "id": 2,
+            "slug": "opel-insignia-b",
             "car_details": {
                 "brand": "Opel",
                 "model": "Insignia",

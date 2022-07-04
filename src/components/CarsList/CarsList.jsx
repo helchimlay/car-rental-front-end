@@ -11,7 +11,7 @@ const CarsList = (props) => {
         const car_description = `${(cars_data[index].car_details.description).substring(0, 200)}...`
 
         return (
-            <Link to={`/${cars_data[index].car_details.id}`} key={cars_data[index].car_details.id} >
+            <Link to={`/${cars_data[index].slug}`} key={cars_data[index].id} >
                 <section  className="single-car-card">
 
                     <div className='photo-of-single-car'>

@@ -1,18 +1,15 @@
 import axios from "axios";
 
-const request = async () => {
-    
-    const response = await axios.get('./jsons/cars_data.json?CarBrandId=11&PriceTo=5000&CarFuelType=BenzynaLPG');
+
+export const getCarsList = async () => {
+    const response = await axios.get('./jsons/cars_data.json');
     return response;
 }
 
-const getCarBySlug = async (slug) => {
+export const GetCarBySlug = async (slug) => {
     
-    const response = await axios.get('./jsons/cars_data.json?CarBrandId=11&PriceTo=5000&CarFuelType=BenzynaLPG');
-    return response;
-    const {car} = props;
-    const {carId} = useParams();
-    const thisProduct = car.cars_data[carId];
+    // const response = await axios.get('./jsons/cars_data.json?CarBrandId=11&PriceTo=5000&CarFuelType=BenzynaLPG');
+    const response = await axios.get('./jsons/cars_data.json');
+    return response.data.cars_data.find(car => car.slug === slug)
 }
  
-export default request;

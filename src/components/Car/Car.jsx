@@ -1,6 +1,7 @@
 import React from "react";
 import {useParams} from 'react-router-dom';
 import "./Car.css";
+import {GetCarBySlug } from "../../services/request";
 
 
 import OwlCarousel from "react-owl-carousel";
@@ -9,22 +10,31 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 
 const Car = () => {
+    const {carSlug} = useParams();
+    // const video = (url) => {
+    //     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    //     const match = url.match(regExp);
 
-    const video = (url) => {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-        const match = url.match(regExp);
+    //     return (match && match[2].length === 11) ? match[2] : null;
+    // }
 
-        return (match && match[2].length === 11) ? match[2] : null;
-    }
+    // const videoId = video(thisProduct.car_details.video);
+    // const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
 
-    const videoId = video(thisProduct.car_details.video);
-    const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
+    console.log(carSlug)
+
+    GetCarBySlug(carSlug).then(response => {
+
+        console.log(response)
+    })
+
+   
 
 
     return ( 
 
         <main className="car">
-            <section className="introduction">
+            {/* <section className="introduction">
                 <div className="photos">
                     <OwlCarousel className="owl-theme owl-carousel" items="1" loop nav>
                         {thisProduct && thisProduct.car_details.images.map((item,index) => 
@@ -107,7 +117,7 @@ const Car = () => {
                         <p>Zadaj nam pytanie a my postaramy się na nie odpowiedzieć. Możesz również umówić się na oględziny pojazdu oraz na jazdę próbną!</p>
                         <button className="button-second">Skontaktuj się z nami</button>
                     </div>
-            </section>  
+            </section>   */}
         
     </main>
      );

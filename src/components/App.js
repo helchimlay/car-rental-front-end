@@ -9,23 +9,23 @@ import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
 
 
-import request from '../services/request';
+import { getCarsList } from '../services/request';
 
 class App extends Component {
   state = { 
-    car: null
+    cars: null
  } 
 
  componentWillMount() {
-    request().then(response => {
+    getCarsList().then(response => {
         this.setState({
-            car: response.data
+            cars: response.data
         })
     })
  } 
 
   render() { 
-    const {car} = this.state
+    const {cars} = this.state
 
     return (
 
@@ -35,9 +35,9 @@ class App extends Component {
 
         <Routes>
           
-          <Route exact path="/" element={car && <CarsList carslist={car}></CarsList>} />
+          <Route exact path="/" element={cars && <CarsList carslist={cars}></CarsList>} />
 
-          <Route path="/:carId" element={car && <Car car={car}></Car>} />
+          <Route path="/:carSlug" element={cars && <Car car={cars}></Car>} />
 
         </Routes>
         
