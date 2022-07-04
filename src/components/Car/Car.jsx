@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from 'react-router-dom';
 import "./Car.css";
 import {GetCarBySlug } from "../../services/request";
@@ -11,6 +11,8 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const Car = () => {
     const {carSlug} = useParams();
+
+    const [thisCar, setThisCar] = useState({});
     // const video = (url) => {
     //     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     //     const match = url.match(regExp);
@@ -21,13 +23,18 @@ const Car = () => {
     // const videoId = video(thisProduct.car_details.video);
     // const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
 
-    console.log(carSlug)
 
-    GetCarBySlug(carSlug).then(response => {
 
-        console.log(response)
-    })
+    useEffect(()=> {
 
+        GetCarBySlug(carSlug).then(response => {
+
+            setThisCar(response);
+        })
+
+    },[carSlug])
+
+    console.log(thisCar)
    
 
 
