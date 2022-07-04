@@ -1,8 +1,8 @@
 {   
     "cars_data": [
         {
+            "id": 0,
             "car_details": {
-                "id": 1,
                 "brand": "Volkswagen",
                 "model": "Passat",
                 "generate": "B8",
@@ -53,8 +53,8 @@
         },
 
         {
+            "id": 1,
             "car_details": {
-                "id": 2,
                 "brand": "Audi",
                 "model": "A6",
                 "generate": "C7",
@@ -100,8 +100,8 @@
             "car_equipment": ["Interfejs Bluuetooth", "Zestaw głośnomówiący", "Radio", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (4 lub więcej strefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "System Start/Stop", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania", "Opony runfiat", "Zawieszenie regulowane"]        
         },
         {
+            "id": 2,
             "car_details": {
-                "id": 3,
                 "brand": "Opel",
                 "model": "Insignia",
                 "generate": "B",
