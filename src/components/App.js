@@ -37,7 +37,7 @@ class App extends Component {
           
           <Route exact path="/" element={cars && <CarsList carslist={cars}></CarsList>} />
 
-          <Route path="/:carSlug" element={cars && <Car car={cars}></Car>} />
+          <Route path="/:carSlug" element={cars && <Car></Car>} />
 
         </Routes>
         

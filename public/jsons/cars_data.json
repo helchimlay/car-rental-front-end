@@ -47,8 +47,7 @@
                     }
                 ],
                 "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
-                "price": "40 000",
-                "to_negotiate": true
+                "price": "40 000"
             },
             "car_equipment": ["Interfejs Bluuetooth", "Zestaw głośnomówiący", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (dwustrefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "Asystent świateł drogowych","System Start/Stop", "Oświetlenie wnętrza LED", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania"]        
         },
