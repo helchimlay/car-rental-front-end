@@ -31,7 +31,7 @@ div.summary-of-single-car {
 main.cars-list section.single-car-card {
   display: grid;
   grid-template-columns: auto auto auto;
-  box-shadow: 5px 10px 20px #888 inset;
+  box-shadow: 2px 1px 10px #888 inset;
   margin: 50px;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -64,9 +64,6 @@ div.summary-of-single-car p {
 
   main.cars-list section.single-car-card {
     display: grid;
-    box-shadow: 5px 10px 20px #888 inset;
-    cursor: pointer;
-    transition: all 0.2s linear;
     text-align: center;
     grid-template-columns: none;
     max-height: 100%;
