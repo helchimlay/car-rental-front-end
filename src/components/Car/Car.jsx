@@ -136,9 +136,7 @@ const Car = () => {
             <ol className='list-equipment'>
               {thisCar &&
                 thisCar.car_equipment.map((item, index) => (
-                  <li key={index}>
-                    <p>{item}</p>
-                  </li>
+                  <li key={index}>{item}</li>
                 ))}
             </ol>
           </section>
