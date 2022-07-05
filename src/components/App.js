@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import HomePage from './HomePage/HomePage';
 import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
 
@@ -28,16 +29,12 @@ class App extends Component {
     return (
       <>
         <Header />
-        {/* {car && <Car car={car} />} */}
 
         <Routes>
-          <Route
-            exact
-            path='/'
-            element={cars && <CarsList carslist={cars}></CarsList>}
-          />
+          <Route exact path='/' element={<HomePage></HomePage>} />
+          <Route path='/lista-samochodow' element={<CarsList></CarsList>} />
 
-          <Route path='/:carSlug' element={<Car></Car>} />
+          <Route path='/lista-samochodow/:carSlug' element={<Car></Car>} />
         </Routes>
 
         <Footer />

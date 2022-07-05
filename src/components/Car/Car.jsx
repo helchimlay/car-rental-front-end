@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Car.css';
-import { GetCarBySlug } from '../../services/request';
+import { getCarBySlug } from '../../services/request';
 
+import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -11,18 +12,9 @@ const Car = () => {
   const { carSlug } = useParams();
 
   const [thisCar, setThisCar] = useState(null);
-  // const video = (url) => {
-  //     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  //     const match = url.match(regExp);
-
-  //     return (match && match[2].length === 11) ? match[2] : null;
-  // }
-
-  // const videoId = video(thisCar.car_details.video);
-  // const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
 
   useEffect(() => {
-    GetCarBySlug(carSlug).then(response => {
+    getCarBySlug(carSlug).then(response => {
       setThisCar(response);
     });
   }, [carSlug]);
@@ -46,6 +38,7 @@ const Car = () => {
                     </div>
                   ))}
               </OwlCarousel>
+              {/* <Slider photos={thisCar.car_details.images} /> */}
             </div>
             <div className='car-info'>
               <h2>
@@ -151,9 +144,9 @@ const Car = () => {
           </section>
           <section className='video'>
             <h3>Hej, chcesz zobaczyć samochód w akcji? Oto on!</h3>
-            {/* <div className="container">
-                        <iframe src={iframeMarkup} frameBorder="0" allowFullScreen title="Prezentacja samochodu">Twoja przeglądarka nie wspiera iframe!</iframe>
-                    </div> */}
+            <div className='container'>
+              <IFrameVideo videoURL={thisCar.car_details.video} />
+            </div>
           </section>
           <section className='other-info'>
             <div className='left'>

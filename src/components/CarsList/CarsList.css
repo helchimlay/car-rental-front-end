@@ -1,97 +1,98 @@
+main.cars-list {
+  padding: 120px 50px 60px 50px;
+}
 main.cars-list section.filter-cars {
-    padding: 60px 50px 60px 50px;
+  padding-bottom: 60px;
 }
 
 main.cars-list ul li {
-    font-size: 15px;
-    display: inline;
+  font-size: 15px;
+  display: inline;
 }
 
-div.price-of-single-car h3 {
-    color: rgb(182, 9, 43);
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px 20px 0 0;
+div.price-of-single-car p {
+  color: rgb(182, 9, 43);
+  padding: 20px 20px 0 0;
+  font-weight: bold;
+}
+
+div.price-of-single-car span {
+  font-size: 20px;
 }
 
 main.cars-list section.single-car-card:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 div.summary-of-single-car {
-    padding: 30px 0 0 30px;
+  padding: 30px 0 0 30px;
 }
 
 main.cars-list section.single-car-card {
-    display: grid;
-    grid-template-columns: auto auto auto; 
-    box-shadow: 5px 10px 20px #888 inset;
-    margin: 50px;
-    cursor: pointer;
-    transition: all 0.2s linear;
-    max-height: 250px; 
-    overflow: hidden; 
-    text-decoration: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  box-shadow: 5px 10px 20px #888 inset;
+  margin: 50px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  max-height: 250px;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 main.cars-list a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-
 main.cars-list div.photo-of-single-car img {
-    max-height: 250px;
+  max-height: 250px;
 }
 
 div.summary-of-single-car {
-    padding: 30px 0 0 30px;
+  padding: 30px 0 0 30px;
 }
 
 div.summary-of-single-car p {
-    padding: 15px 0 20px 0;
+  padding: 15px 0 20px 0;
 }
 
-
-
 @media only screen and (max-width: 991.5px) {
+  main.cars-list {
+    padding: 120px 0 60px 0;
+  }
 
-    main.cars-list section.single-car-card {
-        display: grid;
-        margin: 50px;
-        box-shadow: 5px 10px 20px #888 inset;
-        cursor: pointer;
-        transition: all 0.2s linear;
-        text-align: center;
-        grid-template-columns: none;
-        max-height: 100%; 
-    }
+  main.cars-list section.single-car-card {
+    display: grid;
+    box-shadow: 5px 10px 20px #888 inset;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+    grid-template-columns: none;
+    max-height: 100%;
+  }
 
-    main.cars-list div.photo-of-single-car img {
-        width: 100%;
-    }
+  main.cars-list div.photo-of-single-car img {
+    width: 100%;
+  }
 
-    div.summary-of-single-car {
-        padding: 30px 15px 0 15px;
-    }
+  div.summary-of-single-car {
+    padding: 30px 15px 0 15px;
+  }
 
-    div.summary-of-single-car p {
-        padding: 15px 0 15px 0;
-    }
+  div.summary-of-single-car p {
+    padding: 15px 0 15px 0;
+  }
 
-    div.summary-of-single-car h2 {
-        font-size: 22px;
-    }
+  div.summary-of-single-car h2 {
+    font-size: 22px;
+  }
 
-    div.price-of-single-car h3 {
-        color: rgb(182, 9, 43);
-        font-size: 20px;
-        font-weight: bold;
-        padding: 0 0 15px 0;
-    }
+  div.price-of-single-car p {
+    padding: 0 0 15px 0;
+  }
 
-    main.cars-list div.photo-of-single-car img {
-        max-height: 100%;
-    }
-
+  main.cars-list div.photo-of-single-car img {
+    max-height: 100%;
+  }
 }
