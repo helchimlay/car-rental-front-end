@@ -24,7 +24,7 @@ main.car h3 {
   padding: 20px 0 20px 0;
 }
 
-main.car p {
+main.car p:not(.calculate) {
   font-size: 18px;
   padding-top: 30px;
 }
@@ -92,19 +92,6 @@ li.details-list:before {
   margin-left: 10px;
 }
 
-main.car .price > span:nth-child(1) {
-  margin-top: 30px;
-  color: rgb(182, 9, 43);
-  font-size: 30px;
-  font-weight: bold;
-}
-
-main.car .price > span:nth-child(2) {
-  color: rgb(23, 23, 99);
-  font-weight: bold;
-  margin-left: 5px;
-}
-
 main.car .car-info h2 {
   font-size: 30px;
   background: -webkit-linear-gradient(#7f5a83, #0d324d);
@@ -118,8 +105,9 @@ main.car .other-info p {
   padding: 0 40px 0 40px;
 }
 
-main.car .price small {
+main.car .calculate small {
   color: gray;
+  font-size: 15px;
 }
 
 iframe {
@@ -167,9 +155,25 @@ main button.button-second {
   border: 2px solid #0d324d;
 }
 
-main button.button-second:hover,
-main button.button-first:hover {
+main button.btn-calculate {
+  padding: 10px;
+  width: 250px;
+  color: white;
+  background-color: rgb(182, 9, 43);
+  cursor: pointer;
+  font-size: 17px;
+  border: 2px solid rgb(182, 9, 43);
+  border-radius: 20px;
+  position: relative;
+}
+
+main button:hover {
   opacity: 0.9;
+}
+
+main button.btn-calculate svg {
+  position: absolute;
+  left: 16px;
 }
 
 @media only screen and (max-width: 991.5px) {
