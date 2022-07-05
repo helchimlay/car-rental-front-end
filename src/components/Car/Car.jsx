@@ -22,7 +22,6 @@ const Car = () => {
         <main className='car'>
           <section className='introduction'>
             <div className='photos'>
-              {/* <Slider photos={thisCar.car_details.images} /> */}
               <Slider images={thisCar.car_details.images} />
             </div>
             <div className='car-info'>
