@@ -1,10 +1,21 @@
 main.car section {
   padding: 0 50px 0 50px;
 }
+main.car section.introduction {
+  margin-top: 60px;
+}
+
+main.car .owl-carousel {
+  z-index: 0;
+}
 
 main.car section {
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 60px;
+}
+
+main.car section.other-info {
+  padding-top: 0;
 }
 
 main.car h3 {
@@ -35,8 +46,12 @@ main.car .list-equipment {
   list-style-type: none;
 }
 
-main.car ol.list-equipment p:before {
+main.car ol.list-equipment li:before {
   content: '- ';
+}
+
+main.car ol.list-equipment li {
+  padding: 10px 0 10px 0;
 }
 
 main.car .sides,
@@ -48,7 +63,6 @@ main .list-equipment {
 main.car .photos {
   overflow: hidden;
   height: auto;
-  z-index: -1;
 }
 
 .owl-nav {
@@ -160,7 +174,7 @@ main button.button-first:hover {
 
 @media only screen and (max-width: 991.5px) {
   main.car .introduction,
-  main .sides,
+  main.car .sides,
   main.car .other-info {
     grid-template-columns: auto;
   }

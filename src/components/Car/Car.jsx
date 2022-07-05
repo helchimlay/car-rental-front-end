@@ -3,10 +3,8 @@ import { useParams } from 'react-router-dom';
 import './Car.css';
 import { getCarBySlug } from '../../services/request';
 
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
+import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
+import Slider from './subcomponents/Slider/Slider';
 const Car = () => {
   const { carSlug } = useParams();
 
@@ -24,20 +22,7 @@ const Car = () => {
         <main className='car'>
           <section className='introduction'>
             <div className='photos'>
-              <OwlCarousel
-                className='owl-theme owl-carousel'
-                items='1'
-                loop
-                nav
-              >
-                {thisCar &&
-                  thisCar.car_details.images.map((item, index) => (
-                    <div key={index} className='item'>
-                      <img src={item.src} alt={item.alt} />
-                    </div>
-                  ))}
-              </OwlCarousel>
-              {/* <Slider photos={thisCar.car_details.images} /> */}
+              <Slider images={thisCar.car_details.images} />
             </div>
             <div className='car-info'>
               <h2>
@@ -141,7 +126,9 @@ const Car = () => {
           </section>
           <section className='video'>
             <h3>Hej, chcesz zobaczyć samochód w akcji? Oto on!</h3>
-            <div className='container'></div>
+            <div className='container'>
+              <IFrameVideo videoURL={thisCar.car_details.video} />
+            </div>
           </section>
           <section className='other-info'>
             <div className='left'>
