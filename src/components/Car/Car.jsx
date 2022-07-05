@@ -11,15 +11,6 @@ const Car = () => {
   const { carSlug } = useParams();
 
   const [thisCar, setThisCar] = useState(null);
-  // const video = (url) => {
-  //     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  //     const match = url.match(regExp);
-
-  //     return (match && match[2].length === 11) ? match[2] : null;
-  // }
-
-  // const videoId = video(thisCar.car_details.video);
-  // const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
 
   useEffect(() => {
     getCarBySlug(carSlug).then(response => {
@@ -46,6 +37,7 @@ const Car = () => {
                     </div>
                   ))}
               </OwlCarousel>
+              {/* <Slider photos={thisCar.car_details.images} /> */}
             </div>
             <div className='car-info'>
               <h2>
@@ -143,17 +135,13 @@ const Car = () => {
             <ol className='list-equipment'>
               {thisCar &&
                 thisCar.car_equipment.map((item, index) => (
-                  <li key={index}>
-                    <p>{item}</p>
-                  </li>
+                  <li key={index}>{item}</li>
                 ))}
             </ol>
           </section>
           <section className='video'>
             <h3>Hej, chcesz zobaczyć samochód w akcji? Oto on!</h3>
-            {/* <div className="container">
-                        <iframe src={iframeMarkup} frameBorder="0" allowFullScreen title="Prezentacja samochodu">Twoja przeglądarka nie wspiera iframe!</iframe>
-                    </div> */}
+            <div className='container'></div>
           </section>
           <section className='other-info'>
             <div className='left'>

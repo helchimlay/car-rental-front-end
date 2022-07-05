@@ -1,154 +1,204 @@
-{   
-    "cars_data": [
-        {
-            "id": 0,
-            "slug": "volkswagen-passat-b8",
-            "car_details": {
-                "brand": "Volkswagen",
-                "model": "Passat",
-                "generate": "B8",
-                "year_of_production": "2018",
-                "mileage": "60 000",
-                "displacement": "1998",
-                "fuel": "diesel",
-                "power": "190",
-                "drive": "4x4",
-                "number_of_doors": "5",
-                "number_of_places": "5",
-                "color": "czarny",
-                "country_of_origin": "Polska",
-                "first_registration": "01/05/2018",
-                "car_condition": "używany",
-                "description": "Sprzedam Volkswagen Passat B8, jestem jego pierwszym właścicielem. Samochód ma około 60 000 przebiegu, jest w stanie dobrym. Kupiony został w Polsce, jest w 100% bezwypadkowy. Wszystkie elementy nadwozia są w oryginalnym lakierze.",
-                "images": [
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/99/a6/91/volkswagen-passat-b8-kombi-data-produkcji-22-diesel-531704361.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    },
-                    {
-                        "src": "https://bi.im-g.pl/im/d3/14/10/z16860627IER,Volkswagen-Passat-B8.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/5e/b8/09/volkswagen-passat-b8-18-tsi-180-comfortline-swiatla-led-warszawa-527498534.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/9a/92/84/volkswagen-passat-b8-18-tsi-180-comfortline-centralny-zamek-mazowieckie-warszawa-527498537.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    },
-                    {
-                        "src": "https://bi.im-g.pl/im/c9/14/10/z16860617AMP,Volkswagen-Passat-B8.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/12/de/f2/volkswagen-passat-comfortline-salon-polska-1wl-manualna-wloclawek-555476152.jpg",
-                        "alt": "Passat B8 zdjęcie"
-                    }
-                ],
-                "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
-                "price": "40 000"
-            },
-            "car_equipment": ["Interfejs Bluuetooth", "Zestaw głośnomówiący", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (dwustrefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "Asystent świateł drogowych","System Start/Stop", "Oświetlenie wnętrza LED", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania"]        
-        },
+{
+  "cars_data": [
+    {
+      "id": 0,
+      "slug": "volkswagen-passat-b8",
+      "car_details": {
+        "brand": "Volkswagen",
+        "model": "Passat",
+        "generate": "B8",
+        "year_of_production": "2018",
+        "mileage": "60 000",
+        "displacement": "1998",
+        "fuel": "diesel",
+        "power": "190",
+        "drive": "4x4",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "czarny",
+        "country_of_origin": "Polska",
+        "first_registration": "01/05/2018",
+        "car_condition": "używany",
+        "description": "Sprzedam Volkswagen Passat B8, jestem jego pierwszym właścicielem. Samochód ma około 60 000 przebiegu, jest w stanie dobrym. Kupiony został w Polsce, jest w 100% bezwypadkowy. Wszystkie elementy nadwozia są w oryginalnym lakierze.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/99/a6/91/volkswagen-passat-b8-kombi-data-produkcji-22-diesel-531704361.jpg",
+            "alt": "Passat B8 zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/d3/14/10/z16860627IER,Volkswagen-Passat-B8.jpg",
+            "alt": "Passat B8 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/5e/b8/09/volkswagen-passat-b8-18-tsi-180-comfortline-swiatla-led-warszawa-527498534.jpg",
+            "alt": "Passat B8 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/9a/92/84/volkswagen-passat-b8-18-tsi-180-comfortline-centralny-zamek-mazowieckie-warszawa-527498537.jpg",
+            "alt": "Passat B8 zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/c9/14/10/z16860617AMP,Volkswagen-Passat-B8.jpg",
+            "alt": "Passat B8 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/12/de/f2/volkswagen-passat-comfortline-salon-polska-1wl-manualna-wloclawek-555476152.jpg",
+            "alt": "Passat B8 zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
+        "price": "208"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Zestaw głośnomówiący",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (dwustrefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "Asystent świateł drogowych",
+        "System Start/Stop",
+        "Oświetlenie wnętrza LED",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania"
+      ]
+    },
 
-        {
-            "id": 1,
-            "slug": "audi-a6-c7",
-            "car_details": {
-                "brand": "Audi",
-                "model": "A6",
-                "generate": "C7",
-                "year_of_production": "2012",
-                "mileage": "208 000",
-                "displacement": "2967",
-                "fuel": "diesel",
-                "power": "313",
-                "drive": "4x4",
-                "number_of_doors": "5",
-                "number_of_places": "5",
-                "color": "czarny",
-                "country_of_origin": "Niemcy",
-                "first_registration": "19/11/2016",
-                "car_condition": "używany",
-                "description": "Sprzedam Audi A6. Samochód ma około 208 000 przebiegu, jest w dobrym stanie. Auto zostało sprowadzone z Niemiec po prawie 2 latach poszukiwania tego egzemplarza. Auto jest sprawdzone, oprócz zderzaków nic nie było malowane.",
-                "images": [
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/69/2b/d9/audi-a6-27tdi-dudki11-nieuszkodzony-kutno-550894562.jpg",
-                        "alt": "Audi A6 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/ab/db/fd/audi-a6-177-klimatronik-sensory-mmi-chromy-mazowieckie-ostrow-mazowiecka-551421154.jpg",
-                        "alt": "Audi A6 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/13/61/5f/audi-a6-2007r-bezwypadkowa-477018216.jpg",
-                        "alt": "Audi A6 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/ed/b6/3e/audi-a6-30-tdi-quattro-piekna-kupiony-w-polsce-zachodniopomorskie-szczecinek-305155097.jpg",
-                        "alt": "Audi A6 zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/08/d0/57/audi-a6-30-tdi-quattro-piekna-czarny-szczecinek-sprzedam-305155052.jpg",
-                        "alt": "Audi A6 zdjęcie"
-                    }
-                ],
-                "video": "https://www.youtube.com/watch?v=hjMeKIwLCnI",
-                "price": "92 000",
-                "to_negotiate": false
-            },
-            "car_equipment": ["Interfejs Bluuetooth", "Zestaw głośnomówiący", "Radio", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (4 lub więcej strefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "System Start/Stop", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania", "Opony runfiat", "Zawieszenie regulowane"]        
-        },
-        {
-            "id": 2,
-            "slug": "opel-insignia-b",
-            "car_details": {
-                "brand": "Opel",
-                "model": "Insignia",
-                "generate": "B",
-                "year_of_production": "2018",
-                "mileage": "19 900",
-                "displacement": "1956",
-                "fuel": "diesel",
-                "power": "170",
-                "drive": "na przednie koła",
-                "number_of_doors": "5",
-                "number_of_places": "5",
-                "color": "biały",
-                "country_of_origin": "Niemcy",
-                "first_registration": "28/09/2018",
-                "car_condition": "używany",
-                "description": "Witam wszystkich, sprzedam samochód Opel Insignia Sports Tourer w wersji Exclusive z pakietem OPC Line. Auto zakupiłem w maju 2020 roku od Niemieckiego dealera Opla z przebiegiem 11 500 km. Obecnie 19 900 km. Jest w zasadzie jak nowe. Nie było użytkowane w okresie zimowym. Było serwisowane tylko w ASO w kraju i za granicą. Jest bezwypadkowe.",
-                "images": [
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/1f/6e/be/opel-insignia-wlasciciel-w-69000ledy-b-2017-diesel-sprzedam-555726035.jpg",
-                        "alt": "Opel Insignia zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/f3/b6/72/opel-insignia-wlasciciel-w-69000ledy-b-2017-elektryczne-lusterka-konstantynow-lodzki-555726027.jpg",
-                        "alt": "Opel Insignia zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/03/8f/c3/opel-insignia-wlasciciel-w-69000ledy-b-2017-69000km-konstantynow-lodzki-555726037.jpg",
-                        "alt": "Opel Insignia zdjęcie"
-                    },
-                    {
-                        "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/34/41/42/opel-insignia-fvatsalon-manualna-mazowieckie-warszawa-555888629.jpg",
-                        "alt": "Opel Insignia zdjęcie"
-                    }
-                ],
-                "video": "https://www.youtube.com/watch?v=nUNUrmP3ueQ",
-                "price": "129 000",
-                "to_negotiate": true
-            },
-            "car_equipment": ["Interfejs Bluuetooth", "Radio", "Gniazdo USB", "System nawigacji satelitarnej", "Klimatyzacja automatyczna (2 strefowa)", "Podłokietniki", "Kierownica ze sterowaniem radia", "Podgrzewane fotele", "Kierownica wielofunkcyjna", "Lusterka boczne ustawiane elektrycznie", "System Start/Stop", "ABS", "ESP","Poduszka powietrzna kierowcy" ,"Boczna poduszka powietrzna kierowcy", "System wspomagania hamowania", "Opony runfiat", "Isofix (punkty montowania fotelika dziecięcego)"]        
-        }
-
-
-
-        
-    ]
-    
-
+    {
+      "id": 1,
+      "slug": "audi-a6-c7",
+      "car_details": {
+        "brand": "Audi",
+        "model": "A6",
+        "generate": "C7",
+        "year_of_production": "2012",
+        "mileage": "208 000",
+        "displacement": "2967",
+        "fuel": "diesel",
+        "power": "313",
+        "drive": "4x4",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "czarny",
+        "country_of_origin": "Niemcy",
+        "first_registration": "19/11/2016",
+        "car_condition": "używany",
+        "description": "Sprzedam Audi A6. Samochód ma około 208 000 przebiegu, jest w dobrym stanie. Auto zostało sprowadzone z Niemiec po prawie 2 latach poszukiwania tego egzemplarza. Auto jest sprawdzone, oprócz zderzaków nic nie było malowane.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/69/2b/d9/audi-a6-27tdi-dudki11-nieuszkodzony-kutno-550894562.jpg",
+            "alt": "Audi A6 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/ab/db/fd/audi-a6-177-klimatronik-sensory-mmi-chromy-mazowieckie-ostrow-mazowiecka-551421154.jpg",
+            "alt": "Audi A6 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/13/61/5f/audi-a6-2007r-bezwypadkowa-477018216.jpg",
+            "alt": "Audi A6 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/ed/b6/3e/audi-a6-30-tdi-quattro-piekna-kupiony-w-polsce-zachodniopomorskie-szczecinek-305155097.jpg",
+            "alt": "Audi A6 zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/08/d0/57/audi-a6-30-tdi-quattro-piekna-czarny-szczecinek-sprzedam-305155052.jpg",
+            "alt": "Audi A6 zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=hjMeKIwLCnI",
+        "price": "315",
+        "to_negotiate": false
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Zestaw głośnomówiący",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (4 lub więcej strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Zawieszenie regulowane"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "opel-insignia-b",
+      "car_details": {
+        "brand": "Opel",
+        "model": "Insignia",
+        "generate": "B",
+        "year_of_production": "2018",
+        "mileage": "19 900",
+        "displacement": "1956",
+        "fuel": "diesel",
+        "power": "170",
+        "drive": "na przednie koła",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "biały",
+        "country_of_origin": "Niemcy",
+        "first_registration": "28/09/2018",
+        "car_condition": "używany",
+        "description": "Witam wszystkich, sprzedam samochód Opel Insignia Sports Tourer w wersji Exclusive z pakietem OPC Line. Auto zakupiłem w maju 2020 roku od Niemieckiego dealera Opla z przebiegiem 11 500 km. Obecnie 19 900 km. Jest w zasadzie jak nowe. Nie było użytkowane w okresie zimowym. Było serwisowane tylko w ASO w kraju i za granicą. Jest bezwypadkowe.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/1f/6e/be/opel-insignia-wlasciciel-w-69000ledy-b-2017-diesel-sprzedam-555726035.jpg",
+            "alt": "Opel Insignia zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/f3/b6/72/opel-insignia-wlasciciel-w-69000ledy-b-2017-elektryczne-lusterka-konstantynow-lodzki-555726027.jpg",
+            "alt": "Opel Insignia zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/03/8f/c3/opel-insignia-wlasciciel-w-69000ledy-b-2017-69000km-konstantynow-lodzki-555726037.jpg",
+            "alt": "Opel Insignia zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/34/41/42/opel-insignia-fvatsalon-manualna-mazowieckie-warszawa-555888629.jpg",
+            "alt": "Opel Insignia zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=nUNUrmP3ueQ",
+        "price": "287",
+        "to_negotiate": true
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    }
+  ]
 }
