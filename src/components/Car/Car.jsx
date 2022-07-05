@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './Car.css';
 import { getCarBySlug } from '../../services/request';
 
-import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
+import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo/IFrameVideo';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
