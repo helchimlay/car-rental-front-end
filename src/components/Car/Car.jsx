@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Car.css';
-import { GetCarBySlug } from '../../services/request';
+import { getCarBySlug } from '../../services/request';
 
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -22,7 +22,7 @@ const Car = () => {
   // const iframeMarkup =`//www.youtube.com/embed/${videoId} `;
 
   useEffect(() => {
-    GetCarBySlug(carSlug).then(response => {
+    getCarBySlug(carSlug).then(response => {
       setThisCar(response);
     });
   }, [carSlug]);

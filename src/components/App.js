@@ -4,46 +4,24 @@ import './App.css';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import HomePage from './HomePage/HomePage';
 import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
 
-import { getCarsList } from '../services/request';
+const App = () => {
+  return (
+    <>
+      <Header />
 
-class App extends Component {
-  state = {
-    cars: null,
-  };
+      <Routes>
+        <Route exact path='/' element={<HomePage></HomePage>} />
+        <Route path='/lista-samochodow' element={<CarsList></CarsList>} />
+        <Route path='/lista-samochodow/:carSlug' element={<Car></Car>} />
+      </Routes>
 
-  componentWillMount() {
-    getCarsList().then(response => {
-      this.setState({
-        cars: response.data,
-      });
-    });
-  }
-
-  render() {
-    const { cars } = this.state;
-
-    return (
-      <>
-        <Header />
-        {/* {car && <Car car={car} />} */}
-
-        <Routes>
-          <Route
-            exact
-            path='/'
-            element={cars && <CarsList carslist={cars}></CarsList>}
-          />
-
-          <Route path='/:carSlug' element={<Car></Car>} />
-        </Routes>
-
-        <Footer />
-      </>
-    );
-  }
-}
+      <Footer />
+    </>
+  );
+};
 
 export default App;
