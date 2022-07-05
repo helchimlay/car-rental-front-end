@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './Car.css';
 import { getCarBySlug } from '../../services/request';
 
+import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -141,7 +142,9 @@ const Car = () => {
           </section>
           <section className='video'>
             <h3>Hej, chcesz zobaczyć samochód w akcji? Oto on!</h3>
-            <div className='container'></div>
+            <div className='container'>
+              <IFrameVideo videoURL={thisCar.car_details.video} />
+            </div>
           </section>
           <section className='other-info'>
             <div className='left'>
