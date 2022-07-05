@@ -1,0 +1,31 @@
+section.filter-fields form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 991.5px) {
+  .filter-fields form div {
+    padding: 10px 0 10px 0;
+  }
+  section.filter-fields form {
+    display: block;
+  }
+
+  .filter-fields form button {
+    width: 150px;
+  }
+
+  .filter-fields label {
+    font-weight: bold;
+  }
+
+  .filter-fields input {
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  .filter-fields input:focus {
+    background-color: aliceblue;
+  }
+}

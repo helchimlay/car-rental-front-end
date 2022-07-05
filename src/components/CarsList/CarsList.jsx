@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './CarsList.css';
 
 import { getCarsList } from '../../services/request';
+import Filtering from './subcomponents/Filtering';
 
 const CarsList = () => {
   const [carsList, setCarsList] = useState(null);
@@ -66,9 +67,7 @@ const CarsList = () => {
 
   return (
     <main className='cars-list'>
-      <section className='filter-cars'>
-        <h1>Tu będzie filtracja</h1>
-      </section>
+      <Filtering />
       {ListOfCars}
     </main>
   );

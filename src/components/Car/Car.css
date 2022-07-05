@@ -7,6 +7,31 @@ main.car section.introduction {
 
 main.car .owl-carousel {
   z-index: 0;
+  position: relative;
+}
+
+main.car .owl-nav button {
+  position: absolute;
+  top: -webkit-calc(50% - 30px);
+  top: -moz-calc(50% - 30px);
+  top: -ms-calc(50% - 30px);
+  top: calc(50% - 30px);
+}
+
+main.car .owl-nav button.owl-prev {
+  left: 0;
+}
+
+main.car .owl-nav button.owl-next {
+  right: 0;
+}
+
+main.car .owl-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 40px;
 }
 
 main.car section {
