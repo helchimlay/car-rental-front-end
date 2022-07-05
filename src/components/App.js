@@ -16,7 +16,6 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path='/lista-samochodow' element={<CarsList></CarsList>} />
-
         <Route path='/lista-samochodow/:carSlug' element={<Car></Car>} />
       </Routes>
 
