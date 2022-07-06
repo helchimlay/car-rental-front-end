@@ -25,6 +25,12 @@ section.filter-fields button {
   border-radius: 20px;
   margin-left: 10px;
   cursor: pointer;
+  position: relative;
+}
+
+section.filter-fields svg {
+  position: absolute;
+  left: 32px;
 }
 
 section.filter-fields form select {

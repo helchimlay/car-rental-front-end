@@ -15,10 +15,42 @@ export const getSelectOptions = async () => {
   return response.data;
 };
 
-// const response = await axios.get('./jsons/cars_data.json?CarBrandId=11&PriceTo=5000&CarFuelType=BenzynaLPG');
+// export const getCarsListByFiltering = async (brand, fuel, category) => {
+//   await axios
+//     .post('./jsons/url.json', null, {
+//       params: {
+//         marka: brand,
+//         rodzaj_paliwa: fuel,
+//         kategoria_cenowa: category,
+//       },
+//     })
+//     .then(response => response.status)
+//     .catch(error => console.log(error));
+// };
+
+// export const getCarsListByFiltering = async (brand, fuel, category) => {
+//   const data = {};
+//   const params = new URLSearchParams({
+//     marka: brand,
+//     rodzaj_paliwa: fuel,
+//     kategoria_cenowa: category,
+//   }).toString();
+
+//   const url = 'http://localhost:3000/jsons/url.json?' + params;
+//   axios
+//     .post(url, data, {})
+//     .then(res => {
+//       console.log(res);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// };
 export const getCarsListByFiltering = async (brand, fuel, category) => {
-  const response = await axios.get('./jsons/cars_data.json', null, {
-    params: { marka: brand, rodzaj_paliwa: fuel, kategoria_cenowa: category },
+  const json = JSON.stringify({
+    marka: brand,
+    rodzaj_paliwa: fuel,
+    kategoria_cenowa: category,
   });
-  return response;
+  await axios.post('./jsons/url.json', json, {});
 };

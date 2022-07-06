@@ -1,8 +1,17 @@
 main.cars-list {
   padding: 120px 50px 60px 50px;
 }
+
 main.cars-list section.filter-cars {
   padding-bottom: 60px;
+}
+
+section.single-car-card {
+  margin: 30px;
+}
+
+div.summary-of-single-car {
+  display: flex;
 }
 
 main.cars-list ul li {
@@ -10,84 +19,69 @@ main.cars-list ul li {
   display: inline;
 }
 
-div.category-of-single-car span {
-  font-size: 15px;
-  padding: 5px 5px 0 0;
-  color: rgb(182, 9, 43);
+main.cars-list .single-car-card {
+  transition: all 0.2s linear;
+}
+
+main.cars-list div.photo-of-single-car img,
+main.cars-list div.photo-of-single-car {
+  max-height: 250px;
+}
+
+main.cars-list section.filter-fields {
+  margin-bottom: 60px;
+}
+main.cars-list .summary {
+  padding: 15px;
+}
+
+main.cars-list .summary span:nth-child(1) {
+  font-size: 25px;
   font-weight: bold;
 }
 
+main.cars-list .summary span:nth-child(2) {
+  font-size: 15px;
+  color: rgb(182, 9, 43);
+  font-weight: bold;
+  float: right;
+}
+
+main.cars-list section.single-car-card {
+  box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+}
 main.cars-list section.single-car-card:hover {
   transform: scale(1.01);
 }
 
-div.summary-of-single-car {
-  padding: 30px 0 0 30px;
-}
-
-main.cars-list section.single-car-card {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
-  border-radius: 4px;
-  margin: 80px 50px 50px 50px;
-  cursor: pointer;
-  transition: all 0.2s linear;
-  max-height: 250px;
-  overflow: hidden;
-  text-decoration: none;
-}
-
 main.cars-list a {
   text-decoration: none;
-  color: black;
 }
 
-main.cars-list div.photo-of-single-car img {
-  max-height: 250px;
-}
-
-div.summary-of-single-car {
-  padding: 30px 0 0 30px;
-}
-
-div.summary-of-single-car p {
-  padding: 15px 0 20px 0;
+main.cars-list ul {
+  padding: 7px 0;
 }
 
 @media only screen and (max-width: 991.5px) {
-  main.cars-list {
-    padding: 120px 0 60px 0;
-  }
-
-  main.cars-list section.single-car-card {
-    display: grid;
+  div.summary-of-single-car {
+    display: block;
     text-align: center;
-    grid-template-columns: none;
-    max-height: 100%;
   }
-
   main.cars-list div.photo-of-single-car img {
+    max-height: 100%;
     width: 100%;
   }
-
-  div.summary-of-single-car {
-    padding: 30px 15px 0 15px;
+  main.cars-list .summary span:nth-child(1) {
+    display: block;
+  }
+  main.cars-list .summary span:nth-child(2) {
+    float: none;
   }
 
-  div.summary-of-single-car p {
-    padding: 15px 0 15px 0;
-  }
-
-  div.summary-of-single-car h2 {
-    font-size: 22px;
-  }
-
-  div.category-of-single-car p {
-    padding: 0 0 15px 0;
-  }
-
-  main.cars-list div.photo-of-single-car img {
-    max-height: 100%;
+  main.cars-list div.photo-of-single-car {
+    max-height: none;
   }
 }

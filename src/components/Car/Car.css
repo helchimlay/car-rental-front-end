@@ -80,8 +80,8 @@ main.car ol.list-equipment li {
 }
 
 main.car .sides,
-main .car-description,
-main .list-equipment {
+main.car .car-description,
+main.car .list-equipment {
   padding-left: 30px;
 }
 
@@ -169,7 +169,6 @@ main button.button-first {
   cursor: pointer;
   border: none;
 }
-
 main button.button-second {
   color: #0d324d;
   font-size: 18px;
@@ -199,6 +198,7 @@ main button:hover {
 main button.btn-calculate svg {
   position: absolute;
   left: 16px;
+  fill: white;
 }
 
 @media only screen and (max-width: 991.5px) {
