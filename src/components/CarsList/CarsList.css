@@ -10,14 +10,11 @@ main.cars-list ul li {
   display: inline;
 }
 
-div.price-of-single-car p {
+div.category-of-single-car span {
+  font-size: 15px;
+  padding: 5px 5px 0 0;
   color: rgb(182, 9, 43);
-  padding: 20px 20px 0 0;
   font-weight: bold;
-}
-
-div.price-of-single-car span {
-  font-size: 20px;
 }
 
 main.cars-list section.single-car-card:hover {
@@ -31,8 +28,9 @@ div.summary-of-single-car {
 main.cars-list section.single-car-card {
   display: grid;
   grid-template-columns: auto auto auto;
-  box-shadow: 2px 1px 10px #888 inset;
-  margin: 50px;
+  box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
+  border-radius: 4px;
+  margin: 80px 50px 50px 50px;
   cursor: pointer;
   transition: all 0.2s linear;
   max-height: 250px;
@@ -85,7 +83,7 @@ div.summary-of-single-car p {
     font-size: 22px;
   }
 
-  div.price-of-single-car p {
+  div.category-of-single-car p {
     padding: 0 0 15px 0;
   }
 

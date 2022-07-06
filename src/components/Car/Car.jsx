@@ -39,6 +39,7 @@ const Car = () => {
                 </ul>
               </span>
               <p className='calculate'>
+                <small>Kategoria cenowa: </small> <br />
                 <button className='btn-calculate'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -58,11 +59,6 @@ const Car = () => {
                   </svg>
                   Oblicz cenę wynajmu
                 </button>
-                <br />
-                <small>
-                  {thisCar.car_details.to_negotiate ? 'Do negocjacji, ' : null}
-                  Kategoria cenowa:{' '}
-                </small>
               </p>
               <h3>Opis:</h3>
               <p className='car-description'>

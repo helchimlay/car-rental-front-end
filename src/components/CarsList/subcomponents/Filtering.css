@@ -1,31 +1,55 @@
 section.filter-fields form {
+  max-width: 62.5rem;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
-  align-items: center;
+  margin: 0 auto;
 }
 
-@media only screen and (max-width: 991.5px) {
-  .filter-fields form div {
-    padding: 10px 0 10px 0;
-  }
+section.filter-fields select,
+section.filter-fields button {
+  height: 50px;
+  width: 170px;
+  border: none;
+  font-size: 17px;
+}
+
+section.filter-fields select:focus {
+  background-color: rgb(224, 239, 251);
+}
+
+section.filter-fields button {
+  margin-top: 0;
+  background-color: rgb(182, 9, 43);
+  color: white;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+section.filter-fields form select {
+  border-left: 1px solid rgb(152, 147, 147);
+}
+
+section.filter-fields div.select-category select {
+  border-right: 1px solid rgb(152, 147, 147);
+}
+
+@media only screen and (max-width: 820px) {
   section.filter-fields form {
     display: block;
+    text-align: center;
+  }
+  section.filter-fields form select {
+    border-top: 1px solid rgb(152, 147, 147);
+    border-left: none;
+    border-bottom: 1px solid rgb(152, 147, 147);
+  }
+  section.filter-fields div.select-category select {
+    border-right: none;
   }
 
-  .filter-fields form button {
-    width: 150px;
-  }
-
-  .filter-fields label {
-    font-weight: bold;
-  }
-
-  .filter-fields input {
-    height: 40px;
-    margin-left: 10px;
-  }
-
-  .filter-fields input:focus {
-    background-color: aliceblue;
+  section.filter-fields button {
+    margin: 20px 0 0 0;
   }
 }

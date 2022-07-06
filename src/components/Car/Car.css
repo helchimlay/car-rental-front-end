@@ -91,7 +91,7 @@ main.car .photos {
 }
 
 .owl-nav {
-  color: black;
+  color: rgb(60, 58, 58);
   font-weight: bold;
   font-size: 70px;
   line-height: 20px;
@@ -181,13 +181,13 @@ main button.button-second {
 }
 
 main button.btn-calculate {
-  padding: 10px;
+  padding: 15px;
   width: 250px;
   color: white;
   background-color: rgb(182, 9, 43);
   cursor: pointer;
   font-size: 17px;
-  border: 2px solid rgb(182, 9, 43);
+  border: none;
   border-radius: 20px;
   position: relative;
 }

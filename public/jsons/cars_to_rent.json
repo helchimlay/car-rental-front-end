@@ -1,0 +1,5 @@
+{
+  "brands": ["Audi", "Opel", "Volkswagen"],
+  "types_of_fuels": ["benzyna", "diesel", "LPG"],
+  "categories_of_price": ["Basic", "Standard", "Medium", "Premium"]
+}

@@ -17,10 +17,6 @@ const CarsList = () => {
   if (carsList) {
     const { cars_data } = carsList.data;
     var ListOfCars = cars_data.map((item, index) => {
-      const car_description = `${cars_data[
-        index
-      ].car_details.description.substring(0, 200)}...`;
-
       return (
         <Link
           to={`/lista-samochodow/${cars_data[index].slug}`}
@@ -51,13 +47,10 @@ const CarsList = () => {
                   </li>
                 </ul>
               </span>
-              <p>{car_description}</p>
+              <p>{cars_data[index].car_details.description}</p>
             </div>
-            <div className='price-of-single-car'>
-              <p>
-                <span>{`${cars_data[index].car_details.price}`}</span>
-                zł / dobę brutto
-              </p>
+            <div className='category-of-single-car'>
+              <span>Kategoria cenowa:</span>
             </div>
           </section>
         </Link>
