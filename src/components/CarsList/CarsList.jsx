@@ -1,56 +1,71 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './CarsList.css';
 
-const CarsList = (props) => {
+import { getCarsList } from '../../services/request';
+import Filtering from './subcomponents/Filtering';
 
-    const {cars_data} = props.carslist
+const CarsList = () => {
+  const [carsList, setCarsList] = useState(null);
 
-    const ListOfCars = cars_data.map((item,index) => {
-        
-        const car_description = `${(cars_data[index].car_details.description).substring(0, 200)}...`
+  useEffect(() => {
+    getCarsList().then(response => {
+      setCarsList(response);
+    });
+  }, []);
 
-        return (
-            <Link to={`/${cars_data[index].slug}`} key={cars_data[index].id} >
-                <section  className="single-car-card">
+  if (carsList) {
+    const { cars_data } = carsList.data;
+    var ListOfCars = cars_data.map((item, index) => {
+      return (
+        <Link
+          to={`/lista-samochodow/${cars_data[index].slug}`}
+          key={cars_data[index].id}
+        >
+          <section className='single-car-card'>
+            <div className='summary-of-single-car'>
+              <div className='photo-of-single-car'>
+                <img
+                  src={cars_data[index].car_details.images[0].src}
+                  alt={cars_data[index].car_details.images[1].alt}
+                />
+              </div>
+              <div className='summary'>
+                <span>
+                  {cars_data[index].car_details.brand}{' '}
+                  {cars_data[index].car_details.model}{' '}
+                  {cars_data[index].car_details.generate}
+                </span>
+                <span>
+                  Kat. cenowa: {cars_data[index].car_details.category}
+                </span>{' '}
+                <br />
+                <ul>
+                  <li>{cars_data[index].car_details.year_of_production}</li>
+                  <li className='details-list'>
+                    {cars_data[index].car_details.mileage} km
+                  </li>
+                  <li className='details-list'>
+                    {cars_data[index].car_details.fuel}
+                  </li>
+                </ul>
+                <div className='car-description'>
+                  <p>{cars_data[index].car_details.description}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Link>
+      );
+    });
+  }
 
-                    <div className='photo-of-single-car'>
-                        <img src={cars_data[index].car_details.images[0].src} alt={cars_data[index].car_details.images[1].alt} />
-                    </div>
+  return (
+    <main className='cars-list'>
+      <Filtering />
+      {ListOfCars}
+    </main>
+  );
+};
 
-                    <div className="summary-of-single-car">
-                        <h2>{cars_data[index].car_details.brand} {cars_data[index].car_details.model} {cars_data[index].car_details.generate}</h2>
-                        <span>
-                            <ul>
-                                <li>{cars_data[index].car_details.year_of_production}</li>
-                                <li className="details-list">{cars_data[index].car_details.mileage}</li>
-                                <li className="details-list">{cars_data[index].car_details.fuel}</li>
-                            </ul>
-                        </span>
-                        <p>
-                            {car_description}
-                        </p>
-                    </div>
-                    <div className="price-of-single-car">
-                        <h3>
-                            {`${cars_data[index].car_details.price} PLN`}
-                        </h3>
-                    </div>
-
-                </section>
-            </Link>
-        )
-    })
-
-    return ( 
-        <main className="cars-list">
-            <section className="filter-cars">
-                <h1>Witamy w serwisie CarRental</h1>
-                <h3>Zajmujemy się wypożyczaniem samochodów</h3>
-            </section>
-            {ListOfCars}
-        </main>
-     );
-}
- 
 export default CarsList;

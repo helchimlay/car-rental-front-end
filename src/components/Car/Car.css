@@ -1,183 +1,233 @@
-main.car section{
-    padding: 0 50px 0 50px;
+main.car section {
+  padding: 0 50px 0 50px;
+}
+main.car section.introduction {
+  margin-top: 60px;
+}
+
+main.car .owl-carousel {
+  z-index: 0;
+  position: relative;
+}
+
+main.car .owl-nav button {
+  position: absolute;
+  top: -webkit-calc(50% - 30px);
+  top: -moz-calc(50% - 30px);
+  top: -ms-calc(50% - 30px);
+  top: calc(50% - 30px);
+}
+
+main.car .owl-nav button.owl-prev {
+  left: 0;
+}
+
+main.car .owl-nav button.owl-next {
+  right: 0;
+}
+
+main.car .owl-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 40px;
 }
 
 main.car section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+main.car section.other-info {
+  padding-top: 0;
 }
 
 main.car h3 {
-    font-size: 25px;
-    color: rgb(32, 31, 31);
-    padding: 20px 0 20px 0;
+  font-size: 25px;
+  color: rgb(32, 31, 31);
+  padding: 20px 0 20px 0;
 }
 
-main.car p {
-    font-size: 18px;
-    padding-top: 30px;
+main.car p:not(.calculate) {
+  font-size: 18px;
+  padding-top: 30px;
 }
 
 main.car .other-info {
-    display: grid;
-    grid-template-columns: auto auto;
-    text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
 }
 
-main.car .introduction, main .sides {
-    display: grid;
-    text-align: left;
-    grid-template-columns: auto auto;
+main.car .introduction,
+main .sides {
+  display: grid;
+  text-align: left;
+  grid-template-columns: auto auto;
 }
 
 main.car .list-equipment {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-main.car ol.list-equipment p:before {
-    content: "- "
+main.car ol.list-equipment li:before {
+  content: '- ';
 }
 
-main.car .sides, main .car-description, main .list-equipment {
-    padding-left: 30px;
+main.car ol.list-equipment li {
+  padding: 10px 0 10px 0;
+}
+
+main.car .sides,
+main.car .car-description,
+main.car .list-equipment {
+  padding-left: 30px;
 }
 
 main.car .photos {
-    overflow: hidden;
-    height: auto;
+  overflow: hidden;
+  height: auto;
 }
 
 .owl-nav {
-    color: black;
-    font-weight: bold;
-    font-size: 70px;
-    line-height: 20px;
+  color: rgb(60, 58, 58);
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 20px;
 }
 
-
 .owl-nav > button:hover {
-    background-color: transparent!important;
-    opacity: 0.7;
-    color: black!important;
+  background-color: transparent !important;
+  opacity: 0.7;
+  color: black !important;
 }
 
 main.car .car-info {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 main.car ul li {
-    font-size: 18px;
-    display: inline;
+  font-size: 18px;
+  display: inline;
 }
 
 li.details-list:before {
-    content: "• ";
-    margin-left: 10px;
-  } 
-
-main.car .price > span:nth-child(1){
-    margin-top: 30px;
-    color: rgb(182, 9, 43);
-    font-size: 30px;
-    font-weight: bold;
-}
-
-main.car .price > span:nth-child(2) {
-    color:rgb(23, 23, 99);
-    font-weight: bold;
-    margin-left: 5px;
+  content: '• ';
+  margin-left: 10px;
 }
 
 main.car .car-info h2 {
-    font-size: 30px;
-    background: -webkit-linear-gradient(#7f5a83, #0d324d);
+  font-size: 30px;
+  background: -webkit-linear-gradient(#7f5a83, #0d324d);
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 main.car .other-info p {
-    padding: 0 40px 0 40px;
+  padding: 0 40px 0 40px;
 }
 
-main.car .price small {
-    color: gray;
+main.car .calculate small {
+  color: gray;
+  font-size: 15px;
 }
 
 iframe {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    border: none;
-    display: block;
-    margin: 0 auto;
-
+  position: absolute;
+  top: 30px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  border: none;
+  display: block;
+  margin: 0 auto;
 }
 
 main.car .container {
-    width: 100%;
-    overflow: hidden;
-    padding-top: 56.25%;
-    position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
 }
 
 main button {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 main button.button-first {
-    background-color: #7f5a83;
-    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-    font-size: 18px;
-    color: rgb(233,233,206);
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: none;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  font-size: 18px;
+  color: rgb(233, 233, 206);
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
 }
-
 main button.button-second {
-    color: #0d324d;
-    font-size: 18px;
-    background-color: transparent;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 2px solid #0d324d;
+  color: #0d324d;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 2px solid #0d324d;
 }
 
-main button.button-second:hover, main button.button-first:hover {
-    opacity: 0.9;
+main button.btn-calculate {
+  padding: 15px;
+  width: 250px;
+  color: white;
+  background-color: rgb(182, 9, 43);
+  cursor: pointer;
+  font-size: 17px;
+  border: none;
+  border-radius: 20px;
+  position: relative;
 }
 
+main button:hover {
+  opacity: 0.9;
+}
 
+main button.btn-calculate svg {
+  position: absolute;
+  left: 16px;
+  fill: white;
+}
 
 @media only screen and (max-width: 991.5px) {
+  main.car .introduction,
+  main.car .sides,
+  main.car .other-info {
+    grid-template-columns: auto;
+  }
 
-    main.car .introduction, main .sides, main .other-info {
-        grid-template-columns: auto;
-    }
+  main.car .car-info {
+    margin-top: 30px;
+    text-align: left;
+  }
 
-    main.car .car-info {
-        margin-top: 30px;
-        text-align: left;
-    }
-    
-    main.car section.other-info div.right {
-        margin-top: 30px;
-    }
+  main.car section.other-info div.right {
+    margin-top: 30px;
+  }
 
-    main.car .car-details, main .video, main .other-info, main .car-equipment, main .sides  {
-        text-align: center;
-    }
+  main.car .car-details,
+  main .video,
+  main .other-info,
+  main .car-equipment,
+  main .sides {
+    text-align: center;
+  }
 
-    main.car .sides, main .car-description, main .list-equipment {
-        padding-left: 0;
-    }
-
+  main.car .sides,
+  main .car-description,
+  main .list-equipment {
+    padding-left: 0;
+  }
 }

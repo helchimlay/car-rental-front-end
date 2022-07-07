@@ -1,0 +1,79 @@
+main.home {
+  padding: 120px 50px 60px 50px;
+  height: 100vh;
+  text-align: center;
+}
+
+main.home h1 {
+  font-size: 70px;
+  background: -webkit-linear-gradient(#7f5a83, #0d324d);
+  margin-left: 30%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main.home h2:nth-child(1) {
+  font-size: 50px;
+  background: -webkit-linear-gradient(#7f5a83, #0d324d);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main.home ul {
+  margin-top: 50px;
+}
+
+main.home .description {
+  margin-top: 20px;
+}
+
+main.home button {
+  width: 150px;
+  margin: 30px 60px 0 60px;
+}
+
+main.home svg {
+  width: 40px;
+  margin: 0 15px 0 15px;
+}
+
+main.home li {
+  display: inline;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 991.5px) {
+  main.home {
+    height: auto;
+  }
+  main.home h1 {
+    font-size: 40px;
+    margin-left: 0;
+  }
+
+  main.home h2:nth-child(1) {
+    font-size: 30px;
+  }
+
+  main.home li {
+    display: block;
+    font-size: 20px;
+  }
+  main.home span {
+    line-height: 50px;
+  }
+
+  main.home svg {
+    width: 22px;
+    margin: 0 15px 0 0;
+  }
+
+  main.home button {
+    width: 150px;
+    margin-top: 30px;
+  }
+}
