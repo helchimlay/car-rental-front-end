@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import HomePage from './HomePage/HomePage';
+import ErrorPage from './ErrorPage/ErrorPage';
 import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path='/lista-samochodow' element={<CarsList></CarsList>} />
         <Route path='/lista-samochodow/:carSlug' element={<Car></Car>} />
+        <Route path='*' element={<ErrorPage></ErrorPage>} />
       </Routes>
 
       <Footer />

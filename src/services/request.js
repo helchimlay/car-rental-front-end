@@ -23,6 +23,8 @@ export const getCarsListByFiltering = async (brand, fuel, category) => {
   };
   const response = await axios.get('./jsons/cars_data.json', { params });
   console.log(
-    response.data.cars_data.filter(item => item.car_details.brand === brand)
+    response.data.cars_data.filter(
+      item => item.car_details.brand === brand && item.car_details.fuel === fuel
+    )
   );
 };
