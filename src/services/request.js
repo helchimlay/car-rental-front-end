@@ -22,9 +22,15 @@ export const getCarsListByFiltering = async (brand, fuel, category) => {
     kategoria_cenowa: category,
   };
   const response = await axios.get('./jsons/cars_data.json', { params });
-  console.log(
-    response.data.cars_data.filter(
-      item => item.car_details.brand === brand && item.car_details.fuel === fuel
-    )
-  );
+  // console.log(
+  //   response.data.cars_data.filter(
+  //     item => item.car_details.brand === brand && item.car_details.fuel === fuel
+  //   )
+  // );
+  return response.data.cars_data.filter(item => {
+    return Object.values(item)
+      .join(' ')
+      .toLowerCase()
+      .includes(brand.toLowerCase());
+  });
 };

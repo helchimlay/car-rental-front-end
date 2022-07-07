@@ -59,7 +59,6 @@ const CarsList = () => {
       );
     });
   }
-
   return (
     <main className='cars-list'>
       <Filtering />
