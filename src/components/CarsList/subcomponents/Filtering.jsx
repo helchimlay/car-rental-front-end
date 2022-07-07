@@ -32,8 +32,7 @@ const Filtering = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // history.push('/dresses?color=blue');
-    if (selectedBrand || selectedCategory || selectedCategory) {
+    if (selectedBrand || selectedFuel || selectedCategory) {
       navigate(
         `/lista-samochodow?marka=${selectedBrand}&rodzaj_paliwa=${selectedFuel}&kategoria_cenowa=${selectedCategory}`
       );

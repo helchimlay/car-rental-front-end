@@ -9,8 +9,7 @@ const CarsList = () => {
   const [carsList, setCarsList] = useState(null);
 
   useEffect(() => {
-    const queryString = window.location.search;
-    getCarsList(queryString).then(response => {
+    getCarsList().then(response => {
       setCarsList(response);
     });
   }, []);
@@ -37,7 +36,10 @@ const CarsList = () => {
                   {cars_data[index].car_details.model}{' '}
                   {cars_data[index].car_details.generate}
                 </span>
-                <span>Kategoria cenowa:</span> <br />
+                <span>
+                  Kat. cenowa: {cars_data[index].car_details.category}
+                </span>{' '}
+                <br />
                 <ul>
                   <li>{cars_data[index].car_details.year_of_production}</li>
                   <li className='details-list'>

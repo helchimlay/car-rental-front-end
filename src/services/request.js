@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getCarsList = async queryString => {
-  const response = await axios.get(`./jsons/cars_data.json${queryString}`);
+export const getCarsList = async () => {
+  const response = await axios.get(`./jsons/cars_data.json`);
   return response;
 };
 
@@ -21,5 +21,8 @@ export const getCarsListByFiltering = async (brand, fuel, category) => {
     rodzaj_paliwa: fuel,
     kategoria_cenowa: category,
   };
-  await axios.get('./jsons/url.json', { params });
+  const response = await axios.get('./jsons/cars_data.json', { params });
+  console.log(
+    response.data.cars_data.filter(item => item.car_details.brand === brand)
+  );
 };

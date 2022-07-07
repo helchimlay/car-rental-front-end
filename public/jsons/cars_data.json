@@ -47,7 +47,7 @@
           }
         ],
         "video": "https://www.youtube.com/watch?v=GbD1DwHWbp0",
-        "price": "208"
+        "category": "Medium"
       },
       "car_equipment": [
         "Interfejs Bluuetooth",
@@ -113,8 +113,7 @@
           }
         ],
         "video": "https://www.youtube.com/watch?v=hjMeKIwLCnI",
-        "price": "315",
-        "to_negotiate": false
+        "category": "Premium"
       },
       "car_equipment": [
         "Interfejs Bluuetooth",
@@ -176,8 +175,7 @@
           }
         ],
         "video": "https://www.youtube.com/watch?v=nUNUrmP3ueQ",
-        "price": "287",
-        "to_negotiate": true
+        "category": "Basic"
       },
       "car_equipment": [
         "Interfejs Bluuetooth",

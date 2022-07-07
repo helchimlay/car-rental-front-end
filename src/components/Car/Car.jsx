@@ -39,7 +39,8 @@ const Car = () => {
                 </ul>
               </span>
               <p className='calculate'>
-                <small>Kategoria cenowa: </small> <br />
+                <small>Kategoria cenowa: {thisCar.car_details.category}</small>{' '}
+                <br />
                 <button className='btn-calculate'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
