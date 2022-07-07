@@ -7,7 +7,7 @@ main.cars-list section.filter-cars {
 }
 
 section.single-car-card {
-  margin: 30px;
+  margin: 30px 0;
 }
 
 div.summary-of-single-car {

@@ -9,7 +9,8 @@ const CarsList = () => {
   const [carsList, setCarsList] = useState(null);
 
   useEffect(() => {
-    getCarsList().then(response => {
+    const queryString = window.location.search;
+    getCarsList(queryString).then(response => {
       setCarsList(response);
     });
   }, []);

@@ -3,12 +3,14 @@ import './Filtering.css';
 import { getSelectOptions } from '../../../services/request';
 import { getCarsListByFiltering } from '../../../services/request';
 import FilterList from './FilterList/FilterList';
+import { useNavigate } from 'react-router-dom';
 
 const Filtering = () => {
   const [selectOptions, setSelectOptions] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedFuel, setSelectedFuel] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSelectOptions().then(response => {
@@ -30,6 +32,12 @@ const Filtering = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    // history.push('/dresses?color=blue');
+    if (selectedBrand || selectedCategory || selectedCategory) {
+      navigate(
+        `/lista-samochodow?marka=${selectedBrand}&rodzaj_paliwa=${selectedFuel}&kategoria_cenowa=${selectedCategory}`
+      );
+    }
     getCarsListByFiltering(selectedBrand, selectedFuel, selectedCategory);
   };
 
