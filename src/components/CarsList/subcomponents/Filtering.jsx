@@ -3,11 +3,11 @@ import './Filtering.css';
 import { getSelectOptions } from '../../../services/request';
 import { getCarsListByFiltering } from '../../../services/request';
 import FilterList from './FilterList/FilterList';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const Filtering = props => {
   const [selectOptions, setSelectOptions] = useState(null);
-
+  const [searchParams] = useSearchParams();
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedFuel, setSelectedFuel] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -48,6 +48,22 @@ const Filtering = props => {
     }
   };
 
+  useEffect(() => {
+    const selectedBrand = searchParams.get('marka');
+    const selectedFuel = searchParams.get('rodzaj_paliwa');
+    const selectedCategory = searchParams.get('kategoria_cenowa');
+    setSelectedBrand(selectedBrand);
+    setSelectedFuel(selectedFuel);
+    setSelectedCategory(selectedCategory);
+    getCarsListByFiltering(selectedBrand, selectedFuel, selectedCategory).then(
+      response => {
+        props.setCarsList(response);
+      }
+    );
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className='filter-fields'>
       <form onSubmit={handleSubmit}>
@@ -57,6 +73,7 @@ const Filtering = props => {
               change={handleBrandChange}
               items={selectOptions.brands}
               label={'Marka'}
+              value={selectedBrand}
             />
           ) : null}
         </div>
@@ -66,6 +83,7 @@ const Filtering = props => {
               change={handleFuelChange}
               items={selectOptions.types_of_fuels}
               label={'Rodzaj paliwa'}
+              value={selectedFuel}
             />
           ) : null}
         </div>
@@ -75,6 +93,7 @@ const Filtering = props => {
               change={handleCategoryChange}
               items={selectOptions.categories_of_price}
               label={'Kategoria cenowa'}
+              value={selectedCategory}
             />
           ) : null}
         </div>

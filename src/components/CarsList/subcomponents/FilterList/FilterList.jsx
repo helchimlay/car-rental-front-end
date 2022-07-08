@@ -1,9 +1,9 @@
 import React from 'react';
 
 const FilterList = props => {
-  const { change, items, label } = props;
+  const { change, items, label, value } = props;
   return (
-    <select onChange={change} defaultValue={label}>
+    <select onChange={change} value={value ? value : label}>
       <option value={label} disabled>
         {label}
       </option>
