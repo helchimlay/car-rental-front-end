@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getCarsList = async () => {
   const response = await axios.get(`./jsons/cars_data.json`);
-  return response;
+  return response.data.cars_data;
 };
 
 export const getCarBySlug = async slug => {
@@ -22,15 +22,39 @@ export const getCarsListByFiltering = async (brand, fuel, category) => {
     kategoria_cenowa: category,
   };
   const response = await axios.get('./jsons/cars_data.json', { params });
-  // console.log(
-  //   response.data.cars_data.filter(
-  //     item => item.car_details.brand === brand && item.car_details.fuel === fuel
-  //   )
-  // );
-  return response.data.cars_data.filter(item => {
-    return Object.values(item)
-      .join(' ')
-      .toLowerCase()
-      .includes(brand.toLowerCase());
-  });
+  if (brand && fuel && category) {
+    return response.data.cars_data.filter(
+      item =>
+        item.car_details.brand === brand &&
+        item.car_details.fuel === fuel &&
+        item.car_details.category === category
+    );
+  } else if (brand && fuel) {
+    return response.data.cars_data.filter(
+      item => item.car_details.brand === brand && item.car_details.fuel === fuel
+    );
+  } else if (brand && category) {
+    return response.data.cars_data.filter(
+      item =>
+        item.car_details.brand === brand &&
+        item.car_details.category === category
+    );
+  } else if (category && fuel) {
+    return response.data.cars_data.filter(
+      item =>
+        item.car_details.fuel === fuel && item.car_details.category === category
+    );
+  } else if (brand) {
+    return response.data.cars_data.filter(
+      item => item.car_details.brand === brand
+    );
+  } else if (fuel) {
+    return response.data.cars_data.filter(
+      item => item.car_details.fuel === fuel
+    );
+  } else if (category) {
+    return response.data.cars_data.filter(
+      item => item.car_details.category === category
+    );
+  }
 };

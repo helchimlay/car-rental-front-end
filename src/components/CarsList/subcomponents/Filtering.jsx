@@ -5,12 +5,13 @@ import { getCarsListByFiltering } from '../../../services/request';
 import FilterList from './FilterList/FilterList';
 import { useNavigate } from 'react-router-dom';
 
-const Filtering = () => {
+const Filtering = props => {
   const [selectOptions, setSelectOptions] = useState(null);
+
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedFuel, setSelectedFuel] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [filteredResults, setFilteredResults] = useState(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,16 +32,6 @@ const Filtering = () => {
     setSelectedCategory(e.target.value);
   };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   if (selectedBrand || selectedFuel || selectedCategory) {
-  //     navigate(
-  //       `/lista-samochodow?marka=${selectedBrand}&rodzaj_paliwa=${selectedFuel}&kategoria_cenowa=${selectedCategory}`
-  //     );
-  //   }
-  //   getCarsListByFiltering(selectedBrand, selectedFuel, selectedCategory);
-  // };
-
   const handleSubmit = e => {
     e.preventDefault();
     if (selectedBrand || selectedFuel || selectedCategory) {
@@ -52,10 +43,7 @@ const Filtering = () => {
         selectedFuel,
         selectedCategory
       ).then(response => {
-        setFilteredResults(response);
-        if (filteredResults) {
-          console.log(filteredResults);
-        }
+        props.setCarsList(response);
       });
     }
   };
