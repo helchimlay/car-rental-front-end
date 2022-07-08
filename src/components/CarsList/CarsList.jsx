@@ -20,7 +20,7 @@ const CarsList = () => {
                 <div className='photo-of-single-car'>
                   <img
                     src={item.car_details.images[0].src}
-                    alt={item.car_details.images[1].alt}
+                    alt={item.car_details.images[0].alt}
                   />
                 </div>
                 <div className='summary'>
