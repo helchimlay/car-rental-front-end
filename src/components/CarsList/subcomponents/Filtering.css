@@ -30,7 +30,7 @@ section.filter-fields button {
 
 section.filter-fields svg {
   position: absolute;
-  left: 32px;
+  left: 42px;
 }
 
 section.filter-fields form select {
@@ -57,5 +57,17 @@ section.filter-fields div.select-category select {
 
   section.filter-fields button {
     margin: 20px 0 0 0;
+  }
+
+  section.filter-fields select,
+  section.filter-fields button {
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+  }
+  section.filter-fields svg {
+    position: absolute;
+    left: 95px;
   }
 }
