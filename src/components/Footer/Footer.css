@@ -1,42 +1,41 @@
 footer {
-    background-color: #7f5a83;
-    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-    width: 100%;
-    color: rgb(233, 233, 206);
-    padding: 30px 0 30px 0;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  width: 100%;
+  color: rgb(233, 233, 206);
+  padding: 30px 0 30px 0;
 }
 
 .footer-info {
-    margin: 0 50px 0 50px;
+  margin: 0 50px 0 50px;
 }
 
 footer h2 {
-    background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233,233,206));
-    font-variant: small-caps;
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233, 233, 206));
+  font-variant: small-caps;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-footer h3{
-    margin-top: 20px;
+footer h3 {
+  margin-top: 20px;
 }
 footer p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .footer-copyright {
-    text-align: center;
+  text-align: center;
 }
 
 .footer-copyright p {
-    padding: 50px 0 30px 0;
+  padding: 50px 0 30px 0;
 }
 
 @media only screen and (max-width: 767.5px) {
-    footer {
-        text-align: center;
-    }
-    
+  footer {
+    text-align: center;
+  }
 }

@@ -40,6 +40,11 @@ main.cars-list .summary span:nth-child(1) {
   font-weight: bold;
 }
 
+main.cars-list section.no-offers {
+  text-align: center;
+  min-height: 200px;
+}
+
 main.cars-list .summary span:nth-child(2) {
   font-size: 15px;
   color: rgb(182, 9, 43);

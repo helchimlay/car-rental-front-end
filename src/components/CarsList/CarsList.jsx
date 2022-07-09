@@ -7,12 +7,20 @@ import Filtering from './subcomponents/Filtering';
 
 const CarsList = () => {
   const [carsList, setCarsList] = useState(null);
-
   return (
     <main className='cars-list'>
       <Filtering setCarsList={setCarsList} />
-
-      {carsList &&
+      {carsList && carsList.length <= 0 ? (
+        <section className='no-offers'>
+          <div className='content'>
+            <h2>
+              Przykro nam, ale niestety nie mamy tego czego szukasz {':('}
+            </h2>
+            <h3>Prosimy poszukać innego interesującego cię samochodu!</h3>
+          </div>
+        </section>
+      ) : (
+        carsList &&
         carsList.map(item => (
           <Link to={`/lista-samochodow/${item.slug}`} key={item.id}>
             <section className='single-car-card'>
@@ -43,7 +51,8 @@ const CarsList = () => {
               </div>
             </section>
           </Link>
-        ))}
+        ))
+      )}
     </main>
   );
 };
