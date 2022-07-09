@@ -33,8 +33,7 @@ const CarsList = () => {
                 </div>
                 <div className='summary'>
                   <span>
-                    {item.car_details.brand} {item.car_details.model}{' '}
-                    {item.car_details.generate}
+                    {item.car_details.brand} {item.car_details.model}
                   </span>
                   <span>Kat. cenowa: {item.car_details.category}</span> <br />
                   <ul>

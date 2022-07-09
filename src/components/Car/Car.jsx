@@ -90,7 +90,7 @@ const Car = () => {
                   <b>Rodzaj paliwa:</b> {thisCar.car_details.fuel}
                 </p>
                 <p>
-                  <b>Moc:</b> {thisCar.car_details.power}
+                  <b>Moc:</b> {thisCar.car_details.power} km
                 </p>
               </div>
               <div className='right'>

@@ -197,6 +197,620 @@
         "Opony runfiat",
         "Isofix (punkty montowania fotelika dziecięcego)"
       ]
+    },
+    {
+      "id": 3,
+      "slug": "mazda-3-III",
+      "car_details": {
+        "brand": "Mazda",
+        "model": "3",
+        "generate": "III",
+        "year_of_production": "2016",
+        "mileage": "87 202",
+        "displacement": "1998",
+        "fuel": "benzyna",
+        "power": "120",
+        "drive": "na przednie koła",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "niebieski",
+        "country_of_origin": "Polska",
+        "first_registration": "01/01/2016",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód Mazda 3 III generacji. Auto wyprodukowane w 2016 roku, sprawdza się całkiem nieźle. Napęd na przednie koła. Data pierwszej rejestracji 01/01/2016",
+        "images": [
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InlvdzR5d20zOWJwMzMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.nsuuFpCLZeUlZh1AMbQrgech7CNEzDRnAFxcr7JeM-k/image;s=1080x720",
+            "alt": "Mazda 3 zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Im54MzNrYTNidjVsczMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.ShmMvy5mjokhNUezaIoCiVjF-pT9gcjq4wtdzXo-CcI/image;s=1080x720",
+            "alt": "Mazda 3"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InJsMzVzb2tienV2aTMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.C7aA_y-tNVzu_vgcfFDe8j5OCa3j7IUJPzRJg-zQBww/image;s=1080x720",
+            "alt": "Mazda 3"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InlpZHIzOHlhbTI4cDMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.7goYgls2YODXUYZPZCOaQ-cILSa0v3yjc5Ld-vsmiOo/image;s=1080x720",
+            "alt": "Mazda 3"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImVwbzR6Z2FubHMxNzMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.IawjoxbKJP8ml4ls5XkKRg6MGDLw-1QFrs2I0vZAyyY/image;s=1080x720",
+            "alt": "Mazda 3"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=upDudes0YTA",
+        "category": "Medium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (4 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "skoda-superb-III",
+      "car_details": {
+        "brand": "Škoda",
+        "model": "Superb",
+        "generate": "III",
+        "year_of_production": "2021",
+        "mileage": "10 290",
+        "displacement": "1968",
+        "fuel": "benzyna",
+        "power": "200",
+        "drive": "na przednie koła",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "srebrny",
+        "country_of_origin": "Polska",
+        "first_registration": "24/11/2021",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód Skoda Superb III generacji. Auto zakupiono w listopadzie 2021 roku. Obecnie jest nabite 10000 przebiegu. Jest jak nowe. Nie było użytkowane w okresie zimowym.",
+        "images": [
+          {
+            "src": "https://bi.im-g.pl/im/f2/1f/11/z17956082V,Skoda-Superb-III.jpg",
+            "alt": "Skoda Superb zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/e7/27/19/z26375143V,Skoda-Superb.jpg",
+            "alt": "Skoda Superb zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/91/dc/b5/koda-superb-superb-iii-18-tsi-179-style-dsg-iii-rok-produkcji-2018-superb-warszawa-528334580.jpg",
+            "alt": "Skoda Superb zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=OR5rHWON02c",
+        "category": "Standard"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (4 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele tył i przód",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "Keyless entry",
+        "Czujnik deszczu",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "opel-astra-j",
+      "car_details": {
+        "brand": "Opel",
+        "model": "Astra",
+        "generate": "J",
+        "year_of_production": "2017",
+        "mileage": "83 000",
+        "displacement": "1956",
+        "fuel": "benzyna",
+        "power": "140",
+        "drive": "na przednie koła",
+        "number_of_doors": "4",
+        "number_of_places": "5",
+        "color": "bordowy",
+        "country_of_origin": "Polska",
+        "first_registration": "20/03/2018",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód używany Opel Astraj J 1.4 z bardzo bogatą wersją wyposażenia. Stan bardzo dobry. Auto zakupione w salonie Glob Cars Krosno i tam że jest serwisowane po dzień dzisiejszy. Ważność przeglądu do 03.2023.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/16/04/61/opel-astra-black-weekczarny-tydziensprawdz-550022176.jpg",
+            "alt": "Opel Astra zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/d7/60/32/opel-astra-panoramiczny-reflektory-ksenonowe-gliwice-556069734.jpg",
+            "alt": "Opel Astra zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/9d/8c/fc/opel-astra-j-iv-2011-17-cdti-cosmo-bixenon-mazowieckie-radom-sprzedam-556808712.jpg",
+            "alt": "Opel Astra zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=r1srnibiRBs",
+        "category": "Premium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Zestaw głośnomówiący",
+        "Sterowanie funkcjami pojazdu za pomocą głosu",
+        "Tapicerka częściowo skórzana",
+        "Kierownica skórzana",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "mercedes-benz-klasa-e-w213",
+      "car_details": {
+        "brand": "Mercedes-Benz",
+        "model": "Klasa E",
+        "generate": "W213",
+        "year_of_production": "2018",
+        "mileage": "72 300",
+        "displacement": "1950",
+        "fuel": "diesel",
+        "power": "245",
+        "drive": "na tylne koła",
+        "number_of_doors": "4",
+        "number_of_places": "5",
+        "color": "bordowy",
+        "country_of_origin": "Polska",
+        "first_registration": "15/10/2018",
+        "car_condition": "używany",
+        "description": "Do wynajęcia Mercedes w idealnym stanie technicznym. Dwu litrowy silnik o mocy 245 KM , niezwykle dobrze sprawdza sie w dalekiej trasie czy też w mieście. Jestem drugim właścicielem tego samochodu od czterech lat. Praktycznie cały czas stoi ogrzewanym w garażu stąd niewielki przebieg. Auto pachnie w środku, nie posiada żadnych plam zabrudzeń itp.Wszystkie części są jak nowe i oryginalne.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/8a/33/98/mercedes-benz-klasa-e-esp-paslek-sprzedam-555108692.jpg",
+            "alt": "Mercedes-Benz Klasa E zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/a1/84/ae/mercedes-benz-klasa-e-nieuszkodzony-555108691.jpg",
+            "alt": "Mercedes-Benz Klasa E zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/52/b4/af/mercedes-benz-klasa-e-swiatla-przeciwmgielne-warminsko-mazurskie-paslek-555108693.jpg",
+            "alt": "Mercedes-Benz Klasa E zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=2M4u7l1x5Sc",
+        "category": "Standard"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "Czujnik deszczu",
+        "Kierownica skórzana",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "volkswagen-arteon-r-line-4motion",
+      "car_details": {
+        "brand": "Volkswagen",
+        "model": "Arteon",
+        "generate": "R-Line 4Motion",
+        "year_of_production": "2019",
+        "mileage": "109 000",
+        "displacement": "1995",
+        "fuel": "diesel",
+        "power": "239",
+        "drive": "4x4 (dołączany automatycznie)",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "biały",
+        "country_of_origin": "Polska",
+        "first_registration": "19/07/2019",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód Volkswagen Arteon R-Line 4Motion. Auto wyprodukowane w 2019 roku, przebieg 109 000 km. Ma moc 239 KM, napęd 4x4. Jest w zasadzie jak nowe. Nie było użytkowane w okresie zimowym.",
+        "images": [
+          {
+            "src": "https://st-lento.pl/adpics/large/04_2018/07/92ba20_auto-do-slubu-volkswagen-arteon-bialy-r-line-zdjecia.jpg",
+            "alt": "Volkswagen Arteon zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/m3jl1wec69v43-PL/image;s=960x640",
+            "alt": "Volkswagen Arteon zdjęcie"
+          },
+          {
+            "src": "https://ae01.alicdn.com/kf/HTB1SxyECjDpK1RjSZFrq6y78VXa0/1-18-Model-odlewu-dla-volkswagena-VW-nowy-CC-Arteon-2018-bia-y-samochodzik-zabawka-ze.jpg_Q90.jpg_.webp",
+            "alt": "Volkswagen Arteon zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=3D2pHRuwhr4",
+        "category": "Premium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Kierownica skórzana",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "skoda-octavia-III",
+      "car_details": {
+        "brand": "Škoda",
+        "model": "Octavia",
+        "generate": "III",
+        "year_of_production": "2018",
+        "mileage": "157 000",
+        "displacement": "1968",
+        "fuel": "benzyna",
+        "power": "150",
+        "drive": "na przednie koła",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "srebrny",
+        "country_of_origin": "Polska",
+        "first_registration": "28/06/2018",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód Skoda Octavia III generacji. Auto zakupiono w czerwcu 2021 roku. Obecnie jest nabite 157000 przebiegu. Auto w kolorze srebrnym pięknie lśni.",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/4c/41/df/koda-octavia-ambition-salon-smartlink-12-mcy-isofix-octavia-myslenice-553582318.jpg",
+            "alt": "Skoda Octavia zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/c4/80/e2/koda-octavia-kr9mg38-skoda-octavia-vat-23-psalon-swiatla-do-jazdy-dziennej-pepowo-556711509.jpg",
+            "alt": "Skoda Octavia zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/01/f1/78/koda-octavia-lpg-salon-150-smartlink-serwisowana-gniazdo-aux-myslenice-553974716.jpg",
+            "alt": "Skoda Octavia zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=VNvBh886BV8",
+        "category": "Basic"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Sterowanie funkcjami pojazdu za pomocą głosu",
+        "Keyless entry",
+        "Klimatyzacja automatyczna (4 lub więcej strefowa)",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "porsche-macan-standard",
+      "car_details": {
+        "brand": "Porsche",
+        "model": "Macan",
+        "generate": "Standard",
+        "year_of_production": "2018",
+        "mileage": "76 050",
+        "displacement": "1984",
+        "fuel": "benzyna",
+        "power": "252",
+        "drive": "4x4 (dołączany automatycznie)",
+        "number_of_doors": "5",
+        "number_of_places": "4",
+        "color": "srebrny",
+        "country_of_origin": "Polska",
+        "first_registration": "22/09/2017",
+        "car_condition": "używany",
+        "description": "Porsche Macan Standard do wynajęcia!!! Wyprodukowane w 2018 roku, jestem jego pierwszym właścicielem, ma 76 000 przebiegu. Napęd 4x4. Samochód pali 12l/100km (benzyna). Pomalowany perłową czarną farbą pięknie się prezentuje.",
+        "images": [
+          {
+            "src": "https://bi.im-g.pl/im/f0/6d/fa/z16412144V,Porsche-Macan-Turbo.jpg",
+            "alt": "Porsche Macan zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/fd/6d/fa/z16412157V,Porsche-Macan-Turbo.jpg",
+            "alt": "Porsche Macan zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/04/6e/fa/z16412164V,Porsche-Macan-Turbo.jpg",
+            "alt": "Porsche Macan zdjęcie"
+          },
+          {
+            "src": "https://bi.im-g.pl/im/ea/6d/fa/z16412138V,Porsche-Macan-Turbo.jpg",
+            "alt": "Porsche Macan zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=yvBTIDhpuD4",
+        "category": "Premium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Czujnik deszczu",
+        "Kierownica skórzana",
+        "Zestaw głośnomówiący",
+        "Klimatyzacja automatyczna (4 lub więcej strefowa)",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "volkswagen-t-roc-life",
+      "car_details": {
+        "brand": "Volkswagen",
+        "model": "T-Roc",
+        "generate": "Life 1.5 TSI ",
+        "year_of_production": "2022",
+        "mileage": "2 500",
+        "displacement": "1498",
+        "fuel": "LPG",
+        "power": "150",
+        "drive": "na przednie koła",
+        "number_of_doors": "5",
+        "number_of_places": "5",
+        "color": "srebrny",
+        "country_of_origin": "Niemcy",
+        "first_registration": "28/09/2018",
+        "car_condition": "nowy",
+        "description": "Do wynajęcia samochód Volkswagen T-Roc Life 1.5 TSI. Auto jest nowe - posiada jedynie 2 500 km przebiegu. Idealnie nadaje się do wycieczek rodzinnych - posiada bardzo duże wyposażenie.",
+        "images": [
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InF5ajd1cTM3OWk4bS1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.Fn7nUhNopChDzE1-sPf1Bdo9H-egpeoqyKwuqrKnkBY/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjZhMTFhbjgyejVvYTMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.EPkdxXaw-STWV09ucqSPwRkFmhSmu45zKxNe8KaNdYA/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Imp4dWlyc3V1dnZzbzEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.XdqwlwnrPzzhnFHiNFCN8t8sfmb_I64Z6MdjlpLYVjg/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjR6dXlqZHRic3l5djMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.2LZINk67qUVtUBrf5LNzEpq7szfpiwC606T7kZADZVs/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjAydnN6NXZnam41ei1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.k6Fs6GMGycpLQdtYOTWsHz-46ajtcwymuqDhH0fDW-w/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          },
+          {
+            "src": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImJxbzVzMWh0ejJ5NzItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.ee6EesZfEiOzdukSPSAW3gSrYxlZ6HtJetJHNCrJCxM/image;s=1080x720",
+            "alt": "Volkswagen T-Roc zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=YnkMRz0Ayh4",
+        "category": "Medium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "ford-mustang-V",
+      "car_details": {
+        "brand": "Ford",
+        "model": "Mustang",
+        "generate": "V",
+        "year_of_production": "2013",
+        "mileage": "38 231",
+        "displacement": "4951",
+        "fuel": "benzyna",
+        "power": "500",
+        "drive": "na tylne koła",
+        "number_of_doors": "2",
+        "number_of_places": "4",
+        "color": "niebieski",
+        "country_of_origin": "Stany Zjednoczone",
+        "first_registration": "01/02/2013",
+        "car_condition": "używany",
+        "description": "Do wynajęcia samochód Ford Mustang. Auto dosyć nowe bo wyprodukowane w 2013 roku - sprowadzone z USA. Samochód to istny potwór (aż 500 km oraz 4951 pojemności silnika)! Pomimo swoich lat ma mało przebiegu - tylko 38 000",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/4a/67/f5/ford-mustang-2016-50-zadbany-benzyna-jozefkowo-493333832.jpg",
+            "alt": "Ford Mustang zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/b7/77/1e/ford-mustang-2016-50-zadbany-mp3-mustang-kujawsko-pomorskie-493333834.jpg",
+            "alt": "Ford Mustang zdjęcie"
+          },
+          {
+            "src": "https://a.allegroimg.com/s1024/0cd670/b62ee14741ce881ff2da877606b3",
+            "alt": "Ford Mustang zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/66/b6/12/ford-mustang-2016-50-zadbany-esp-kujawsko-pomorskie-493333833.jpg",
+            "alt": "Ford Mustang zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=G5opr6Lh9Uk",
+        "category": "Premium"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Podłokietniki",
+        "Kierownica ze sterowaniem radia",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Opony runfiat",
+        "Czujnik deszczu",
+        "Kierownica skórzana",
+        "Keyless entry",
+        "Zawieszenie regulowane",
+        "Klimatyzacja automatyczna (4 lub więcej strefowa)"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "mercedes-benz-klasa-V-II",
+      "car_details": {
+        "brand": "Mercedes-Benz",
+        "model": "Klasa V",
+        "generate": "II",
+        "year_of_production": "2018",
+        "mileage": "46 000",
+        "displacement": "2143",
+        "fuel": "diesel",
+        "power": "190",
+        "drive": "4x4 (stały)",
+        "number_of_doors": "4",
+        "number_of_places": "7",
+        "color": "biały",
+        "country_of_origin": "Polska",
+        "first_registration": "07/12/2018",
+        "car_condition": "używany",
+        "description": "Do wynajęcia minivan Mercedes-Benz Klasa V II generacji. Idealnie nada się jeżeli razem ze znajomymi chcielibyście wybrać się w dłuższą trasę - np na wakacje! Auto pali 7l/100km co jest dosyć małą ilością w porównaniu do innych modeli tej marki. Zachęcamy serdecznie do wypożyczenia!",
+        "images": [
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/6d/89/05/mercedes-vito-22cdi-ekstralongtourerpolska-lodzkie-555016237.jpg",
+            "alt": "Mercedes-Benz Klasa V zdjęcie"
+          },
+          {
+            "src": "https://www.tuningblog.eu/wp-content/uploads/2016/11/Carlex-Design-Mercedes-Benz-Vito-AMG-2016-Tuning-1.jpg",
+            "alt": "Mercedes-Benz Klasa V zdjęcie"
+          },
+          {
+            "src": "https://thumbs.img-sprzedajemy.pl/1000x901c/37/c0/fe/mercedes-vito-22cdi-ekstralongtourerpolska-mozliwa-zamiana-555016236.jpg",
+            "alt": "Mercedes-Benz Klasa V zdjęcie"
+          }
+        ],
+        "video": "https://www.youtube.com/watch?v=rU2DHT74ryo",
+        "category": "Standard"
+      },
+      "car_equipment": [
+        "Interfejs Bluuetooth",
+        "Radio",
+        "Gniazdo USB",
+        "System nawigacji satelitarnej",
+        "Klimatyzacja automatyczna (2 strefowa)",
+        "Podłokietniki",
+        "Podgrzewane fotele",
+        "Kierownica wielofunkcyjna",
+        "Lusterka boczne ustawiane elektrycznie",
+        "System Start/Stop",
+        "ABS",
+        "ESP",
+        "Poduszka powietrzna kierowcy",
+        "Boczna poduszka powietrzna kierowcy",
+        "System wspomagania hamowania",
+        "Isofix (punkty montowania fotelika dziecięcego)"
+      ]
     }
   ]
 }
