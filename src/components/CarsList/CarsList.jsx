@@ -44,7 +44,11 @@ const CarsList = () => {
                     <li className='details-list'>{item.car_details.fuel}</li>
                   </ul>
                   <div className='car-description'>
-                    <p>{item.car_details.description}</p>
+                    <p>
+                      {item.car_details.description.length > 200
+                        ? `${item.car_details.description.slice(0, 200)}...`
+                        : item.car_details.description}
+                    </p>
                   </div>
                 </div>
               </div>
