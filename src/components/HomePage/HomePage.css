@@ -1,13 +1,13 @@
 main.home {
   padding: 120px 50px 60px 50px;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
 }
 
 main.home h1 {
   font-size: 70px;
   background: -webkit-linear-gradient(#7f5a83, #0d324d);
-  margin-left: 30%;
+  /* margin-left: 30%; */
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -47,9 +47,6 @@ main.home li {
 }
 
 @media only screen and (max-width: 991.5px) {
-  main.home {
-    height: auto;
-  }
   main.home h1 {
     font-size: 40px;
     margin-left: 0;
