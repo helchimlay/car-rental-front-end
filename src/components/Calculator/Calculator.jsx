@@ -67,7 +67,7 @@ const Calculator = () => {
                 />
               </div>
               <div className='calculator-submit'>
-                <input type='submit' value='Oblicz koszt' />
+                <button>Oblicz koszt</button>
               </div>
             </form>
           </div>
