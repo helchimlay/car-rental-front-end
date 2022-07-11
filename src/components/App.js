@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -8,6 +8,7 @@ import HomePage from './HomePage/HomePage';
 import ErrorPage from './ErrorPage/ErrorPage';
 import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
+import Calculator from './Calculator/Calculator';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path='/lista-samochodow' element={<CarsList></CarsList>} />
         <Route path='/lista-samochodow/:carSlug' element={<Car></Car>} />
+        <Route path='/kalkulator' element={<Calculator></Calculator>} />
         <Route path='*' element={<ErrorPage></ErrorPage>} />
       </Routes>
 
