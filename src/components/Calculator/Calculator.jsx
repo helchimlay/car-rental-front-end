@@ -2,38 +2,43 @@ import React, { useState, useEffect } from 'react';
 import './Calculator.css';
 
 import { useParams } from 'react-router-dom';
-import { getCarBySlug } from '../../services/request';
+import { getCarBySlug, getFuelsPrices } from '../../services/request';
 
 const Calculator = () => {
   const { carSlug } = useParams();
-  const [thisCar, setThisCar] = useState();
-  const [rentSince, setRentSince] = useState();
-  const [rentTo, setRentTo] = useState();
-  const [location, setLocation] = useState('');
-  const [yearOfDrivingLicense, setYearOfDrivingLicense] = useState(0);
-  const [kilometersToDrive, setKilometersToDrive] = useState(0);
 
-  const [rentalPrice, setRentalPrice] = useState(0);
+  const [fuelsPrices, setFuelsPrices] = useState();
+  const [thisCar, setThisCar] = useState();
+  const [rentCarInfo, setRentCarInfo] = useState({
+    rentSince: '',
+    rentTo: '',
+    location: '',
+    yearOfDrivingLicense: 0,
+    kilometersToDrive: 0,
+    rentalPrice: null,
+  });
+
+  const [errorMsg, setErrorMsg] = useState('');
   const priceForOneNight = 135;
 
   const handleRentSinceChange = e => {
-    setRentSince(e.target.value);
+    setRentCarInfo({ ...rentCarInfo, rentSince: e.target.value });
   };
 
   const handleRentToChange = e => {
-    setRentTo(e.target.value);
+    setRentCarInfo({ ...rentCarInfo, rentTo: e.target.value });
   };
 
   const handleLocationChange = e => {
-    setLocation(e.target.value);
+    setRentCarInfo({ ...rentCarInfo, location: e.target.value });
   };
 
   const handleYearOfDrivingLicenseChange = e => {
-    setYearOfDrivingLicense(e.target.value);
+    setRentCarInfo({ ...rentCarInfo, yearOfDrivingLicense: e.target.value });
   };
 
   const handleKilometersToDriveChange = e => {
-    setKilometersToDrive(e.target.value);
+    setRentCarInfo({ ...rentCarInfo, kilometersToDrive: e.target.value });
   };
 
   useEffect(() => {
@@ -42,17 +47,57 @@ const Calculator = () => {
     });
   }, [carSlug]);
 
+  useEffect(() => {
+    getFuelsPrices().then(response => {
+      setFuelsPrices(response);
+    });
+  }, []);
+
   const handleCalculateCarRentPrice = e => {
     e.preventDefault();
-    setRentalPrice(
-      RentCar(priceForOneNight, rentSince, rentTo, thisCar.car_details.category)
-    );
+
+    let fuelPrice;
+
+    if (thisCar.car_details.fuel === 'benzyna') {
+      fuelPrice = fuelsPrices.benzyna;
+    } else if (thisCar.car_details.fuel === 'diesel') {
+      fuelPrice = fuelsPrices.diesel;
+    } else {
+      fuelPrice = fuelsPrices.LPG;
+    }
+
+    setRentCarInfo({
+      ...rentCarInfo,
+      rentalPrice: RentCar(
+        priceForOneNight,
+        rentCarInfo.rentSince,
+        rentCarInfo.rentTo,
+        rentCarInfo.location,
+        rentCarInfo.yearOfDrivingLicense,
+        thisCar.car_details.category,
+        thisCar.car_details.number_of_available_models,
+        rentCarInfo.kilometersToDrive,
+        fuelPrice
+      ),
+    });
   };
-  console.log(rentalPrice);
-  const RentCar = (priceForOneNight, rentSince, rentTo, priceCategory) => {
+
+  //function calls calculation of rent price
+  const RentCar = (
+    priceForOneNight,
+    rentSince,
+    rentTo,
+    location,
+    yearOfDrivingLicense,
+    priceCategory,
+    number_of_available_models,
+    kilometersToDrive,
+    fuelPrice
+  ) => {
     const numberOfDays =
       (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
-    let rentPrice = priceForOneNight * numberOfDays;
+    let rentPrice =
+      priceForOneNight * numberOfDays * kilometersToDrive * fuelPrice;
     switch (priceCategory) {
       case 'Basic':
         rentPrice *= 1;
@@ -69,7 +114,47 @@ const Calculator = () => {
       default:
         return rentPrice;
     }
-    return rentPrice;
+
+    if (new Date().getFullYear() - yearOfDrivingLicense < 5) {
+      rentPrice *= 1.2;
+    }
+
+    if (number_of_available_models < 3) {
+      rentPrice *= 1.15;
+    }
+
+    if (!rentSince || !rentTo || !location || !kilometersToDrive) {
+      setErrorMsg(
+        'Aby sprawdzić cenę wypożyczenia samochodu musisz wypełnić wszystkie pola!'
+      );
+      return false;
+    }
+
+    if (
+      new Date().getFullYear() - yearOfDrivingLicense < 3 &&
+      priceCategory === 'Premium'
+    ) {
+      setErrorMsg(
+        'Aby wypożyczyć ten model samochodu musisz posiadać prawojazdy conajmniej 3 lata!'
+      );
+      return false;
+    } else {
+      setErrorMsg('');
+      return Math.ceil(rentPrice);
+    }
+  };
+
+  //function generates and returns years for <select>
+  const renderSelectOptions = () => {
+    const years = [];
+    for (
+      let a = new Date().getFullYear();
+      a >= new Date().getFullYear() - 100;
+      a--
+    ) {
+      years.push(a);
+    }
+    return years;
   };
 
   return (
@@ -126,19 +211,27 @@ const Calculator = () => {
                     name='adress'
                     id='adress'
                     onChange={handleLocationChange}
-                    value={location}
+                    value={rentCarInfo.location}
                   />
                   <br />
                 </div>
                 <div className='form-div-right'>
-                  <label htmlFor=''>Rok otrzymania prawa jazdy</label>
+                  <label htmlFor='year-of-get-driving-license'>
+                    Rok otrzymania prawa jazdy
+                  </label>
                   <br />
                   <select
-                    name=''
-                    id=''
+                    name='year-of-get-driving-license'
+                    id='year-of-get-driving-license'
                     onChange={handleYearOfDrivingLicenseChange}
-                    value={yearOfDrivingLicense}
-                  ></select>
+                    value={rentCarInfo.yearOfDrivingLicense}
+                  >
+                    {renderSelectOptions().map(item => (
+                      <option value={item} key={item}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
                   <br />
                   <label htmlFor='kilometers-to-drive'>
                     Szacunkowa ilość kilometrów do przejechania
@@ -152,7 +245,7 @@ const Calculator = () => {
                     min='0'
                     max='1000'
                     onChange={handleKilometersToDriveChange}
-                    value={kilometersToDrive}
+                    value={rentCarInfo.kilometersToDrive}
                   />
                 </div>
                 <div className='calculator-submit'>
@@ -160,9 +253,10 @@ const Calculator = () => {
                 </div>
               </form>
             </div>
+            {errorMsg && <h2>{errorMsg}</h2>}
             <div className='div-price'>
               <h2 className='price-title'>Koszt wypożyczenia:</h2>
-              <div className='price-display'>1234 zł</div>
+              <div className='price-display'>{rentCarInfo.rentalPrice}</div>
             </div>
           </section>
         </main>

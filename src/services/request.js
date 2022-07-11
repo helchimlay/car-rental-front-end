@@ -37,3 +37,8 @@ export const getCarsListByFiltering = async (brand, fuel, category) => {
     return showCar;
   });
 };
+
+export const getFuelsPrices = async () => {
+  const response = await axios.get('../jsons/fuels_data.json');
+  return response.data;
+};
