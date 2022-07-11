@@ -57,10 +57,11 @@ const Calculator = () => {
     e.preventDefault();
 
     let fuelPrice;
-
-    if (thisCar.car_details.fuel === 'benzyna') {
+    const isBenzyna = thisCar.car_details.fuel === 'benzyna';
+    const isDiesel = thisCar.car_details.fuel === 'diesel';
+    if (isBenzyna) {
       fuelPrice = fuelsPrices.benzyna;
-    } else if (thisCar.car_details.fuel === 'diesel') {
+    } else if (isDiesel) {
       fuelPrice = fuelsPrices.diesel;
     } else {
       fuelPrice = fuelsPrices.LPG;
