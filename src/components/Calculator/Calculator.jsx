@@ -6,13 +6,71 @@ import { getCarBySlug } from '../../services/request';
 
 const Calculator = () => {
   const { carSlug } = useParams();
-  const [thisCar, setThisCar] = useState(null);
+  const [thisCar, setThisCar] = useState();
+  const [rentSince, setRentSince] = useState();
+  const [rentTo, setRentTo] = useState();
+  const [location, setLocation] = useState('');
+  const [yearOfDrivingLicense, setYearOfDrivingLicense] = useState(0);
+  const [kilometersToDrive, setKilometersToDrive] = useState(0);
+
+  const [rentalPrice, setRentalPrice] = useState(0);
+  const priceForOneNight = 135;
+
+  const handleRentSinceChange = e => {
+    setRentSince(e.target.value);
+  };
+
+  const handleRentToChange = e => {
+    setRentTo(e.target.value);
+  };
+
+  const handleLocationChange = e => {
+    setLocation(e.target.value);
+  };
+
+  const handleYearOfDrivingLicenseChange = e => {
+    setYearOfDrivingLicense(e.target.value);
+  };
+
+  const handleKilometersToDriveChange = e => {
+    setKilometersToDrive(e.target.value);
+  };
 
   useEffect(() => {
     getCarBySlug(carSlug).then(response => {
       setThisCar(response);
     });
   }, [carSlug]);
+
+  const handleCalculateCarRentPrice = e => {
+    e.preventDefault();
+    setRentalPrice(
+      RentCar(priceForOneNight, rentSince, rentTo, thisCar.car_details.category)
+    );
+  };
+  console.log(rentalPrice);
+  const RentCar = (priceForOneNight, rentSince, rentTo, priceCategory) => {
+    const numberOfDays =
+      (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
+    let rentPrice = priceForOneNight * numberOfDays;
+    switch (priceCategory) {
+      case 'Basic':
+        rentPrice *= 1;
+        break;
+      case 'Standard':
+        rentPrice *= 1.3;
+        break;
+      case 'Medium':
+        rentPrice *= 1.6;
+        break;
+      case 'Premium':
+        rentPrice *= 2;
+        break;
+      default:
+        return rentPrice;
+    }
+    return rentPrice;
+  };
 
   return (
     <>
@@ -41,14 +99,24 @@ const Calculator = () => {
               Oblicz koszt wyposażenia samochodu
             </h1>
             <div className='div-form'>
-              <form>
+              <form onSubmit={handleCalculateCarRentPrice}>
                 <div className='form-div-left'>
                   <span>Termin wyposażenia samochodu</span>
                   <br />
                   <label htmlFor='rent-since'>Od:</label>
-                  <input type='date' name='rent-since' id='rent-since' />
+                  <input
+                    type='date'
+                    name='rent-since'
+                    id='rent-since'
+                    onChange={handleRentSinceChange}
+                  />
                   <label htmlFor='rent-to'>do:</label>{' '}
-                  <input type='date' name='rent-to' id='rent-to' />
+                  <input
+                    type='date'
+                    name='rent-to'
+                    id='rent-to'
+                    onChange={handleRentToChange}
+                  />
                   <br />
                   <label htmlFor='adress'>Lokalizacja odbioru samochodu</label>
                   <br />
@@ -57,13 +125,20 @@ const Calculator = () => {
                     type='text'
                     name='adress'
                     id='adress'
+                    onChange={handleLocationChange}
+                    value={location}
                   />
                   <br />
                 </div>
                 <div className='form-div-right'>
                   <label htmlFor=''>Rok otrzymania prawa jazdy</label>
                   <br />
-                  <select name='' id=''></select>
+                  <select
+                    name=''
+                    id=''
+                    onChange={handleYearOfDrivingLicenseChange}
+                    value={yearOfDrivingLicense}
+                  ></select>
                   <br />
                   <label htmlFor='kilometers-to-drive'>
                     Szacunkowa ilość kilometrów do przejechania
@@ -76,10 +151,12 @@ const Calculator = () => {
                     id='kilometers-to-drive'
                     min='0'
                     max='1000'
+                    onChange={handleKilometersToDriveChange}
+                    value={kilometersToDrive}
                   />
                 </div>
                 <div className='calculator-submit'>
-                  <input type='submit' value='Oblicz koszt' />
+                  <button>Oblicz koszt</button>
                 </div>
               </form>
             </div>

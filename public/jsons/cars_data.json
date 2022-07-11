@@ -19,6 +19,9 @@
         "country_of_origin": "Polska",
         "first_registration": "01/05/2018",
         "car_condition": "używany",
+        "fuel_usage": 7.5,
+        "present_location": "Kraków",
+        "number_of_available_models": 14,
         "description": "Do wynajęcia Volkswagen Passat B8. Samochód ma około 60 000 przebiegu, jest w stanie dobrym. Kupiony został w Polsce, jest w 100% bezwypadkowy. Wszystkie elementy nadwozia są w oryginalnym lakierze.",
         "images": [
           {
@@ -89,6 +92,9 @@
         "country_of_origin": "Niemcy",
         "first_registration": "19/11/2016",
         "car_condition": "używany",
+        "fuel_usage": 9,
+        "present_location": "Warszawa",
+        "number_of_available_models": 10,
         "description": "Do wynajęcia Audi A6. Samochód jest w dobrym stanie. Auto zostało sprowadzone z Niemiec po prawie 2 latach poszukiwania tego egzemplarza. Auto jest sprawdzone, oprócz zderzaków nic nie było malowane.",
         "images": [
           {
@@ -155,6 +161,9 @@
         "country_of_origin": "Niemcy",
         "first_registration": "28/09/2018",
         "car_condition": "używany",
+        "fuel_usage": 7,
+        "present_location": "Kraków",
+        "number_of_available_models": 20,
         "description": "Do wynajęcia samochód Opel Insignia Sports Tourer w wersji Exclusive z pakietem OPC Line. Auto zakupiono w maju 2020 roku od Niemieckiego dealera Opla z przebiegiem 11 500 km. Obecnie 19 900 km. Jest w zasadzie jak nowe. Nie było użytkowane w okresie zimowym.",
         "images": [
           {
@@ -217,6 +226,9 @@
         "country_of_origin": "Polska",
         "first_registration": "01/01/2016",
         "car_condition": "używany",
+        "fuel_usage": 10,
+        "present_location": "Szczecin",
+        "number_of_available_models": 7,
         "description": "Do wynajęcia samochód Mazda 3 III generacji. Auto wyprodukowane w 2016 roku, sprawdza się całkiem nieźle. Napęd na przednie koła. Data pierwszej rejestracji 01/01/2016",
         "images": [
           {
@@ -280,6 +292,9 @@
         "country_of_origin": "Polska",
         "first_registration": "24/11/2021",
         "car_condition": "używany",
+        "fuel_usage": 10,
+        "present_location": "Rzeszów",
+        "number_of_available_models": 11,
         "description": "Do wynajęcia samochód Skoda Superb III generacji. Auto zakupiono w listopadzie 2021 roku. Obecnie jest nabite 10000 przebiegu. Jest jak nowe. Nie było użytkowane w okresie zimowym.",
         "images": [
           {
@@ -338,6 +353,9 @@
         "country_of_origin": "Polska",
         "first_registration": "20/03/2018",
         "car_condition": "używany",
+        "fuel_usage": 12,
+        "present_location": "Warszawa",
+        "number_of_available_models": 19,
         "description": "Do wynajęcia samochód używany Opel Astraj J 1.4 z bardzo bogatą wersją wyposażenia. Stan bardzo dobry. Auto zakupione w salonie Glob Cars Krosno i tam że jest serwisowane po dzień dzisiejszy. Ważność przeglądu do 03.2023.",
         "images": [
           {
@@ -400,6 +418,9 @@
         "country_of_origin": "Polska",
         "first_registration": "15/10/2018",
         "car_condition": "używany",
+        "fuel_usage": 11,
+        "present_location": "Warszawa",
+        "number_of_available_models": 9,
         "description": "Do wynajęcia Mercedes w idealnym stanie technicznym. Dwu litrowy silnik o mocy 245 KM , niezwykle dobrze sprawdza sie w dalekiej trasie czy też w mieście. Jestem drugim właścicielem tego samochodu od czterech lat. Praktycznie cały czas stoi ogrzewanym w garażu stąd niewielki przebieg. Auto pachnie w środku, nie posiada żadnych plam zabrudzeń itp.Wszystkie części są jak nowe i oryginalne.",
         "images": [
           {
@@ -458,6 +479,9 @@
         "country_of_origin": "Polska",
         "first_registration": "19/07/2019",
         "car_condition": "używany",
+        "fuel_usage": 9,
+        "present_location": "Gdańsk",
+        "number_of_available_models": 5,
         "description": "Do wynajęcia samochód Volkswagen Arteon R-Line 4Motion. Auto wyprodukowane w 2019 roku, przebieg 109 000 km. Ma moc 239 KM, napęd 4x4. Jest w zasadzie jak nowe. Nie było użytkowane w okresie zimowym.",
         "images": [
           {
@@ -516,6 +540,9 @@
         "country_of_origin": "Polska",
         "first_registration": "28/06/2018",
         "car_condition": "używany",
+        "fuel_usage": 8,
+        "present_location": "Wrocław",
+        "number_of_available_models": 15,
         "description": "Do wynajęcia samochód Skoda Octavia III generacji. Auto zakupiono w czerwcu 2021 roku. Obecnie jest nabite 157000 przebiegu. Auto w kolorze srebrnym pięknie lśni.",
         "images": [
           {
@@ -575,6 +602,9 @@
         "country_of_origin": "Polska",
         "first_registration": "22/09/2017",
         "car_condition": "używany",
+        "fuel_usage": 12,
+        "present_location": "Wrocław",
+        "number_of_available_models": 5,
         "description": "Porsche Macan Standard do wynajęcia!!! Wyprodukowane w 2018 roku, jestem jego pierwszym właścicielem, ma 76 000 przebiegu. Napęd 4x4. Samochód pali 12l/100km (benzyna). Pomalowany perłową czarną farbą pięknie się prezentuje.",
         "images": [
           {
@@ -640,6 +670,9 @@
         "country_of_origin": "Niemcy",
         "first_registration": "28/09/2018",
         "car_condition": "nowy",
+        "fuel_usage": 8.5,
+        "present_location": "Warszawa",
+        "number_of_available_models": 2,
         "description": "Do wynajęcia samochód Volkswagen T-Roc Life 1.5 TSI. Auto jest nowe - posiada jedynie 2 500 km przebiegu. Idealnie nadaje się do wycieczek rodzinnych - posiada bardzo duże wyposażenie.",
         "images": [
           {
@@ -710,6 +743,9 @@
         "country_of_origin": "Stany Zjednoczone",
         "first_registration": "01/02/2013",
         "car_condition": "używany",
+        "fuel_usage": 13,
+        "present_location": "Lublin",
+        "number_of_available_models": 4,
         "description": "Do wynajęcia samochód Ford Mustang. Auto dosyć nowe bo wyprodukowane w 2013 roku - sprowadzone z USA. Samochód to istny potwór (aż 500 km oraz 4951 pojemności silnika)! Pomimo swoich lat ma mało przebiegu - tylko 38 000",
         "images": [
           {
@@ -775,6 +811,9 @@
         "country_of_origin": "Polska",
         "first_registration": "07/12/2018",
         "car_condition": "używany",
+        "fuel_usage": 12,
+        "present_location": "Łódź",
+        "number_of_available_models": 2,
         "description": "Do wynajęcia minivan Mercedes-Benz Klasa V II generacji. Idealnie nada się jeżeli razem ze znajomymi chcielibyście wybrać się w dłuższą trasę - np na wakacje! Auto pali 7l/100km co jest dosyć małą ilością w porównaniu do innych modeli tej marki. Zachęcamy serdecznie do wypożyczenia!",
         "images": [
           {
