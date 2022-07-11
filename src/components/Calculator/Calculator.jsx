@@ -13,7 +13,7 @@ const Calculator = () => {
     rentSince: '',
     rentTo: '',
     location: '',
-    yearOfDrivingLicense: 0,
+    yearOfDrivingLicense: new Date().getFullYear(),
     kilometersToDrive: 0,
     rentalPrice: null,
   });
