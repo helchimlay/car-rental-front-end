@@ -123,7 +123,7 @@ const Calculator = () => {
       rentPrice *= 1.15;
     }
 
-    if (!rentSince || !rentTo || !location || !kilometersToDrive) {
+    if (!rentSince || !rentTo || !location || kilometersToDrive === 0) {
       setErrorMsg(
         'Aby sprawdzić cenę wypożyczenia samochodu musisz wypełnić wszystkie pola!'
       );
