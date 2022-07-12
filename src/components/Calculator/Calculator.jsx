@@ -17,18 +17,17 @@ const Calculator = () => {
   const [fuelsPrices, setFuelsPrices] = useState();
   const [thisCar, setThisCar] = useState();
   const [deliveryDistance, setDeliveryDistance] = useState(null);
+  const [errorMsg, setErrorMsg] = useState('');
+  const priceForOneNight = 135;
+
   const [rentCarInfo, setRentCarInfo] = useState({
     rentSince: '',
     rentTo: '',
     future_location: '',
     yearOfDrivingLicense: new Date().getFullYear(),
     kilometersToDrive: 0,
-    rentalPriceNetto: null,
-    rentalPriceBrutto: null,
   });
-
-  const [errorMsg, setErrorMsg] = useState('');
-  const priceForOneNight = 135;
+  const [carSummary, setCarSummary] = useState({});
 
   const handleRentSinceChange = e => {
     setRentCarInfo({ ...rentCarInfo, rentSince: e.target.value });
@@ -83,9 +82,8 @@ const Calculator = () => {
       setDeliveryDistance(Number((response / 1000).toFixed(0)));
     });
 
-    setRentCarInfo({
-      ...rentCarInfo,
-      rentalPriceNetto: calculateCarRentPrice(
+    setCarSummary(
+      calculateCarRentPrice(
         priceForOneNight,
         rentCarInfo.rentSince,
         rentCarInfo.rentTo,
@@ -97,22 +95,8 @@ const Calculator = () => {
         rentCarInfo.kilometersToDrive,
         fuelPrice,
         setErrorMsg
-      ),
-      rentalPriceBrutto:
-        calculateCarRentPrice(
-          priceForOneNight,
-          rentCarInfo.rentSince,
-          rentCarInfo.rentTo,
-          rentCarInfo.future_location,
-          deliveryDistance,
-          rentCarInfo.yearOfDrivingLicense,
-          thisCar.car_details.category,
-          thisCar.car_details.number_of_available_models,
-          rentCarInfo.kilometersToDrive,
-          fuelPrice,
-          setErrorMsg
-        ) * 1.23,
-    });
+      )
+    );
   };
 
   return (
@@ -217,7 +201,12 @@ const Calculator = () => {
             </div>
             {errorMsg && <h2>{errorMsg}</h2>}
           </section>
-          <Summary />
+          <Summary
+            summary={carSummary}
+            rentInfo={rentCarInfo}
+            priceForOneNight={priceForOneNight}
+            presentLocation={thisCar.car_details.present_location}
+          />
         </main>
       ) : (
         <h2>Pobieranie danych o pojeździe...</h2>

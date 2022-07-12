@@ -11,10 +11,10 @@ const calculateCarRentPrice = (
   fuelPrice,
   setErrorMsg
 ) => {
-  const numberOfDays =
+  const numberOfRentDays =
     (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
   let rentPrice =
-    priceForOneNight * numberOfDays * kilometersToDrive * fuelPrice;
+    priceForOneNight * numberOfRentDays * kilometersToDrive * fuelPrice;
   switch (priceCategory) {
     case 'Basic':
       rentPrice *= 1;
@@ -60,7 +60,13 @@ const calculateCarRentPrice = (
   } else {
     setErrorMsg('');
     rentPrice += deliveryFee;
-    return Math.ceil(rentPrice);
+    return {
+      priceBrutto: Math.ceil(rentPrice * 1.23),
+      priceNetto: Math.ceil(rentPrice),
+      numberOfRentDays,
+      deliveryFee,
+      fuelPrice,
+    };
   }
 };
 
