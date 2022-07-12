@@ -57,12 +57,6 @@ export const getLocations = async (present_location, future_location) => {
     },
   };
 
-  axios
-    .request(options)
-    .then(function (response) {
-      return response.data.steps[0].distance.car.distance;
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  const response = await axios.request(options);
+  return response.data.steps[0].distance.car.distance;
 };

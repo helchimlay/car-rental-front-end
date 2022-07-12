@@ -7,6 +7,8 @@ import {
   getFuelsPrices,
   getLocations,
 } from '../../services/request';
+import calculateCarRentPrice from './functions/calculateCarRentPrice';
+import renderSelectOptions from './functions/renderSelectOptions';
 
 const Calculator = () => {
   const { carSlug } = useParams();
@@ -20,7 +22,8 @@ const Calculator = () => {
     future_location: '',
     yearOfDrivingLicense: new Date().getFullYear(),
     kilometersToDrive: 0,
-    rentalPrice: null,
+    rentalPriceNetto: null,
+    rentalPriceBrutto: null,
   });
 
   const [errorMsg, setErrorMsg] = useState('');
@@ -76,97 +79,39 @@ const Calculator = () => {
       thisCar.car_details.present_location,
       rentCarInfo.future_location
     ).then(response => {
-      console.log(response);
+      setDeliveryDistance(Number((response / 1000).toFixed(0)));
     });
 
     setRentCarInfo({
       ...rentCarInfo,
-      rentalPrice: calculateCarRentPrice(
+      rentalPriceNetto: calculateCarRentPrice(
         priceForOneNight,
         rentCarInfo.rentSince,
         rentCarInfo.rentTo,
         rentCarInfo.future_location,
+        deliveryDistance,
         rentCarInfo.yearOfDrivingLicense,
         thisCar.car_details.category,
         thisCar.car_details.number_of_available_models,
         rentCarInfo.kilometersToDrive,
-        fuelPrice
+        fuelPrice,
+        setErrorMsg
       ),
+      rentalPriceBrutto:
+        calculateCarRentPrice(
+          priceForOneNight,
+          rentCarInfo.rentSince,
+          rentCarInfo.rentTo,
+          rentCarInfo.future_location,
+          deliveryDistance,
+          rentCarInfo.yearOfDrivingLicense,
+          thisCar.car_details.category,
+          thisCar.car_details.number_of_available_models,
+          rentCarInfo.kilometersToDrive,
+          fuelPrice,
+          setErrorMsg
+        ) * 1.23,
     });
-  };
-
-  const calculateCarRentPrice = (
-    priceForOneNight,
-    rentSince,
-    rentTo,
-    future_location,
-    yearOfDrivingLicense,
-    priceCategory,
-    number_of_available_models,
-    kilometersToDrive,
-    fuelPrice
-  ) => {
-    const numberOfDays =
-      (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
-    let rentPrice =
-      priceForOneNight * numberOfDays * kilometersToDrive * fuelPrice;
-    switch (priceCategory) {
-      case 'Basic':
-        rentPrice *= 1;
-        break;
-      case 'Standard':
-        rentPrice *= 1.3;
-        break;
-      case 'Medium':
-        rentPrice *= 1.6;
-        break;
-      case 'Premium':
-        rentPrice *= 2;
-        break;
-      default:
-        return rentPrice;
-    }
-
-    if (new Date().getFullYear() - yearOfDrivingLicense < 5) {
-      rentPrice *= 1.2;
-    }
-
-    if (number_of_available_models < 3) {
-      rentPrice *= 1.15;
-    }
-
-    if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
-      setErrorMsg(
-        'Aby sprawdzić cenę wypożyczenia samochodu musisz wypełnić wszystkie pola!'
-      );
-      return false;
-    }
-
-    if (
-      new Date().getFullYear() - yearOfDrivingLicense < 3 &&
-      priceCategory === 'Premium'
-    ) {
-      setErrorMsg(
-        'Aby wypożyczyć ten model samochodu musisz posiadać prawojazdy conajmniej 3 lata!'
-      );
-      return false;
-    } else {
-      setErrorMsg('');
-      return Math.ceil(rentPrice);
-    }
-  };
-
-  //function generates and returns years for <select>
-  const renderSelectOptions = () => {
-    const years = [];
-    for (
-      let a = new Date().getFullYear();
-      a >= new Date().getFullYear() - 100;
-      a--
-    ) {
-      years.push(a);
-    }
-    return years;
   };
 
   return (
