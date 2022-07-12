@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./Calculator.css"
+import Summary from "./subcomponents/Summary"
 
 import { useParams } from "react-router-dom"
 import { getCarBySlug, getFuelsPrices } from "../../services/request"
@@ -164,11 +165,8 @@ const Calculator = () => {
         <main className="calculator">
           <section className="calculator-form">
             <div className="div-form">
-              <h1 className="calculator-title">
-                Oblicz koszt wyposażenia samochodu
-              </h1>
               <form onSubmit={handleCalculateCarRentPrice}>
-                <span>Termin wyposażenia samochodu</span>
+                <span>Termin wypożyczenia samochodu</span>
                 <br />
                 <label htmlFor="rent-since">Od:</label>
                 <input
@@ -203,6 +201,7 @@ const Calculator = () => {
                 <select
                   name="year-of-get-driving-license"
                   id="year-of-get-driving-license"
+                  className="year-of-get-driving-license"
                   onChange={handleYearOfDrivingLicenseChange}
                   value={rentCarInfo.yearOfDrivingLicense}
                 >
@@ -218,6 +217,14 @@ const Calculator = () => {
                 </label>
                 <br />
                 <input
+                  type="number"
+                  className="range-display-value"
+                  min="0"
+                  max="1000"
+                  onChange={handleKilometersToDriveChange}
+                  value={rentCarInfo.kilometersToDrive}
+                />
+                <input
                   className="range-display"
                   type="range"
                   name="kilometers-to-drive"
@@ -227,9 +234,7 @@ const Calculator = () => {
                   onChange={handleKilometersToDriveChange}
                   value={rentCarInfo.kilometersToDrive}
                 />
-                <div className="calculator-submit">
-                  <button>Oblicz koszt</button>
-                </div>
+                <button className="calculate-button">Oblicz koszt</button>
               </form>
             </div>
             <div className="car-display">
@@ -254,12 +259,9 @@ const Calculator = () => {
                 </ul>
               </div>
             </div>
-            {/* {errorMsg && <h2>{errorMsg}</h2>}
-            <div className="div-price">
-              <h2 className="price-title">Koszt wypożyczenia:</h2>
-              <div className="price-display">{rentCarInfo.rentalPrice}</div>
-            </div> */}
+            {errorMsg && <h2>{errorMsg}</h2>}
           </section>
+          <Summary />
         </main>
       ) : (
         <h2>Pobieranie danych o pojeździe...</h2>
