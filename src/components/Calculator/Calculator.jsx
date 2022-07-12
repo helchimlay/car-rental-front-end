@@ -163,108 +163,102 @@ const Calculator = () => {
       {thisCar ? (
         <main className="calculator">
           <section className="calculator-form">
-            <h1 className="calculator-title">
-              Oblicz koszt wyposażenia samochodu
-            </h1>
             <div className="div-form">
+              <h1 className="calculator-title">
+                Oblicz koszt wyposażenia samochodu
+              </h1>
               <form onSubmit={handleCalculateCarRentPrice}>
-                <div className="form-div-left">
-                  <span>Termin wyposażenia samochodu</span>
-                  <br />
-                  <label htmlFor="rent-since">Od:</label>
-                  <input
-                    type="date"
-                    name="rent-since"
-                    id="rent-since"
-                    onChange={handleRentSinceChange}
-                  />
-                  <label htmlFor="rent-to">do:</label>{" "}
-                  <input
-                    type="date"
-                    name="rent-to"
-                    id="rent-to"
-                    onChange={handleRentToChange}
-                  />
-                  <br />
-                  <label htmlFor="adress">Lokalizacja odbioru samochodu</label>
-                  <br />
-                  <input
-                    placeholder="Wpisz adres..."
-                    type="text"
-                    name="adress"
-                    id="adress"
-                    onChange={handleLocationChange}
-                    value={rentCarInfo.location}
-                  />
-                  <br />
-                </div>
-                <div className="form-div-right">
-                  <label htmlFor="year-of-get-driving-license">
-                    Rok otrzymania prawa jazdy
-                  </label>
-                  <br />
-                  <select
-                    name="year-of-get-driving-license"
-                    id="year-of-get-driving-license"
-                    onChange={handleYearOfDrivingLicenseChange}
-                    value={rentCarInfo.yearOfDrivingLicense}
-                  >
-                    {renderSelectOptions().map((item) => (
-                      <option value={item} key={item}>
-                        {item}
-                      </option>
-                    ))}
-                  </select>
-                  <br />
-                  <label htmlFor="kilometers-to-drive">
-                    Szacunkowa ilość kilometrów do przejechania
-                  </label>
-                  <br />
-                  <input
-                    className="range-display"
-                    type="range"
-                    name="kilometers-to-drive"
-                    id="kilometers-to-drive"
-                    min="0"
-                    max="1000"
-                    onChange={handleKilometersToDriveChange}
-                    value={rentCarInfo.kilometersToDrive}
-                  />
-                </div>
-                <div className="car-display">
-                  <div className="calculator-car-img">
-                    <img
-                      className="calculator-car-img"
-                      src={thisCar.car_details.images[0].src}
-                      alt={thisCar.car_details.images[0].alt}
-                    />
-                  </div>
-                  <div className="calculator-car-info">
-                    <h1 className="calculator-car-model">
-                      {thisCar.car_details.brand} {thisCar.car_details.model}{" "}
-                      {thisCar.car_details.generate}
-                    </h1>
-                    <ul>
-                      <li>{thisCar.car_details.year_of_production}</li>
-                      <li className="calculator-li">
-                        {thisCar.car_details.mileage}
-                      </li>
-                      <li className="calculator-li">
-                        {thisCar.car_details.fuel}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <span>Termin wyposażenia samochodu</span>
+                <br />
+                <label htmlFor="rent-since">Od:</label>
+                <input
+                  type="date"
+                  name="rent-since"
+                  id="rent-since"
+                  onChange={handleRentSinceChange}
+                />
+                <label htmlFor="rent-to">do:</label>{" "}
+                <input
+                  type="date"
+                  name="rent-to"
+                  id="rent-to"
+                  onChange={handleRentToChange}
+                />
+                <br />
+                <label htmlFor="adress">Lokalizacja odbioru samochodu</label>
+                <br />
+                <input
+                  placeholder="Wpisz adres..."
+                  type="text"
+                  name="adress"
+                  id="adress"
+                  onChange={handleLocationChange}
+                  value={rentCarInfo.location}
+                />
+                <br />
+                <label htmlFor="year-of-get-driving-license">
+                  Rok otrzymania prawa jazdy
+                </label>
+                <br />
+                <select
+                  name="year-of-get-driving-license"
+                  id="year-of-get-driving-license"
+                  onChange={handleYearOfDrivingLicenseChange}
+                  value={rentCarInfo.yearOfDrivingLicense}
+                >
+                  {renderSelectOptions().map((item) => (
+                    <option value={item} key={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                <br />
+                <label htmlFor="kilometers-to-drive">
+                  Szacunkowa ilość kilometrów do przejechania
+                </label>
+                <br />
+                <input
+                  className="range-display"
+                  type="range"
+                  name="kilometers-to-drive"
+                  id="kilometers-to-drive"
+                  min="0"
+                  max="1000"
+                  onChange={handleKilometersToDriveChange}
+                  value={rentCarInfo.kilometersToDrive}
+                />
                 <div className="calculator-submit">
                   <button>Oblicz koszt</button>
                 </div>
               </form>
             </div>
-            {errorMsg && <h2>{errorMsg}</h2>}
+            <div className="car-display">
+              <div className="calculator-car-img">
+                <img
+                  className="calculator-car-img"
+                  src={thisCar.car_details.images[0].src}
+                  alt={thisCar.car_details.images[0].alt}
+                />
+              </div>
+              <div className="calculator-car-info">
+                <h1 className="calculator-car-model">
+                  {thisCar.car_details.brand} {thisCar.car_details.model}{" "}
+                  {thisCar.car_details.generate}
+                </h1>
+                <ul>
+                  <li>{thisCar.car_details.year_of_production}</li>
+                  <li className="calculator-li">
+                    {thisCar.car_details.mileage}
+                  </li>
+                  <li className="calculator-li">{thisCar.car_details.fuel}</li>
+                </ul>
+              </div>
+            </div>
+            {/* {errorMsg && <h2>{errorMsg}</h2>}
             <div className="div-price">
               <h2 className="price-title">Koszt wypożyczenia:</h2>
               <div className="price-display">{rentCarInfo.rentalPrice}</div>
-            </div>
+            </div> */}
           </section>
         </main>
       ) : (

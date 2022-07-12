@@ -9,25 +9,10 @@ main.calculator {
   font-size: 22px;
 }
 
-.div-form form {
+.calculator-form {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.form-div-left {
-  grid-area: 1 / 1 / 2 / 3;
-}
-.form-div-right {
-  grid-area: 1 / 3 / 2 / 5;
-}
-.car-display {
-  grid-area: 1 / 5 / 2 / 8;
-}
-.calculator-submit {
-  grid-area: 2 / 2 / 3 / 4;
+  grid-template-columns: auto auto;
+  grid-auto-flow: dense;
 }
 
 .form-div-left {
@@ -120,4 +105,10 @@ input[type="date"] {
 
 .calculator-img {
   display: inline;
+}
+
+@media only screen and (max-width: 991.5px) {
+  .calculator-form {
+    grid-template-columns: auto;
+  }
 }
