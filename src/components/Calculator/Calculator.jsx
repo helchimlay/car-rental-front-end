@@ -27,7 +27,7 @@ const Calculator = () => {
     yearOfDrivingLicense: new Date().getFullYear(),
     kilometersToDrive: 0,
   });
-  const [carSummary, setCarSummary] = useState({});
+  const [carSummary, setCarSummary] = useState();
 
   const handleRentSinceChange = e => {
     setRentCarInfo({ ...rentCarInfo, rentSince: e.target.value });
@@ -199,14 +199,16 @@ const Calculator = () => {
                 </ul>
               </div>
             </div>
-            {errorMsg && <h2>{errorMsg}</h2>}
+            {errorMsg && <p>{errorMsg}</p>}
           </section>
-          <Summary
-            summary={carSummary}
-            rentInfo={rentCarInfo}
-            priceForOneNight={priceForOneNight}
-            presentLocation={thisCar.car_details.present_location}
-          />
+          {carSummary ? (
+            <Summary
+              summary={carSummary}
+              rentInfo={rentCarInfo}
+              priceForOneNight={priceForOneNight}
+              presentLocation={thisCar.car_details.present_location}
+            />
+          ) : null}
         </main>
       ) : (
         <h2>Pobieranie danych o pojeździe...</h2>

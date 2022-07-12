@@ -37,7 +37,7 @@ const Summary = props => {
           <b>Miejsce dostarczenia pojazdu:</b> {future_location}
         </p>
         <p>
-          <b>Koszt dostarczenia pojazdu:</b> {deliveryFee}
+          <b>Koszt dostarczenia pojazdu:</b> {deliveryFee} zł
         </p>
       </div>
     </section>
