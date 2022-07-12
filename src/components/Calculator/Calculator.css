@@ -3,11 +3,31 @@ main.calculator {
 }
 .form-div-left,
 .form-div-right {
-  float: left;
   max-width: 35%;
   min-width: 480px;
   padding-bottom: 20px;
   font-size: 22px;
+}
+
+.div-form form {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.form-div-left {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.form-div-right {
+  grid-area: 1 / 3 / 2 / 5;
+}
+.car-display {
+  grid-area: 1 / 5 / 2 / 8;
+}
+.calculator-submit {
+  grid-area: 2 / 2 / 3 / 4;
 }
 
 .form-div-left {
@@ -23,13 +43,8 @@ main.calculator {
   height: 35px;
 }
 
-.div-price {
-  clear: both;
-}
-
 .calculator-title {
   margin-bottom: 20px;
-  clear: both;
 }
 
 label {
@@ -77,12 +92,12 @@ input[type="date"] {
 
 .calculator-car-img {
   padding-bottom: 50px;
-  float: left;
+  width: 375px;
+  height: 250px;
 }
 
 .calculator-car-info {
   padding-bottom: 50px;
-  float: left;
 }
 
 .calculator-car-info ul {
