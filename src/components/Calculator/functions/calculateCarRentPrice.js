@@ -41,7 +41,6 @@ const calculateCarRentPrice = (
   }
 
   const deliveryFee = 50 * (deliveryDistance / 100);
-  console.log(deliveryFee);
 
   if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
     setErrorMsg(

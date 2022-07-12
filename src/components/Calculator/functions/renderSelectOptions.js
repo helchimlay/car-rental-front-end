@@ -12,3 +12,13 @@ const renderSelectOptions = () => {
 };
 
 export default renderSelectOptions;
+
+// const years = new Array(100);
+// years.fill(19).map((item, index) => {
+//   if (index < 10) {
+//     years[index] += '0' + [index];
+//   } else {
+//     years[index] += [index];
+//   }
+// });
+// console.log(years);
