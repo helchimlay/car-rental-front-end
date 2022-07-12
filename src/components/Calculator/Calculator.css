@@ -1,21 +1,34 @@
 main.calculator {
   padding: 120px 50px 60px 50px;
 }
-.form-div-left,
-.form-div-right {
-  max-width: 35%;
-  min-width: 480px;
-  padding-bottom: 20px;
-  font-size: 22px;
-}
 
 .calculator-form {
   display: grid;
   grid-template-columns: auto auto;
-  grid-auto-flow: dense;
 }
 
-.form-div-left {
+@media only screen and (max-width: 991.5px) {
+  .calculator-form {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .car-display {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .calculator-form {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .calculator-car-img img {
+    padding-bottom: 50px;
+    width: 100%;
+  }
+}
+
+.car-display {
+  padding-right: 50px;
+}
+
+.div-form {
   padding-right: 20px;
 }
 
@@ -75,14 +88,9 @@ input[type="date"] {
   clear: both;
 }
 
-.calculator-car-img {
+.calculator-car-img img {
   padding-bottom: 50px;
-  width: 375px;
-  height: 250px;
-}
-
-.calculator-car-info {
-  padding-bottom: 50px;
+  width: 100%;
 }
 
 .calculator-car-info ul {
@@ -105,10 +113,4 @@ input[type="date"] {
 
 .calculator-img {
   display: inline;
-}
-
-@media only screen and (max-width: 991.5px) {
-  .calculator-form {
-    grid-template-columns: auto;
-  }
 }
