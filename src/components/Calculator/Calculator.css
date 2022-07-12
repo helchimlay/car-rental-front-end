@@ -61,12 +61,12 @@ input {
   margin-bottom: 30px;
 }
 
-input[type="text"] {
+input[type='text'] {
   width: 400px;
   height: 30px;
 }
 
-input[type="date"] {
+input[type='date'] {
   width: 160px;
   height: 30px;
 }
@@ -94,7 +94,7 @@ input[type="date"] {
 }
 
 .calculator-li:before {
-  content: "• ";
+  content: '• ';
   margin-left: 10px;
 }
 

@@ -2,17 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './Calculator.css';
 
 import { useParams } from 'react-router-dom';
-import { getCarBySlug, getFuelsPrices } from '../../services/request';
+import {
+  getCarBySlug,
+  getFuelsPrices,
+  getLocations,
+} from '../../services/request';
 
 const Calculator = () => {
   const { carSlug } = useParams();
 
   const [fuelsPrices, setFuelsPrices] = useState();
   const [thisCar, setThisCar] = useState();
+  const [deliveryDistance, setDeliveryDistance] = useState(null);
   const [rentCarInfo, setRentCarInfo] = useState({
     rentSince: '',
     rentTo: '',
-    location: '',
+    future_location: '',
     yearOfDrivingLicense: new Date().getFullYear(),
     kilometersToDrive: 0,
     rentalPrice: null,
@@ -30,7 +35,7 @@ const Calculator = () => {
   };
 
   const handleLocationChange = e => {
-    setRentCarInfo({ ...rentCarInfo, location: e.target.value });
+    setRentCarInfo({ ...rentCarInfo, future_location: e.target.value });
   };
 
   const handleYearOfDrivingLicenseChange = e => {
@@ -67,13 +72,20 @@ const Calculator = () => {
       fuelPrice = fuelsPrices.LPG;
     }
 
+    getLocations(
+      thisCar.car_details.present_location,
+      rentCarInfo.future_location
+    ).then(response => {
+      console.log(response);
+    });
+
     setRentCarInfo({
       ...rentCarInfo,
-      rentalPrice: RentCar(
+      rentalPrice: calculateCarRentPrice(
         priceForOneNight,
         rentCarInfo.rentSince,
         rentCarInfo.rentTo,
-        rentCarInfo.location,
+        rentCarInfo.future_location,
         rentCarInfo.yearOfDrivingLicense,
         thisCar.car_details.category,
         thisCar.car_details.number_of_available_models,
@@ -83,12 +95,11 @@ const Calculator = () => {
     });
   };
 
-  //function calls calculation of rent price
-  const RentCar = (
+  const calculateCarRentPrice = (
     priceForOneNight,
     rentSince,
     rentTo,
-    location,
+    future_location,
     yearOfDrivingLicense,
     priceCategory,
     number_of_available_models,
@@ -124,7 +135,7 @@ const Calculator = () => {
       rentPrice *= 1.15;
     }
 
-    if (!rentSince || !rentTo || !location || kilometersToDrive === 0) {
+    if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
       setErrorMsg(
         'Aby sprawdzić cenę wypożyczenia samochodu musisz wypełnić wszystkie pola!'
       );

@@ -42,3 +42,27 @@ export const getFuelsPrices = async () => {
   const response = await axios.get('../jsons/fuels_data.json');
   return response.data;
 };
+
+export const getLocations = async (present_location, future_location) => {
+  const options = {
+    method: 'GET',
+    url: 'https://distanceto.p.rapidapi.com/get',
+    params: {
+      route: `[{"t":"${present_location}"},{"t":"${future_location}"}]`,
+      car: 'true',
+    },
+    headers: {
+      'X-RapidAPI-Key': 'af01419181mshfce3248d02a958ap19da96jsnf779398ef605',
+      'X-RapidAPI-Host': 'distanceto.p.rapidapi.com',
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      return response.data.steps[0].distance.car.distance;
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+};
