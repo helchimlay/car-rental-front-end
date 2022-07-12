@@ -83,7 +83,7 @@ input {
 }
 
 .calculator-li:before {
-  content: '• ';
+  content: "• ";
   margin-left: 10px;
 }
 
