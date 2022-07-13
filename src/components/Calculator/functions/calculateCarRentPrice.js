@@ -10,16 +10,16 @@ const calculateCarRentPrice = (
   kilometersToDrive,
   fuelPrice,
   fuel_usage,
-  setErrorMsg
+  setMsg
 ) => {
   if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
-    setErrorMsg('Wypełnij wszystkie pola!');
+    setMsg('Wypełnij wszystkie pola!');
     return false;
   } else if (
     new Date().getFullYear() - yearOfDrivingLicense < 3 &&
     priceCategory === 'Premium'
   ) {
-    setErrorMsg(
+    setMsg(
       'Aby wypożyczyć ten model samochodu musisz posiadać prawojazdy conajmniej 3 lata!'
     );
     return false;
@@ -45,20 +45,21 @@ const calculateCarRentPrice = (
         return rentPrice;
     }
 
-    if (new Date().getFullYear() - yearOfDrivingLicense < 5) {
-      setErrorMsg(
-        'UWAGA! Posiadasz prawojazdy mniej niż 5 lat dlatego podwyższyliśmy cenę wynajmu o 20% :)'
-      );
-      rentPrice *= 1.2;
-    }
-
     if (number_of_available_models < 3) {
       rentPrice *= 1.15;
     }
 
     const deliveryFee = 50 * (deliveryDistance / 100);
 
-    setErrorMsg('');
+    if (new Date().getFullYear() - yearOfDrivingLicense < 5) {
+      setMsg('');
+      rentPrice *= 1.2;
+    } else {
+      setMsg(
+        'Posiadasz prawojazdy więcej niż 5 lat, z tego powodu obniżyliśmy cenę twojego wynajmu o 20%!'
+      );
+    }
+
     rentPrice += deliveryFee;
     return {
       priceBrutto: Math.ceil(rentPrice * 1.23),

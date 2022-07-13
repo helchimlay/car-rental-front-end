@@ -19,7 +19,7 @@ const Calculator = () => {
   const [fuelsPrices, setFuelsPrices] = useState();
   const [thisCar, setThisCar] = useState();
   const [deliveryDistance, setDeliveryDistance] = useState(null);
-  const [errorMsg, setErrorMsg] = useState('');
+  const [msg, setMsg] = useState('');
 
   const [rentCarInfo, setRentCarInfo] = useState({
     rentSince: '',
@@ -86,7 +86,7 @@ const Calculator = () => {
           rentCarInfo.kilometersToDrive,
           fuelPrice,
           thisCar.car_details.fuel_usage,
-          setErrorMsg
+          setMsg
         )
       );
     });
@@ -192,7 +192,7 @@ const Calculator = () => {
                 </ul>
               </div>
             </div>
-            {errorMsg && <p>{errorMsg}</p>}
+            {msg && <p>{msg}</p>}
           </section>
           {carSummary ? (
             <Summary
