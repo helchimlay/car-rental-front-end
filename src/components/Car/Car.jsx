@@ -145,7 +145,9 @@ const Car = () => {
                 ogłoszeniami. Jeżeli chcesz dowiedzieć się więcej kliknij w
                 przycisk!
               </p>
-              <button className='button-first'>Nasz kalkulator</button>
+              <Link to={routes.carCalculator(thisCar.slug)}>
+                <button className='button-first'>Nasz kalkulator</button>
+              </Link>
             </div>
             <div className='right'>
               <h3>Zasięgnij rady eksperta</h3>
@@ -153,7 +155,9 @@ const Car = () => {
                 Zadaj nam pytanie a my postaramy się na nie odpowiedzieć. Możesz
                 również umówić się na oględziny pojazdu oraz na jazdę próbną!
               </p>
-              <button className='button-second'>Skontaktuj się z nami</button>
+              <Link to='/'>
+                <button className='button-second'>Skontaktuj się z nami</button>
+              </Link>
             </div>
           </section>
         </main>

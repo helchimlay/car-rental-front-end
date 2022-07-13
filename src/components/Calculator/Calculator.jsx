@@ -11,6 +11,8 @@ import {
 import calculateCarRentPrice from './functions/calculateCarRentPrice';
 import renderSelectOptions from './functions/renderSelectOptions';
 
+const priceForOneNight = 135;
+
 const Calculator = () => {
   const { carSlug } = useParams();
 
@@ -18,7 +20,6 @@ const Calculator = () => {
   const [thisCar, setThisCar] = useState();
   const [deliveryDistance, setDeliveryDistance] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
-  const priceForOneNight = 135;
 
   const [rentCarInfo, setRentCarInfo] = useState({
     rentSince: '',
@@ -64,39 +65,31 @@ const Calculator = () => {
   const handleCalculateCarRentPrice = e => {
     e.preventDefault();
 
-    let fuelPrice;
-    const isBenzyna = thisCar.car_details.fuel === 'benzyna';
-    const isDiesel = thisCar.car_details.fuel === 'diesel';
-    if (isBenzyna) {
-      fuelPrice = fuelsPrices.benzyna;
-    } else if (isDiesel) {
-      fuelPrice = fuelsPrices.diesel;
-    } else {
-      fuelPrice = fuelsPrices.LPG;
-    }
+    const fuelPrice =
+      fuelsPrices[thisCar.car_details.fuel.trim().toLowerCase()] ?? 0;
 
     getLocations(
       thisCar.car_details.present_location,
       rentCarInfo.future_location
     ).then(response => {
       setDeliveryDistance(Number((response / 1000).toFixed(0)));
+      setCarSummary(
+        calculateCarRentPrice(
+          priceForOneNight,
+          rentCarInfo.rentSince,
+          rentCarInfo.rentTo,
+          rentCarInfo.future_location,
+          Number((response / 1000).toFixed(0)),
+          rentCarInfo.yearOfDrivingLicense,
+          thisCar.car_details.category,
+          thisCar.car_details.number_of_available_models,
+          rentCarInfo.kilometersToDrive,
+          fuelPrice,
+          thisCar.car_details.fuel_usage,
+          setErrorMsg
+        )
+      );
     });
-
-    setCarSummary(
-      calculateCarRentPrice(
-        priceForOneNight,
-        rentCarInfo.rentSince,
-        rentCarInfo.rentTo,
-        rentCarInfo.future_location,
-        deliveryDistance,
-        rentCarInfo.yearOfDrivingLicense,
-        thisCar.car_details.category,
-        thisCar.car_details.number_of_available_models,
-        rentCarInfo.kilometersToDrive,
-        fuelPrice,
-        setErrorMsg
-      )
-    );
   };
 
   return (

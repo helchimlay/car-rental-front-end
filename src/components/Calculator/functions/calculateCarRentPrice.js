@@ -9,13 +9,11 @@ const calculateCarRentPrice = (
   number_of_available_models,
   kilometersToDrive,
   fuelPrice,
+  fuel_usage,
   setErrorMsg
 ) => {
   if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
     setErrorMsg('Wypełnij wszystkie pola!');
-    return false;
-  } else if (!deliveryDistance) {
-    setErrorMsg('Podaj poprawną lokalizację!');
     return false;
   } else if (
     new Date().getFullYear() - yearOfDrivingLicense < 3 &&
@@ -28,8 +26,8 @@ const calculateCarRentPrice = (
   } else {
     const numberOfRentDays =
       (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
-    let rentPrice =
-      priceForOneNight * numberOfRentDays * kilometersToDrive * fuelPrice;
+    let rentPrice = priceForOneNight * numberOfRentDays;
+    rentPrice += (kilometersToDrive / 100) * fuel_usage * fuelPrice;
     switch (priceCategory) {
       case 'Basic':
         rentPrice *= 1;

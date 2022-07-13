@@ -1,24 +1,9 @@
-//function generates and returns years for <select>
 const renderSelectOptions = () => {
-  const years = [];
-  for (
-    let a = new Date().getFullYear();
-    a >= new Date().getFullYear() - 100;
-    a--
-  ) {
-    years.push(a);
-  }
+  let years = new Array(100)
+    .fill(undefined)
+    .map((val, idx) => idx + new Date().getFullYear() - 99);
+  years.reverse();
   return years;
 };
 
 export default renderSelectOptions;
-
-// const years = new Array(100);
-// years.fill(19).map((item, index) => {
-//   if (index < 10) {
-//     years[index] += '0' + [index];
-//   } else {
-//     years[index] += [index];
-//   }
-// });
-// console.log(years);
