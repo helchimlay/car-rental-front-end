@@ -13,9 +13,14 @@ const HomePage = () => {
           content='Jedna z najlepszych wypożyczalni samochodowych w Polsce. Odwiedź nas już teraz i sprawdź naszą ofertę!'
         />
       </Helmet>
+      <header>
+        <div className='hero-bg'></div>
+        <div className='hero-text'>
+          <h2>Witamy w aplikacji </h2>
+          <h1>CarRental</h1>
+        </div>
+      </header>
       <main className='home'>
-        <h2>Witamy w aplikacji </h2>
-        <h1>CarRental</h1>
         <h2 className='description'>
           Zajmujemy się wypożyczaniem samochodów na doby!
         </h2>
@@ -64,7 +69,7 @@ const HomePage = () => {
             <button className='button-first'>Oferta</button>
           </Link>
           <Link to='/'>
-            <button className='button-second'>Kontakt</button>
+            <button className='button-second'>Nasz sklep</button>
           </Link>
         </div>
       </main>

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import { routes } from '../config/routes/routes';
-import Header from './Header/Header';
+import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import HomePage from './HomePage/HomePage';
 import ErrorPage from './ErrorPage/ErrorPage';
@@ -14,7 +14,7 @@ import Calculator from './Calculator/Calculator';
 const App = () => {
   return (
     <>
-      <Header />
+      <Nav />
 
       <Routes>
         <Route exact path='/' element={<HomePage></HomePage>} />

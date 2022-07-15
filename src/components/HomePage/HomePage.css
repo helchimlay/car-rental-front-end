@@ -1,12 +1,38 @@
-main.home {
-  padding: 120px 50px 60px 50px;
-  min-height: 100vh;
+header {
+  position: relative;
+  margin-top: 60px;
+  background-image: url('https://pixabay.com/get/g146c0ae8a699bda5b5a849d31c1125ee09e4cf1d6429ac980c094b381e2df24521d65523063fd7a8118666c911ea6fb968969a7726ed4480d3e1065bd9a1fd6faea85c0b77c5fb0a470cb5b86182b531_1920.jpg');
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
   text-align: center;
 }
 
-main.home h1 {
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+main.home {
+  padding: 120px 50px 120px 50px;
+  min-height: 50vh;
+  text-align: center;
+}
+
+header h1 {
   font-size: 70px;
-  background: -webkit-linear-gradient(#7f5a83, #0d324d);
+  background: -webkit-linear-gradient(white, rgba(180, 0, 243, 1));
   /* margin-left: 30%; */
 
   background-clip: text;
@@ -14,9 +40,9 @@ main.home h1 {
   -webkit-text-fill-color: transparent;
 }
 
-main.home h2:nth-child(1) {
+header h2 {
   font-size: 50px;
-  background: -webkit-linear-gradient(#7f5a83, #0d324d);
+  background: -webkit-linear-gradient(white, rgba(180, 0, 243, 1));
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -47,15 +73,22 @@ main.home li {
 }
 
 @media only screen and (max-width: 991.5px) {
-  main.home h1 {
+  header h1 {
     font-size: 40px;
     margin-left: 0;
   }
 
-  main.home h2:nth-child(1) {
+  header h2 {
     font-size: 30px;
   }
 
+  main.home {
+    padding: 100px 50px 120px 50px;
+  }
+
+  main.home h2 {
+    font-size: 22px;
+  }
   main.home li {
     display: block;
     font-size: 20px;
