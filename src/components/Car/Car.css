@@ -159,26 +159,6 @@ main button {
   margin-top: 30px;
 }
 
-main button.button-first {
-  background-color: #7f5a83;
-  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-  font-size: 18px;
-  color: rgb(233, 233, 206);
-  padding: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-}
-main button.button-second {
-  color: #0d324d;
-  font-size: 18px;
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  border: 2px solid #0d324d;
-}
-
 main button.btn-calculate {
   padding: 15px;
   width: 250px;
