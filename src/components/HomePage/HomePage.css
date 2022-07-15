@@ -84,7 +84,7 @@ main.home section .content p::first-letter {
 }
 
 main.home section .content p {
-  padding: 25px;
+  padding: 15px;
 }
 
 main.home .single-card,
@@ -177,6 +177,9 @@ main.home .contact button {
 }
 
 @media only screen and (max-width: 991.5px) {
+  main.home {
+    text-align: center;
+  }
   header h1 {
     font-size: 40px;
     margin-left: 0;

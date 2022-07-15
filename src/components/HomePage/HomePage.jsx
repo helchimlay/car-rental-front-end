@@ -58,8 +58,8 @@ const HomePage = () => {
             </div>
             <div className='image'>
               <img
-                src='https://img.freepik.com/darmowe-zdjecie/szczesliwy-czlowiek-z-broda-za-pomoca-smartfona-przed-komputerem-w-domu_221404-720.jpg'
-                alt='człowiek siedzący przed komputerem oraz patrzący w telefon'
+                src='https://pixabay.com/get/g5aa08f5f3effd2e08484dc4194746b8e8c4a053b16600f1c7d02dd81fe516c6f08ca4a919eb53202391a27dbeca8094655405e36118fd14499d7b5904a71d6fbfb53cad89ea3dfd891f33820b74a0a45_1920.jpg'
+                alt='kobieta pisząca w notatniku'
               />
             </div>
           </div>
