@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { routes } from '../../config/routes/routes';
 import { Link } from 'react-router-dom';
 import './CarsList.css';
 
@@ -22,7 +23,7 @@ const CarsList = () => {
       ) : (
         carsList &&
         carsList.map(item => (
-          <Link to={`/lista-samochodow/${item.slug}`} key={item.id}>
+          <Link to={routes.car(item.slug)} key={item.id}>
             <section className='single-car-card'>
               <div className='summary-of-single-car'>
                 <div className='photo-of-single-car'>

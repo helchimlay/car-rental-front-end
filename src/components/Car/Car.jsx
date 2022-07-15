@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './Car.css';
+import { routes } from '../../config/routes/routes';
 import { getCarBySlug } from '../../services/request';
 
 import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
@@ -40,7 +41,8 @@ const Car = () => {
               </span>
               <p className='calculate'>
                 <small>Kategoria cenowa: {thisCar.car_details.category}</small>{' '}
-                <br />
+              </p>
+              <Link to={routes.carCalculator(thisCar.slug)}>
                 <button className='btn-calculate'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -53,7 +55,7 @@ const Car = () => {
                   </svg>
                   Oblicz cenę wynajmu
                 </button>
-              </p>
+              </Link>
               <h3>Opis:</h3>
               <p className='car-description'>
                 {thisCar.car_details.description}
@@ -143,7 +145,9 @@ const Car = () => {
                 ogłoszeniami. Jeżeli chcesz dowiedzieć się więcej kliknij w
                 przycisk!
               </p>
-              <button className='button-first'>Nasz kalkulator</button>
+              <Link to={routes.carCalculator(thisCar.slug)}>
+                <button className='button-first'>Nasz kalkulator</button>
+              </Link>
             </div>
             <div className='right'>
               <h3>Zasięgnij rady eksperta</h3>
@@ -151,7 +155,9 @@ const Car = () => {
                 Zadaj nam pytanie a my postaramy się na nie odpowiedzieć. Możesz
                 również umówić się na oględziny pojazdu oraz na jazdę próbną!
               </p>
-              <button className='button-second'>Skontaktuj się z nami</button>
+              <Link to='/'>
+                <button className='button-second'>Skontaktuj się z nami</button>
+              </Link>
             </div>
           </section>
         </main>

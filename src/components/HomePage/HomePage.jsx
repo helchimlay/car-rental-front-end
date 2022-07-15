@@ -54,8 +54,8 @@ const HomePage = () => {
         <Link to='/lista-samochodow'>
           <button className='button-first'>Oferta</button>
         </Link>
-        <Link to='/kalkulator'>
-          <button className='button-second'>Kalkulator</button>
+        <Link to='/'>
+          <button className='button-second'>Kontakt</button>
         </Link>
       </div>
     </main>

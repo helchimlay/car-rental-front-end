@@ -34,21 +34,18 @@ const Filtering = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (selectedBrand || selectedFuel || selectedCategory) {
-      navigate(
-        '/lista-samochodow?' +
-          (selectedBrand ? `marka=${selectedBrand}` : '') +
-          (selectedFuel ? `&rodzaj_paliwa=${selectedFuel}` : '') +
-          (selectedCategory ? `&kategoria_cenowa=${selectedCategory}` : '')
-      );
-      getCarsListByFiltering(
-        selectedBrand,
-        selectedFuel,
-        selectedCategory
-      ).then(response => {
+
+    navigate(
+      '/lista-samochodow?' +
+        (selectedBrand ? `marka=${selectedBrand}` : '') +
+        (selectedFuel ? `&rodzaj_paliwa=${selectedFuel}` : '') +
+        (selectedCategory ? `&kategoria_cenowa=${selectedCategory}` : '')
+    );
+    getCarsListByFiltering(selectedBrand, selectedFuel, selectedCategory).then(
+      response => {
         props.setCarsList(response);
-      });
-    }
+      }
+    );
   };
 
   useEffect(() => {

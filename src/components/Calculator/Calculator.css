@@ -1,17 +1,24 @@
 main.calculator {
   padding: 120px 50px 60px 50px;
 }
-.form-div-left,
-.form-div-right {
-  float: left;
-  max-width: 35%;
-  min-width: 480px;
-  padding-bottom: 20px;
-  font-size: 22px;
+
+.calculator-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  max-width: 100%;
 }
 
-.form-div-left {
-  padding-right: 20px;
+input {
+  width: 100%;
+  height: 30px;
+}
+
+.div-form {
+  font-size: 20px;
+}
+
+.calculator-car-info ul {
+  padding-left: 20px;
 }
 
 .price-display {
@@ -20,25 +27,25 @@ main.calculator {
   width: 100px;
   font-size: 20px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   height: 35px;
-}
-
-.div-price {
-  clear: both;
 }
 
 .calculator-title {
   margin-bottom: 20px;
-  clear: both;
 }
 
-label {
-  font-size: 22px;
-  display: inline-block;
-  padding-bottom: 10px;
+.calculator-form select {
+  height: 30px;
+  width: 100%;
+  font-size: 17px;
+}
+.range-display-value {
+  max-width: 20%;
 }
 .range-display {
-  width: 300px;
+  width: 75%;
   height: 13px;
   -webkit-appearance: none;
   background: rgb(200, 200, 200);
@@ -46,6 +53,7 @@ label {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+  margin-left: 5%;
 }
 .range-display::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -57,36 +65,17 @@ label {
   border: 4px solid #333;
   box-shadow: -407px 0 0 400px rgb(90, 90, 90);
 }
-input {
-  margin-bottom: 30px;
-}
 
-input[type="text"] {
-  width: 400px;
-  height: 30px;
-}
-
-input[type="date"] {
-  width: 160px;
-  height: 30px;
-}
-
-.calculator-submit {
-  clear: both;
-}
-
-.calculator-car-img {
-  padding-bottom: 50px;
-  float: left;
+.calculator-car-img img {
+  width: 50%;
+  min-width: 500px;
+  display: block;
+  margin: 0 auto;
 }
 
 .calculator-car-info {
-  padding-bottom: 50px;
-  float: left;
-}
-
-.calculator-car-info ul {
-  padding-left: 20px;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .calculator-car-info ul li {
@@ -94,15 +83,79 @@ input[type="date"] {
 }
 
 .calculator-li:before {
-  content: "• ";
+  content: '• ';
   margin-left: 10px;
 }
 
 .calculator-car-model {
   display: inline;
-  padding-left: 20px;
 }
 
-.calculator-img {
+.value-of-range {
   display: inline;
+  padding-left: 15px;
+}
+
+.calculate-button {
+  background-color: rgb(182, 9, 43);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  height: 50px;
+  width: 170px;
+  border: none;
+  font-size: 17px;
+  margin: 20px 0;
+}
+
+.year-of-get-driving-license {
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 991.5px) {
+  main.calculator {
+    text-align: center;
+  }
+
+  .calculator-car-img img {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .calculator-form {
+    grid-template-columns: auto;
+  }
+  .car-display {
+    grid-area: 1 / 1 / 2 / 2;
+    max-width: 100%;
+  }
+  .calculator-form {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .calculator-car-info ul {
+    padding: 0;
+  }
+
+  .calculator-car-info {
+    padding: 20px 0;
+  }
+
+  input,
+  select {
+    height: 30px;
+    width: 99%;
+  }
+  input[type='text'] {
+    margin-bottom: 30px;
+  }
+
+  .range-display {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
