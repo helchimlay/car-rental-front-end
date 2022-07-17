@@ -119,7 +119,7 @@ li.details-list:before {
 
 main.car .car-info h2 {
   font-size: 30px;
-  background: -webkit-linear-gradient(#7f5a83, #0d324d);
+  background: -webkit-linear-gradient(white, rgba(180, 0, 243, 1));
 
   background-clip: text;
   -webkit-background-clip: text;

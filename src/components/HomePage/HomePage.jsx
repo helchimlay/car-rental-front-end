@@ -19,10 +19,24 @@ const HomePage = () => {
           <h2>Witamy w aplikacji </h2>
           <h1>CarRental</h1>
         </div>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='40'
+          height='40'
+          fill='white'
+          className='bi bi-arrow-down-circle bounce-top'
+          viewBox='0 0 16 16'
+        >
+          <path
+            fill-rule='evenodd'
+            d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z'
+          />
+        </svg>
       </header>
       <main className='home'>
         <section className='about-us'>
           <h2>O NAS</h2>
+          <div className='underline'></div>
           <div className='grid-cols-2'>
             <div className='image'>
               <img
@@ -43,6 +57,7 @@ const HomePage = () => {
         </section>
         <section className='work'>
           <h2>JAK DZIAŁAMY?</h2>
+          <div className='underline'></div>
           <div className='grid-cols-2'>
             <div className='content'>
               <p>
@@ -58,8 +73,8 @@ const HomePage = () => {
             </div>
             <div className='image'>
               <img
-                src='https://pixabay.com/get/g5aa08f5f3effd2e08484dc4194746b8e8c4a053b16600f1c7d02dd81fe516c6f08ca4a919eb53202391a27dbeca8094655405e36118fd14499d7b5904a71d6fbfb53cad89ea3dfd891f33820b74a0a45_1920.jpg'
-                alt='kobieta pisząca w notatniku'
+                src='https://pixabay.com/get/g2e1c74d8108c3a9118a2e150de9068842d72da379711152119e821c4a1d50ac8f43fc9839cc8d65b5190e6d5e5aca3ab4f52589e0f332f98251512b81a8bdfdf_1920.jpg'
+                alt='pisanie w notatniku'
               />
             </div>
           </div>
@@ -109,6 +124,7 @@ const HomePage = () => {
         </section>
         <section className='services'>
           <h2>Usługi</h2>
+          <div className='underline'></div>
           <div className='grid-cols-2'>
             <div className='single-card-image'>
               <div className='image'>
@@ -146,6 +162,7 @@ const HomePage = () => {
         </section>
         <section className='achievements'>
           <h2>Dlaczego właśnie my?</h2>
+          <div className='underline'></div>
           <div className='grid-cols-3'>
             <div className='single-card'>
               <div className='svg'>
@@ -189,6 +206,7 @@ const HomePage = () => {
         </section>
         <section className='contact'>
           <h2>Kontakt</h2>
+          <div className='underline'></div>
           <div className='grid-cols-1'>
             <div className='contact-form'>
               <form action='#'>
