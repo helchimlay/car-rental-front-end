@@ -126,7 +126,7 @@ header svg {
 .underline {
   width: 60px;
   height: 4px;
-  background: linear-gradient(white, rgba(180, 0, 243, 1));
+  background: rgba(180, 0, 243, 1);
   margin: 0 auto 40px;
 }
 
