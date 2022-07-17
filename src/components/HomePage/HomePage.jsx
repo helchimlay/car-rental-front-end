@@ -73,7 +73,7 @@ const HomePage = () => {
             </div>
             <div className='image'>
               <img
-                src='https://pixabay.com/get/g8144984549ea929a13fadfa2aaef2688a7fcbc15b83b43dc24a208c214cbd33f19150b10c6a77338b0089a55b985d75f_1920.jpg'
+                src='https://img.freepik.com/darmowe-zdjecie/pisanie-w-notatniku_1112-168.jpg'
                 alt='pisanie w notatniku'
               />
             </div>

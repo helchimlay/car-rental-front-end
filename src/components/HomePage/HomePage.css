@@ -197,6 +197,21 @@ main.home .single-card-image:hover {
   transform: scale(0.98);
 }
 
+main.home .achievements {
+  background: linear-gradient(black, transparent),
+    url('https://i.wpimg.pl/1920x0/m.autokult.pl/bentley-continental-gt-i-f697639.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+main.home .achievements .single-card {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+}
+
 main.home .work .single-card,
 main.home .achievements .single-card {
   height: 300px;
