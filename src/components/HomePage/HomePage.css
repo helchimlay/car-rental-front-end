@@ -182,20 +182,24 @@ main.home section .content p {
 
 main.home .single-card,
 main.home .single-card-image {
+  margin: 30px 20px 0 20px;
+  position: relative;
   text-align: center;
   box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
   font-size: 17px;
 }
 
+main.home .single-card-image {
+  transition: transform 0.5s;
+}
+
+main.home .single-card-image:hover {
+  transform: scale(0.98);
+}
+
 main.home .work .single-card,
 main.home .achievements .single-card {
   height: 300px;
-}
-
-main.home .single-card,
-main.home .single-card-image {
-  margin: 30px 20px 0 20px;
-  position: relative;
 }
 
 main.home .single-card .svg {
