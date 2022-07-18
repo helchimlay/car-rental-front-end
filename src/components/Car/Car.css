@@ -72,7 +72,7 @@ main.car .list-equipment {
 }
 
 main.car ol.list-equipment li:before {
-  content: '- ';
+  content: "- ";
 }
 
 main.car ol.list-equipment li {
@@ -113,7 +113,7 @@ main.car ul li {
 }
 
 li.details-list:before {
-  content: '• ';
+  content: "• ";
   margin-left: 10px;
 }
 
