@@ -73,26 +73,23 @@ const Summary = (props) => {
         />
       </div>
       <div className="calculator-summary-info">
-        <p className="price-brutto">
-          <b>Wyliczona cena brutto:</b> {priceBrutto} zł
-        </p>
         <p>
-          <b>Wyliczona cena netto:</b> {priceNetto} zł
+          <span className="price-brutto">
+            <b>Wyliczona cena brutto:</b> {priceBrutto} zł
+          </span>
+          <span className="price-netto"> (netto: {priceNetto} zł)</span>
         </p>
+
         <p>
           <b>Ilość dni wypożyczenia:</b> {numberOfRentDays}
         </p>
         <p>
-          <b>Aktualna cena paliwa:</b> {fuelPrice} zł/litr
+          <b>Bazowa cena wypożyczenia za dzień: </b>
+          {priceForOneNight} zł
         </p>
         <p>
-          <b>Bazowa cena wypożyczenia:</b> {priceForOneNight} zł
-        </p>
-        <p>
-          <b>Liczba kilometrów do przejechania:</b> {kilometersToDrive} km
-        </p>
-        <p>
-          <b>Koszt dostarczenia pojazdu:</b> {deliveryFee} zł
+          <b>Szacunkowy dystans jaki chce pokonać klient:</b>{" "}
+          {kilometersToDrive} km
         </p>
       </div>
     </section>

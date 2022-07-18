@@ -146,7 +146,7 @@ const Calculator = () => {
                 </select>
                 <br />
                 <label htmlFor="kilometers-to-drive">
-                  Szacunkowa ilość kilometrów do przejechania
+                  Szacunkowy dystans jaki chce pokonać klient:
                 </label>
                 <br />
                 <input
@@ -192,7 +192,7 @@ const Calculator = () => {
                 </ul>
               </div>
             </div>
-            {msg && <p>{msg}</p>}
+            {msg && <p className="discount-info">{msg}</p>}
           </section>
           {carSummary ? (
             <Summary
