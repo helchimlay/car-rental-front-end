@@ -1,11 +1,17 @@
 header {
-  position: relative;
-  background-image: url('../../img/bg-header-big.jpg');
-  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 1), transparent),
+    url('../../img/bg-header-big.jpg');
+  min-height: 70vh;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   text-align: center;
+  color: white;
+  background-attachment: fixed;
 }
 
 header h1 {
@@ -25,37 +31,50 @@ header h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.hero-bg {
+
+header button::before {
   position: absolute;
+  content: '';
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  transform: translate(-16%, -31.5%);
+  font-size: 20px;
+  background: linear-gradient(
+    rgba(120, 120, 113, 0.5),
+    rgba(233, 233, 206, 0.5)
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
 }
-
-.hero-content {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 header button {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: 50px;
   border: none;
-  background-color: #a2a294;
+  background: linear-gradient(rgb(120, 120, 113), rgb(233, 233, 206));
   color: #333;
   padding: 20px 40px;
   border-radius: 20px;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.5s;
 }
 
-header button:hover {
-  background-color: #626258;
+header button:hover svg {
+  fill: rgba(120, 120, 113, 0.5);
+}
+
+header button svg {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  transition: fill 0.5s;
+}
+
+header button:hover::before {
+  opacity: 1;
 }
 
 .underline {
@@ -66,7 +85,7 @@ header button:hover {
 }
 
 main.home {
-  padding: 120px 50px 120px 50px;
+  padding: 100px 50px 100px 50px;
 }
 
 main.home .grid-cols-1 {
@@ -163,6 +182,7 @@ main.home .achievements .single-card {
   background-color: white;
   color: black;
   border-radius: 20px;
+  padding: 20px;
 }
 
 main.home .work .single-card,
@@ -170,7 +190,7 @@ main.home .achievements .single-card {
   height: 300px;
 }
 
-main.home .single-card .svg {
+main.home .single-card .card-img img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -184,7 +204,7 @@ main.home .single-card p {
   transform: translateX(-50%);
 }
 
-main.home .single-card svg {
+main.home .single-card .card-img img {
   width: 80px;
   height: 80px;
 }
@@ -247,11 +267,14 @@ main.home .contact button {
 }
 
 @media only screen and (max-width: 991.5px) {
+  main.home h2 {
+    font-size: 23px;
+  }
   main.home {
     text-align: center;
   }
   header h1 {
-    font-size: 40px;
+    font-size: 45px;
     margin-left: 0;
   }
 
@@ -267,5 +290,23 @@ main.home .contact button {
   main.home .grid-cols-3 {
     display: grid;
     grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  header h1 {
+    font-size: 35px;
+  }
+
+  header h2 {
+    font-size: 25px;
+  }
+
+  main.home .achievements .single-card {
+    height: 250px;
+  }
+
+  main.home .achievements .single-card img {
+    top: 30%;
   }
 }
