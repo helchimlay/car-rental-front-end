@@ -58,7 +58,7 @@ header button {
   font-size: 20px;
   cursor: pointer;
 }
-
+/* 
 header button:hover svg {
   fill: rgba(120, 120, 113, 0.5);
 }
@@ -71,7 +71,7 @@ header button svg {
   height: 20px;
   transform: translateY(-50%);
   transition: fill 0.5s;
-}
+} */
 
 header button:hover::before {
   opacity: 1;

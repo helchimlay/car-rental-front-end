@@ -1,3 +1,10 @@
+const vat = 1.23;
+const priceCategories = {
+  Basic: 1,
+  Standard: 1.3,
+  Medium: 1.6,
+  Premium: 2,
+};
 const calculateCarRentPrice = (
   priceForOneNight,
   rentSince,
@@ -30,16 +37,16 @@ const calculateCarRentPrice = (
     rentPrice += (kilometersToDrive / 100) * fuel_usage * fuelPrice;
     switch (priceCategory) {
       case 'Basic':
-        rentPrice *= 1;
+        rentPrice *= priceCategories.Basic;
         break;
       case 'Standard':
-        rentPrice *= 1.3;
+        rentPrice *= priceCategories.Standard;
         break;
       case 'Medium':
-        rentPrice *= 1.6;
+        rentPrice *= priceCategories.Medium;
         break;
       case 'Premium':
-        rentPrice *= 2;
+        rentPrice *= priceCategories.Premium;
         break;
       default:
         return rentPrice;
@@ -62,7 +69,7 @@ const calculateCarRentPrice = (
 
     rentPrice += deliveryFee;
     return {
-      priceBrutto: Math.ceil(rentPrice * 1.23),
+      priceBrutto: Math.ceil(rentPrice * vat),
       priceNetto: Math.ceil(rentPrice),
       numberOfRentDays,
       deliveryFee,
