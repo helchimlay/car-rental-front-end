@@ -1,19 +1,39 @@
 nav {
-  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
   letter-spacing: 1px;
   top: 0;
   position: fixed;
   z-index: 1;
+  padding: 0 50px 0 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav ul a {
+  color: rgb(233, 233, 206);
+  transition: opacity 0.5s;
 }
 
 nav a {
   text-decoration: none;
 }
 
+nav ul a:hover {
+  opacity: 0.7;
+}
+
 nav h1 {
-  margin: 0 50px 0 50px;
-  line-height: 60px;
   background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233, 233, 206));
   font-variant: small-caps;
   font-size: 40px;

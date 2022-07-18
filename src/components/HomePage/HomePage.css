@@ -1,8 +1,7 @@
 header {
   position: relative;
-  margin-top: 60px;
-  background-image: url('../../img/header-bg.jpg');
-  height: calc(100vh - 60px);
+  background-image: url('../../img/bg-header-big.jpg');
+  height: 70vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -10,19 +9,18 @@ header {
 }
 
 header h1 {
-  font-size: 70px;
-  background: -webkit-linear-gradient(white, rgba(180, 0, 243, 1));
-  /* margin-left: 30%; */
-
+  font-size: 60px;
+  letter-spacing: 2px;
+  background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233, 233, 206));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 header h2 {
-  font-size: 50px;
-  background: -webkit-linear-gradient(white, rgba(180, 0, 243, 1));
-
+  font-size: 40px;
+  color: aliceblue;
+  background: -webkit-linear-gradient(rgb(120, 120, 113), rgb(233, 233, 206));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,97 +34,34 @@ header h2 {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-header svg {
+header button {
   position: absolute;
-  bottom: 30px;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background-color: #a2a294;
+  color: #333;
+  padding: 20px 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.5s;
 }
 
-@-webkit-keyframes bounce-top {
-  0% {
-    transform: translateY(-45px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    transform: translateY(-24px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  65% {
-    transform: translateY(-12px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  25%,
-  55%,
-  75%,
-  87% {
-    transform: translateY(0px);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translateY(0px);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-}
-
-@keyframes bounce-top {
-  0% {
-    transform: translateY(-45px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    transform: translateY(-24px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  65% {
-    transform: translateY(-12px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  25%,
-  55%,
-  75%,
-  87% {
-    transform: translateY(0px);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translateY(0px);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-}
-
-.bounce-top {
-  -webkit-animation: bounce-top 2s infinite both;
-  animation: bounce-top 2s infinite both;
+header button:hover {
+  background-color: #626258;
 }
 
 .underline {
   width: 60px;
   height: 4px;
-  background: rgba(180, 0, 243, 1);
+  background: rgb(182, 9, 43);
   margin: 0 auto 40px;
 }
 
@@ -176,8 +111,21 @@ main.home section .content p::first-letter {
   font-weight: bold;
 }
 
-main.home section .content p {
+main.home section .content {
   padding: 15px;
+}
+
+main.home section .content a {
+  text-decoration: none;
+  color: rgb(182, 9, 43);
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  transition: opacity 0.5s;
+}
+
+main.home section .content a:hover {
+  opacity: 0.8;
 }
 
 main.home .single-card,
@@ -187,6 +135,11 @@ main.home .single-card-image {
   text-align: center;
   box-shadow: rgb(0 0 0 / 64%) 0px 2px 8px -5px;
   font-size: 17px;
+}
+
+main.home .services a {
+  text-decoration: none;
+  color: black;
 }
 
 main.home .single-card-image {
@@ -199,7 +152,7 @@ main.home .single-card-image:hover {
 
 main.home .achievements {
   background: linear-gradient(black, transparent),
-    url('https://i.wpimg.pl/1920x0/m.autokult.pl/bentley-continental-gt-i-f697639.jpg');
+    url('https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -244,6 +197,11 @@ main.home .single-card svg {
   padding: 20px 40px;
   border: none;
   font-size: 17px;
+  transition: opacity 0.5s;
+}
+
+.button:hover {
+  opacity: 0.7;
 }
 
 main.home .single-card-image {

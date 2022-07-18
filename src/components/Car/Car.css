@@ -72,7 +72,7 @@ main.car .list-equipment {
 }
 
 main.car ol.list-equipment li:before {
-  content: "- ";
+  content: '- ';
 }
 
 main.car ol.list-equipment li {
@@ -113,7 +113,7 @@ main.car ul li {
 }
 
 li.details-list:before {
-  content: "• ";
+  content: '• ';
   margin-left: 10px;
 }
 
@@ -169,10 +169,11 @@ main button.btn-calculate {
   border: none;
   border-radius: 20px;
   position: relative;
+  transition: opacity 0.5s;
 }
 
-main button:hover {
-  opacity: 0.9;
+main button.btn-calculate:hover {
+  opacity: 0.7;
 }
 
 main button.btn-calculate svg {

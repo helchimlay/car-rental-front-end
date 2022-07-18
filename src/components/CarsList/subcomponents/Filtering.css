@@ -26,6 +26,11 @@ section.filter-fields button {
   margin-left: 10px;
   cursor: pointer;
   position: relative;
+  transition: opacity 0.5s;
+}
+
+section.filter-fields button:hover {
+  opacity: 0.7;
 }
 
 section.filter-fields svg {

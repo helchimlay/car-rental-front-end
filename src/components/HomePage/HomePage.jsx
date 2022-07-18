@@ -16,22 +16,29 @@ const HomePage = () => {
       <header>
         <div className='hero-bg'></div>
         <div className='hero-content'>
-          <h2>Witamy w aplikacji </h2>
           <h1>CarRental</h1>
+          <h2>
+            U nas wynajmiesz swój <br /> wymarzony samochód
+          </h2>
         </div>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='40'
-          height='40'
-          fill='white'
-          className='bi bi-arrow-down-circle bounce-top'
-          viewBox='0 0 16 16'
-        >
-          <path
-            fill-rule='evenodd'
-            d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z'
-          />
-        </svg>
+        <button>
+          Dowiedz się więcej{' '}
+          <span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              fill='currentColor'
+              class='bi bi-arrow-down-circle'
+              viewBox='0 0 16 16'
+            >
+              <path
+                fill-rule='evenodd'
+                d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z'
+              />
+            </svg>
+          </span>
+        </button>
       </header>
       <main className='home'>
         <section className='about-us'>
@@ -52,6 +59,9 @@ const HomePage = () => {
                 <strong> sklep internetowy</strong>. Podczas naszej wieloletniej
                 pracy z naszych usług skorzystało tysiące klientów!
               </p>
+              <Link to='onas'>
+                <span>Pokaż więcej...</span>
+              </Link>
             </div>
           </div>
         </section>
@@ -126,38 +136,40 @@ const HomePage = () => {
           <h2>Usługi</h2>
           <div className='underline'></div>
           <div className='grid-cols-2'>
-            <div className='single-card-image'>
-              <div className='image'>
-                <img
-                  src='https://static.oferteo.pl/images/hero/samochody-zlecenia-oferty-a.jpg'
-                  alt='zdjęcie samochodów z wypożyczalni'
-                />
-              </div>
-              <div className='items'>
-                <p>
-                  <strong>Wypożyczalnia</strong> <br />
-                </p>
-                <Link to='/lista-samochodow'>
+            <Link to='/lista-samochodow'>
+              <div className='single-card-image'>
+                <div className='image'>
+                  <img
+                    src='https://static.oferteo.pl/images/hero/samochody-zlecenia-oferty-a.jpg'
+                    alt='zdjęcie samochodów z wypożyczalni'
+                  />
+                </div>
+                <div className='items'>
+                  <p>
+                    <strong>Wypożyczalnia</strong> <br />
+                  </p>
+
                   <button className='button'>Zobacz ofertę</button>
-                </Link>
+                </div>
               </div>
-            </div>
-            <div className='single-card-image'>
-              <div className='image'>
-                <img
-                  src='https://paczki.com.pl/wp-content/uploads/2021/09/kurier-56.png'
-                  alt='zdjęcie sklepu internetowego'
-                />
-              </div>
-              <div className='items'>
-                <p>
-                  <strong>Sklep</strong> <br />
-                </p>
-                <Link to='/'>
+            </Link>
+            <Link to='/'>
+              <div className='single-card-image'>
+                <div className='image'>
+                  <img
+                    src='https://paczki.com.pl/wp-content/uploads/2021/09/kurier-56.png'
+                    alt='zdjęcie sklepu internetowego'
+                  />
+                </div>
+                <div className='items'>
+                  <p>
+                    <strong>Sklep</strong> <br />
+                  </p>
+
                   <button className='button'>Zobacz ofertę</button>
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </section>
         <section className='achievements'>

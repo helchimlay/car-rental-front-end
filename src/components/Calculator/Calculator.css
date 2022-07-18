@@ -107,6 +107,11 @@ input {
   border: none;
   font-size: 17px;
   margin: 20px 0;
+  transition: opacity 0.5s;
+}
+
+.calculate-button:hover {
+  opacity: 0.7;
 }
 
 .year-of-get-driving-license {
