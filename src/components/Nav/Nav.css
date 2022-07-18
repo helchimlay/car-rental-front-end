@@ -1,8 +1,9 @@
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: black;
   width: 100%;
   letter-spacing: 1px;
   top: 0;
@@ -42,9 +43,76 @@ nav h1 {
   -webkit-text-fill-color: transparent;
 }
 
-@media only screen and (max-width: 766.5px) {
-  nav h1 {
-    margin: 0;
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(233, 233, 206);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+.toggle .dash1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .dash2 {
+  opacity: 0;
+}
+
+.toggle .dash3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav ul {
     text-align: center;
+    position: absolute;
+    right: 0px;
+    height: 91vh;
+    top: 9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: black;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    color: white;
+  }
+
+  nav ul li {
+    margin: 30%;
+  }
+
+  nav ul li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }

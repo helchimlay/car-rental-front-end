@@ -1,15 +1,21 @@
 import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
+import navSlide from '../HomePage/js/burger';
+import { useEffect } from 'react';
 
 const Nav = () => {
+  useEffect(() => {
+    navSlide();
+  });
+
   return (
     <nav>
       <Link to='/'>
         <h1>CarRental</h1>
       </Link>
 
-      <ul>
+      <ul className='nav-links'>
         <li>
           <Link to='/'>Strona główna</Link>
         </li>
@@ -20,6 +26,11 @@ const Nav = () => {
           <Link to='/'>Sklep</Link>
         </li>
       </ul>
+      <div className='burger'>
+        <div className='dash1'></div>
+        <div className='dash2'></div>
+        <div className='dash3'></div>
+      </div>
     </nav>
   );
 };
