@@ -6,6 +6,7 @@ import { getCarBySlug } from '../../services/request';
 
 import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
 import Slider from './subcomponents/Slider/Slider';
+import { Helmet } from 'react-helmet';
 const Car = () => {
   const { carSlug } = useParams();
 
@@ -19,8 +20,18 @@ const Car = () => {
 
   return (
     <>
-      {thisCar ? (
+      {thisCar && (
         <main className='car'>
+          <Helmet>
+            <title>
+              {thisCar.car_details.brand} {thisCar.car_details.model} |
+              CarRental
+            </title>
+            <meta
+              name='description'
+              content={thisCar.car_details.description}
+            />
+          </Helmet>
           <section className='introduction'>
             <div className='photos'>
               <Slider images={thisCar.car_details.images} />
@@ -146,7 +157,7 @@ const Car = () => {
                 przycisk!
               </p>
               <Link to={routes.carCalculator(thisCar.slug)}>
-                <button className='button-first'>Nasz kalkulator</button>
+                <button className='button'>Nasz kalkulator</button>
               </Link>
             </div>
             <div className='right'>
@@ -156,13 +167,11 @@ const Car = () => {
                 również umówić się na oględziny pojazdu oraz na jazdę próbną!
               </p>
               <Link to='/'>
-                <button className='button-second'>Skontaktuj się z nami</button>
+                <button className='button'>Skontaktuj się z nami</button>
               </Link>
             </div>
           </section>
         </main>
-      ) : (
-        <h2>Pobieranie danych o pojeździe...</h2>
       )}
     </>
   );
