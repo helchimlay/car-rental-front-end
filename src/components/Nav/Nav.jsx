@@ -2,12 +2,11 @@ import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 import navSlide from '../HomePage/js/burger';
-import { useEffect } from 'react';
 
 const Nav = () => {
-  useEffect(() => {
+  const toggleNav = () => {
     navSlide();
-  });
+  };
 
   return (
     <nav>
@@ -26,7 +25,7 @@ const Nav = () => {
           <Link to='/'>Sklep</Link>
         </li>
       </ul>
-      <div className='burger'>
+      <div className='burger' onClick={toggleNav}>
         <div className='dash1'></div>
         <div className='dash2'></div>
         <div className='dash3'></div>
