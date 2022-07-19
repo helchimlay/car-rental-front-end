@@ -58,5 +58,5 @@ export const getLocations = async (present_location, future_location) => {
   // }
   // const response = await axios.request(options)
   // return response.data.steps[0].distance.car.distance
-  return 150
+  return 1500
 }
