@@ -15,7 +15,7 @@ const Footer = () => {
         <p>Dziękujemy że nas odwiedziłeś, mamy nadzieję że niedługo wrócisz.</p>
       </div>
       <div className='footer-copyright'>
-        <p>CarRental {thisDate} wszelkie prawa zastrzeżone</p>
+        <p>Copyright &copy; {thisDate} CarRental</p>
       </div>
     </footer>
   );
