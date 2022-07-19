@@ -83,7 +83,7 @@ input {
 }
 
 .calculator-li:before {
-  content: '• ';
+  content: "• ";
   margin-left: 10px;
 }
 
@@ -121,6 +121,11 @@ input {
   margin-bottom: 30px;
 }
 
+.discount-info {
+  color: rgb(0, 179, 104);
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 991.5px) {
   main.calculator {
     text-align: center;
@@ -155,7 +160,7 @@ input {
     height: 30px;
     width: 99%;
   }
-  input[type='text'] {
+  input[type="text"] {
     margin-bottom: 30px;
   }
 

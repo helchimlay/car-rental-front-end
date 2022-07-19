@@ -1,10 +1,10 @@
-const vat = 1.23;
+const vat = 1.23
 const priceCategories = {
   Basic: 1,
   Standard: 1.3,
   Medium: 1.6,
   Premium: 2,
-};
+}
 const calculateCarRentPrice = (
   priceForOneNight,
   rentSince,
@@ -20,62 +20,67 @@ const calculateCarRentPrice = (
   setMsg
 ) => {
   if (!rentSince || !rentTo || !future_location || kilometersToDrive === 0) {
-    setMsg('Wypełnij wszystkie pola!');
-    return false;
+    setMsg("Wypełnij wszystkie pola!")
+    return false
   } else if (
     new Date().getFullYear() - yearOfDrivingLicense < 3 &&
-    priceCategory === 'Premium'
+    priceCategory === "Premium"
   ) {
     setMsg(
-      'Aby wypożyczyć ten model samochodu musisz posiadać prawojazdy conajmniej 3 lata!'
-    );
-    return false;
+      "Aby wypożyczyć ten model samochodu musisz posiadać prawojazdy conajmniej 3 lata!"
+    )
+    return false
   } else {
+    const priceOfFuelUsedWhileRented = Math.ceil(
+      (kilometersToDrive / 100) * fuel_usage * fuelPrice
+    )
     const numberOfRentDays =
-      (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000; // the number of days in milliseconds divided by how many milliseconds 1 day has
-    let rentPrice = priceForOneNight * numberOfRentDays;
-    rentPrice += (kilometersToDrive / 100) * fuel_usage * fuelPrice;
+      (new Date(rentTo).getTime() - new Date(rentSince).getTime()) / 86400000 // the number of days in milliseconds divided by how many milliseconds 1 day has
+    let rentPrice = priceForOneNight * numberOfRentDays
+    rentPrice += priceOfFuelUsedWhileRented
+
     switch (priceCategory) {
-      case 'Basic':
-        rentPrice *= priceCategories.Basic;
-        break;
-      case 'Standard':
-        rentPrice *= priceCategories.Standard;
-        break;
-      case 'Medium':
-        rentPrice *= priceCategories.Medium;
-        break;
-      case 'Premium':
-        rentPrice *= priceCategories.Premium;
-        break;
+      case "Basic":
+        rentPrice *= priceCategories.Basic
+        break
+      case "Standard":
+        rentPrice *= priceCategories.Standard
+        break
+      case "Medium":
+        rentPrice *= priceCategories.Medium
+        break
+      case "Premium":
+        rentPrice *= priceCategories.Premium
+        break
       default:
-        return rentPrice;
+        return rentPrice
     }
 
     if (number_of_available_models < 3) {
-      rentPrice *= 1.15;
+      rentPrice *= 1.15
     }
 
-    const deliveryFee = 50 * (deliveryDistance / 100);
+    const deliveryFee = 50 * (deliveryDistance / 100)
 
     if (new Date().getFullYear() - yearOfDrivingLicense < 5) {
-      setMsg('');
-      rentPrice *= 1.2;
+      setMsg("")
+      rentPrice *= 1.2
     } else {
       setMsg(
-        'Posiadasz prawojazdy więcej niż 5 lat, z tego powodu obniżyliśmy cenę twojego wynajmu o 20%!'
-      );
+        "Posiadasz prawojazdy więcej niż 5 lat, z tego powodu obniżyliśmy cenę twojego wynajmu o 20%!"
+      )
     }
 
-    rentPrice += deliveryFee;
+    rentPrice += deliveryFee
     return {
       priceBrutto: Math.ceil(rentPrice * vat),
       priceNetto: Math.ceil(rentPrice),
       numberOfRentDays,
       deliveryFee,
       fuelPrice,
-    };
+      priceOfFuelUsedWhileRented,
+    }
   }
-};
+}
 
-export default calculateCarRentPrice;
+export default calculateCarRentPrice
