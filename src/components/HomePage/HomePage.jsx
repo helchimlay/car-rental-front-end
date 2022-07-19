@@ -10,6 +10,9 @@ import babycar from '../../img/baby-car.png';
 import bestprice from '../../img/best-price.png';
 
 const HomePage = () => {
+  const scroll = () => {
+    document.querySelector('.about-us').scrollIntoView();
+  };
   return (
     <>
       <Helmet>
@@ -26,7 +29,7 @@ const HomePage = () => {
           <h2>
             U nas wynajmiesz swój <br /> wymarzony samochód
           </h2>
-          <button>
+          <button onClick={scroll} id='scroll-btn'>
             <span>
               {/* <svg
                 xmlns='http://www.w3.org/2000/svg'

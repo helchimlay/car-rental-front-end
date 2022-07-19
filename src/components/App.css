@@ -3,3 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60.8px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
-import navSlide from '../HomePage/js/burger';
+import navSlide from '../../js/burger';
 
 const Nav = () => {
   const toggleNav = () => {
