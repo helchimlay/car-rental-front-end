@@ -69,7 +69,7 @@ const HomePage = () => {
                 pracy z naszych usług skorzystało tysiące klientów!
               </p>
               <Link to='onas'>
-                <span>Pokaż więcej...</span>
+                <button className='button'>Pokaż więcej...</button>
               </Link>
             </div>
           </div>

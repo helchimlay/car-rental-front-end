@@ -143,6 +143,10 @@ main.home section .content a {
   transition: opacity 0.5s;
 }
 
+main.home .content button {
+  margin-top: 0;
+}
+
 main.home section .content a:hover {
   opacity: 0.8;
 }
