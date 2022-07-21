@@ -1,0 +1,103 @@
+{
+  "gadgets": [
+    {
+      "id": 0,
+      "slug": "naklejki-na-samochod-10-szt",
+      "name": "Naklejki na samochód 10 szt.",
+      "price": 25.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://a.allegroimg.com/original/11ce9c/6d70593b4015b139321a2344b6cf/Zestaw-naklejek-na-samochod-LAMINOWANE-UV",
+        "alt": "Zestaw naklejek na samochód"
+      }
+    },
+    {
+      "id": 1,
+      "slug": "piesek-z-kiwajaca-glowa-ozdoba-samochodu",
+      "name": "Piesek z kiwającą głową - ozdoba samochodu",
+      "price": 40.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://image.ceneostatic.pl/data/products/104650493/i-giftwow-pies-z-kiwajaca-glowa.jpg",
+        "alt": "Piesek z kiwającą głową - brązowy"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "oparcie-na-glowe-do-samochodu",
+      "name": "Oparcie na głowę do samochodu",
+      "price": 93.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://bb-shop.pl/wp-content/uploads/2020/08/Zrzut-ekranu-2020-08-11-o-12.52.38.png",
+        "alt": "Oparcie na głowę do samochodu"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "okulary-przeciwsloneczne-do-jazdy-samochodem",
+      "name": "Okulary przeciwsłoneczne do jazdy samochodem",
+      "price": 25.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://www.iloko.pl/pol_pl_OKULARY-PRZECIWSLONECZNE-meskie-POLARYZACYJNE-37075_1.jpg",
+        "alt": "Okulary przeciwsłoneczne do samochodu"
+      }
+    },
+    {
+      "id": 4,
+      "slug": "oczyszczacz-powietrza-do-samochodu",
+      "name": "Oczyszczacz powietrza do samochodu",
+      "price": 160.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://ranking-oczyszczaczy.pl/wp-content/uploads/2018/05/Eberg-Mia.jpg",
+        "alt": "Oczyszczacz powietrza do samochodu"
+      }
+    },
+    {
+      "id": 5,
+      "slug": "brelok-do-samochodu",
+      "name": "Brelok do samochodu",
+      "price": 30.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://cf.shopee.pl/file/556eef085076f54841499cb2f54cd7f5",
+        "alt": "Brelok do samochodu z logiem"
+      }
+    },
+    {
+      "id": 6,
+      "slug": "naklejka-na-samochod",
+      "name": "Naklejka na samochód",
+      "price": 5.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://a.allegroimg.com/s720/1138c0/068ec6a748a78679bf07034f3a27/Naklejka-na-samochod-Pikachu-wlepa-30-cm-jdm-poke",
+        "alt": "Duża naklejka na samochód"
+      }
+    },
+    {
+      "id": 7,
+      "slug": "pluszowe-kostki-wisiorek-do-samochodu",
+      "name": "Pluszowe kostki wisiorek do samochodu",
+      "price": 15.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://doauta24.pl/userdata/public/gfx/379855a662e9ff00644ed4eb1c571abb.jpg",
+        "alt": "Pluszowe kostki do samochodu wisiorek"
+      }
+    },
+    {
+      "id": 8,
+      "slug": "zapach-do-auta-50-ml",
+      "name": "Zapach do auta 50 ml",
+      "price": 58.99,
+      "condition": "nowy",
+      "image": {
+        "src": "https://a.allegroimg.com/original/0367df/0c3c880641268c5c72cd989ee3b6/Zestaw-2-drewniane-zawieszki-zapach-do-auta-FRESSO",
+        "alt": "Zapach do samochodu"
+      }
+    }
+  ]
+}

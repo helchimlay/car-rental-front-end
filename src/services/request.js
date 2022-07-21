@@ -1,47 +1,47 @@
-import axios from "axios"
+import axios from 'axios';
 
 export const getCarsList = async () => {
-  const response = await axios.get(`./jsons/cars_data.json`)
-  return response.data.cars_data
-}
+  const response = await axios.get(`./jsons/cars_data.json`);
+  return response.data.cars_data;
+};
 
-export const getCarBySlug = async (slug) => {
-  const response = await axios.get("../jsons/cars_data.json")
-  return response.data.cars_data.find((car) => car.slug === slug)
-}
+export const getCarBySlug = async slug => {
+  const response = await axios.get('../jsons/cars_data.json');
+  return response.data.cars_data.find(car => car.slug === slug);
+};
 
 export const getSelectOptions = async () => {
-  const response = await axios.get("./jsons/cars_to_rent.json")
-  return response.data
-}
+  const response = await axios.get('./jsons/cars_to_rent.json');
+  return response.data;
+};
 
 export const getCarsListByFiltering = async (brand, fuel, category) => {
   const params = {
     marka: brand,
     rodzaj_paliwa: fuel,
     kategoria_cenowa: category,
-  }
-  const response = await axios.get("./jsons/cars_data.json", { params })
-  return response.data.cars_data.filter((item) => {
-    let showCar = true
+  };
+  const response = await axios.get('./jsons/cars_data.json', { params });
+  return response.data.cars_data.filter(item => {
+    let showCar = true;
     if (brand && brand !== item.car_details.brand) {
-      showCar = false
+      showCar = false;
     }
     if (fuel && fuel !== item.car_details.fuel) {
-      showCar = false
+      showCar = false;
     }
     if (category && category !== item.car_details.category) {
-      showCar = false
+      showCar = false;
     }
 
-    return showCar
-  })
-}
+    return showCar;
+  });
+};
 
 export const getFuelsPrices = async () => {
-  const response = await axios.get("../jsons/fuels_data.json")
-  return response.data
-}
+  const response = await axios.get('../jsons/fuels_data.json');
+  return response.data;
+};
 
 export const getLocations = async (present_location, future_location) => {
   // const options = {
@@ -58,5 +58,10 @@ export const getLocations = async (present_location, future_location) => {
   // }
   // const response = await axios.request(options)
   // return response.data.steps[0].distance.car.distance
-  return 1500
-}
+  return 1500;
+};
+
+export const getGadgets = async () => {
+  const response = await axios.get('../jsons/gadgets.json');
+  return response.data.gadgets;
+};
