@@ -10,7 +10,7 @@ section.single-car-card {
   margin: 30px 0;
 }
 
-div.summary-of-single-car {
+.summary-of-single-car {
   display: flex;
 }
 
@@ -23,8 +23,8 @@ main.cars-list .single-car-card {
   transition: all 0.2s linear;
 }
 
-main.cars-list div.photo-of-single-car img,
-main.cars-list div.photo-of-single-car {
+main.cars-list .photo-of-single-car img,
+main.cars-list .photo-of-single-car {
   max-height: 250px;
 }
 
@@ -71,11 +71,11 @@ main.cars-list ul {
 }
 
 @media only screen and (max-width: 991.5px) {
-  div.summary-of-single-car {
+  .summary-of-single-car {
     display: block;
     text-align: center;
   }
-  main.cars-list div.photo-of-single-car img {
+  main.cars-list .photo-of-single-car img {
     max-height: 100%;
     width: 100%;
   }
@@ -86,7 +86,7 @@ main.cars-list ul {
     float: none;
   }
 
-  main.cars-list div.photo-of-single-car {
+  main.cars-list .photo-of-single-car {
     max-height: none;
   }
 }

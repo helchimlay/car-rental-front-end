@@ -11,6 +11,7 @@ import Car from './Car/Car';
 import CarsList from './CarsList/CarsList';
 import Calculator from './Calculator/Calculator';
 import Shop from './Shop/Shop';
+import OrderForm from './Shop/subcomponents/OrderForm/OrderForm';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path={routes.cars} element={<CarsList></CarsList>} />
-        <Route path={routes.shop} element={<Shop></Shop>} />
+        <Route path={routes.shop} element={<OrderForm></OrderForm>} />
         <Route path={routes.car()} element={<Car></Car>} />
         <Route path={routes.calculator} element={<Calculator></Calculator>} />
         <Route

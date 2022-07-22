@@ -19,6 +19,7 @@ const Calculator = () => {
 
   const [fuelsPrices, setFuelsPrices] = useState();
   const [thisCar, setThisCar] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [deliveryDistance, setDeliveryDistance] = useState(null);
   const [msg, setMsg] = useState('');
 

@@ -42,7 +42,7 @@ section.filter-fields form select {
   border-left: 1px solid rgb(152, 147, 147);
 }
 
-section.filter-fields div.select-category select {
+section.filter-fields .select-category select {
   border-right: 1px solid rgb(152, 147, 147);
 }
 
@@ -56,7 +56,7 @@ section.filter-fields div.select-category select {
     border-left: none;
     border-bottom: 1px solid rgb(152, 147, 147);
   }
-  section.filter-fields div.select-category select {
+  section.filter-fields .select-category select {
     border-right: none;
   }
 
