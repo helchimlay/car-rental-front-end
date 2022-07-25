@@ -1,0 +1,26 @@
+main.privacy-policy {
+  padding: 120px 50px 60px 50px;
+  font-size: 20px;
+  h2 {
+    color: #b6092b;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .privacy-policy-paragraphs {
+    h3 {
+      font-size: 25px;
+      font-weight: bold;
+      color: #b6092b;
+      padding: 15px 0;
+    }
+    p {
+      padding: 10px 0;
+    }
+
+    ol {
+      padding-left: 40px;
+    }
+  }
+}

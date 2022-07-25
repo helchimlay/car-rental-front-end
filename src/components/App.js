@@ -12,6 +12,8 @@ import CarsList from './CarsList/CarsList';
 import Calculator from './Calculator/Calculator';
 import Shop from './Shop/Shop';
 import OrderForm from './Shop/subcomponents/OrderForm/OrderForm';
+import Regulations from './Regulations/Regulations';
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
 
 const App = () => {
   return (
@@ -24,6 +26,14 @@ const App = () => {
         <Route path={routes.shop} element={<OrderForm></OrderForm>} />
         <Route path={routes.car()} element={<Car></Car>} />
         <Route path={routes.calculator} element={<Calculator></Calculator>} />
+        <Route
+          path={routes.regulations}
+          element={<Regulations></Regulations>}
+        />
+        <Route
+          path={routes.privacy_policy}
+          element={<PrivacyPolicy></PrivacyPolicy>}
+        />
         <Route
           path={routes.carCalculator()}
           element={<Calculator></Calculator>}
