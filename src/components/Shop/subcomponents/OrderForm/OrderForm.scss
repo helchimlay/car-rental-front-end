@@ -2,10 +2,12 @@ main.order {
   padding: 120px 50px 60px 50px;
   section.order-form {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+
+    .order-payment {
+      margin-top: 20px;
+    }
 
     .order-summary {
       position: relative;
@@ -192,9 +194,8 @@ main.order {
 @media screen and (min-width: 992px) {
   main.order {
     section.order-form {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: 1fr;
 
       .order-summary {
         h2 {
@@ -203,15 +204,11 @@ main.order {
       }
 
       .consumer-information {
-        grid-area: 1 / 1 / 3 / 2;
+        grid-area: 1 / 1 / 2 / 2;
       }
 
-      .order-delivery {
+      .order-delivery-and-payment {
         grid-area: 1 / 2 / 2 / 3;
-      }
-
-      .order-payment {
-        grid-area: 2 / 2 / 3 / 3;
       }
 
       .order-info {

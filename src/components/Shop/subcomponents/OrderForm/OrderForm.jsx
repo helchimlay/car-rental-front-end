@@ -109,70 +109,72 @@ const OrderForm = () => {
               </div>
             )}
           </div>
-          <div className='order-delivery order-summary'>
-            <h2>2. Metoda dostawy</h2>
-            <div className='delivery-input'>
-              <div className='radio'>
+          <div className='order-delivery-and-payment'>
+            <div className='order-delivery order-summary'>
+              <h2>2. Metoda dostawy</h2>
+              <div className='delivery-input'>
+                <div className='radio'>
+                  <input
+                    type='radio'
+                    name='delivery-method'
+                    id='inpost'
+                    value='Kurier InPost'
+                  />
+                </div>
+                <div className='label'>
+                  <label htmlFor='inpost'>Kurier InPost</label>
+                  <span>15,00 zł</span>
+                </div>
+              </div>
+              <div className='delivery-input'>
+                <div className='radio'>
+                  <input
+                    type='radio'
+                    name='delivery-method'
+                    id='pickup-courier'
+                    value='Kurier InPost'
+                  />
+                </div>
+                <div className='label'>
+                  <label htmlFor='pickup-courier'>Kurier pobranie</label>
+                  <span>15,00 zł</span>
+                </div>
+              </div>
+              <div className='delivery-input'>
+                <div className='radio'>
+                  <input
+                    type='radio'
+                    name='delivery-method'
+                    id='parcel-locker'
+                    value='Kurier InPost'
+                  />
+                </div>
+                <div className='label'>
+                  <label htmlFor='parcel-locker'>Paczkomat</label>
+                  <span>12,00 zł</span>
+                </div>
+              </div>
+            </div>
+            <div className='order-payment order-summary'>
+              <h2>3. Metoda płatności</h2>
+              <div className='payment-input'>
                 <input
                   type='radio'
-                  name='delivery-method'
-                  id='inpost'
-                  value='Kurier InPost'
+                  name='payment-method'
+                  id='traditional-bank-transfer'
                 />
+                <label htmlFor='traditional-bank-transfer'>
+                  Tradycyjny przelew bankowy
+                </label>
               </div>
-              <div className='label'>
-                <label htmlFor='inpost'>Kurier InPost</label>
-                <span>15,00 zł</span>
+              <div className='payment-input'>
+                <input type='radio' name='payment-method' id='transfers24' />
+                <label htmlFor='transfers24'>Przelewy24</label>
               </div>
-            </div>
-            <div className='delivery-input'>
-              <div className='radio'>
-                <input
-                  type='radio'
-                  name='delivery-method'
-                  id='pickup-courier'
-                  value='Kurier InPost'
-                />
+              <div className='payment-input'>
+                <input type='radio' name='payment-method' id='blik' />
+                <label htmlFor='blik'>BLIK</label>
               </div>
-              <div className='label'>
-                <label htmlFor='pickup-courier'>Kurier pobranie</label>
-                <span>15,00 zł</span>
-              </div>
-            </div>
-            <div className='delivery-input'>
-              <div className='radio'>
-                <input
-                  type='radio'
-                  name='delivery-method'
-                  id='parcel-locker'
-                  value='Kurier InPost'
-                />
-              </div>
-              <div className='label'>
-                <label htmlFor='parcel-locker'>Paczkomat</label>
-                <span>12,00 zł</span>
-              </div>
-            </div>
-          </div>
-          <div className='order-payment order-summary'>
-            <h2>3. Metoda płatności</h2>
-            <div className='payment-input'>
-              <input
-                type='radio'
-                name='payment-method'
-                id='traditional-bank-transfer'
-              />
-              <label htmlFor='traditional-bank-transfer'>
-                Tradycyjny przelew bankowy
-              </label>
-            </div>
-            <div className='payment-input'>
-              <input type='radio' name='payment-method' id='transfers24' />
-              <label htmlFor='transfers24'>Przelewy24</label>
-            </div>
-            <div className='payment-input'>
-              <input type='radio' name='payment-method' id='blik' />
-              <label htmlFor='blik'>BLIK</label>
             </div>
           </div>
           <div className='order-info  order-summary'>
