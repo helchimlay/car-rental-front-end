@@ -9,7 +9,7 @@ main.order {
 
     .order-summary {
       position: relative;
-      padding: 2.5rem 1rem 3rem;
+      padding: 1.5rem 1rem 3rem;
       border: 0.1rem dashed #d7d7d7;
       background-color: #f9f9f9;
       border-radius: 0.3rem;
@@ -83,6 +83,7 @@ main.order {
         input {
           flex-grow: 1;
           max-width: 20px;
+          min-width: 20px;
         }
 
         label {
@@ -196,15 +197,13 @@ main.order {
       grid-template-rows: repeat(2, 1fr);
 
       .order-summary {
-        padding: 2.5rem 3rem 3rem;
-
         h2 {
           font-size: 20px;
         }
       }
 
       .consumer-information {
-        grid-area: 1 / 1 / 2 / 2;
+        grid-area: 1 / 1 / 3 / 2;
       }
 
       .order-delivery {
