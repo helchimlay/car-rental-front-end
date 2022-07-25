@@ -177,7 +177,7 @@ const OrderForm = () => {
               </div>
             </div>
           </div>
-          <div className='order-info  order-summary'>
+          <div className='order-info order-summary'>
             <h2>4. Podsumowanie</h2>
             <p>Wysyłka: 15,00 zł</p>
             <h3>Do zapłaty: 30,00 zł</h3>

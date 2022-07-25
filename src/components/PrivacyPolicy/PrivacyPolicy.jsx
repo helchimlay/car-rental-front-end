@@ -23,15 +23,13 @@ const PrivacyPolicy = () => {
           4. Operator jest Administratorem Twoich danych osobowych w odniesieniu
           do danych podanych dobrowolnie w Serwisie.
         </p>
-        <p>
-          5. Serwis wykorzystuje dane osobowe w następujących celach:
-          <ol>
-            <li>Wyświetlanie ogłoszeń użytkowników</li>
-            <li>Obsługa zapytań przez formularz</li>
-            <li>Realizacja zamówionych usług</li>
-            <li>Prezentacja oferty lub informacji</li>
-          </ol>
-        </p>
+        <p>5. Serwis wykorzystuje dane osobowe w następujących celach:</p>{' '}
+        <ol>
+          <li>Wyświetlanie ogłoszeń użytkowników</li>
+          <li>Obsługa zapytań przez formularz</li>
+          <li>Realizacja zamówionych usług</li>
+          <li>Prezentacja oferty lub informacji</li>
+        </ol>
         <h3>2. Wybrane metody ochrony danych stosowane przez Operatora</h3>
         <p>
           1. Miejsca logowania i wprowadzania danych osobowych są chronione w
@@ -64,17 +62,17 @@ const PrivacyPolicy = () => {
           dane osobowe innym odbiorcom, jeśli będzie to niezbędne do wykonania
           zawartej z Tobą umowy lub do zrealizowania obowiązków ciążących na
           Administratorze. Dotyczy to takich grup odbiorców:
-          <ol>
-            <li>kurierzy</li>
+        </p>{' '}
+        <ol>
+          <li>kurierzy</li>
 
-            <li>banki</li>
-            <li>
-              upoważnieni pracownicy i współpracownicy, którzy korzystają z
-              danych w celu realizacji celu działania strony
-            </li>
-            <li>firmy, świadczące usługi marketingu na rzecz Administratora</li>
-          </ol>
-        </p>
+          <li>banki</li>
+          <li>
+            upoważnieni pracownicy i współpracownicy, którzy korzystają z danych
+            w celu realizacji celu działania strony
+          </li>
+          <li>firmy, świadczące usługi marketingu na rzecz Administratora</li>
+        </ol>
         <p>
           2. Twoje dane osobowe przetwarzane przez Administratora nie dłużej,
           niż jest to konieczne do wykonania związanych z nimi czynności
