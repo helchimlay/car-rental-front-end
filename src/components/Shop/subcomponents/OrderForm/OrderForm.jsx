@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './OrderForm.scss';
 
 const OrderForm = () => {
@@ -180,12 +181,16 @@ const OrderForm = () => {
             <h3>Do zapłaty: 30,00 zł</h3>
             <div className='regulations'>
               <input type='checkbox' id='regulations' />
-              <label htmlFor='regulations'>Akceptuję regulamin serwisu</label>
+              <label htmlFor='regulations'>
+                Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
+              </label>
             </div>
             <div className='rodo'>
               <input type='checkbox' id='rodo' />
               <label htmlFor='rodo'>
-                Wyrażam zgodę na przetwarzanie moich danych osobowych
+                Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
+                akceptuję{' '}
+                <Link to='/polityka-prywatnosci'>politykę prywatności</Link>
               </label>
             </div>
             <button className='button'>Zamawiam</button>
