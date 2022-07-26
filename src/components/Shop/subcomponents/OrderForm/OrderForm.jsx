@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import InputField from './subcomponents/InputField/InputField';
+import LabelField from './subcomponents/LabelField/LabelField';
 import './OrderForm.scss';
 
 const OrderForm = () => {
@@ -28,7 +30,7 @@ const OrderForm = () => {
                 name='person-option'
                 value='private-person'
                 onChange={handlePersonOptionChange}
-                checked={personOption === 'private-person' ? true : false}
+                checked={personOption === 'private-person'}
               />
               <label htmlFor='private-person'>Osoba prywatna</label>
               <input
@@ -37,56 +39,56 @@ const OrderForm = () => {
                 name='person-option'
                 value='facture'
                 onChange={handlePersonOptionChange}
-                checked={personOption === 'facture' ? true : false}
+                checked={personOption === 'facture'}
               />
               <label htmlFor='facture'>Chcę fakturę</label>
             </div>
             {personOption === 'facture' ? (
               <>
                 <div className='factory'>
-                  <label htmlFor='factory'>Firma</label>
-                  <input type='text' id='factory' className='form-control' />
+                  <LabelField id='factory' labelText='Firma' />
+                  <InputField id='factory' type='text' class='form-control' />
                 </div>
                 <div className='nip'>
-                  <label htmlFor='nip'>NIP</label>
-                  <input type='text' id='nip' className='form-control' />
+                  <LabelField id='nip' labelText='NIP' />
+                  <InputField id='nip' type='text' class='form-control' />
                 </div>
               </>
             ) : null}
             <div className='name'>
-              <label htmlFor='name'>Imię</label>
-              <input type='text' id='name' className='form-control' />
+              <LabelField id='name' labelText='Imię' />
+              <InputField id='name' type='text' class='form-control' />
             </div>
             <div className='lastname'>
-              <label htmlFor='lastname'>Nazwisko</label>
-              <input type='text' id='lastname' className='form-control' />
+              <LabelField id='lastname' labelText='Nazwisko' />
+              <InputField id='lastname' type='text' class='form-control' />
             </div>
             <div className='email'>
-              <label htmlFor='email'>Email</label>
-              <input type='email' id='email' className='form-control' />
+              <LabelField id='email' labelText='Email' />
+              <InputField id='email' type='email' class='form-control' />
             </div>
             <div className='phone'>
-              <label htmlFor='phone'>Nr telefonu</label>
-              <input type='text' id='phone' className='form-control' />
+              <LabelField id='phone' labelText='Nr telefonu' />
+              <InputField id='phone' type='text' class='form-control' />
             </div>
             <div className='street-and-address'>
               <div className='street'>
-                <label htmlFor='street'>Ulica</label>
-                <input type='text' id='street' className='form-control' />
+                <LabelField id='street' labelText='Ulica' />
+                <InputField id='street' type='text' class='form-control' />
               </div>
               <div className='address'>
-                <label htmlFor='address'>Nr</label>
-                <input type='text' id='address' className='form-control' />
+                <LabelField id='address' labelText='Nr' />
+                <InputField id='address' type='text' class='form-control' />
               </div>
             </div>
             <div className='zip-and-city'>
               <div className='zip'>
-                <label htmlFor='zip'>Kod pocztowy</label>
-                <input type='text' id='zip' className='form-control' />
+                <LabelField id='zip' labelText='Kod pocztowy' />
+                <InputField id='zip' type='text' class='form-control' />
               </div>
               <div className='city'>
-                <label htmlFor='city'>Miasto</label>
-                <input type='text' id='city' className='form-control' />
+                <LabelField id='city' labelText='Miasto' />
+                <InputField id='city' type='text' class='form-control' />
               </div>
             </div>
 
@@ -114,7 +116,7 @@ const OrderForm = () => {
               <h2>2. Metoda dostawy</h2>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <input
+                  <InputField
                     type='radio'
                     name='delivery-method'
                     id='inpost'
@@ -122,35 +124,35 @@ const OrderForm = () => {
                   />
                 </div>
                 <div className='label'>
-                  <label htmlFor='inpost'>Kurier InPost</label>
+                  <LabelField id='inpost' labelText='Kurier InPost' />
                   <span>15,00 zł</span>
                 </div>
               </div>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <input
+                  <InputField
                     type='radio'
                     name='delivery-method'
                     id='pickup-courier'
-                    value='Kurier InPost'
+                    value='Kurier pobranie'
                   />
                 </div>
                 <div className='label'>
-                  <label htmlFor='pickup-courier'>Kurier pobranie</label>
+                  <LabelField id='pickup-courier' labelText='Kurier pobranie' />
                   <span>15,00 zł</span>
                 </div>
               </div>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <input
+                  <InputField
                     type='radio'
                     name='delivery-method'
                     id='parcel-locker'
-                    value='Kurier InPost'
+                    value='Paczkomat'
                   />
                 </div>
                 <div className='label'>
-                  <label htmlFor='parcel-locker'>Paczkomat</label>
+                  <LabelField id='parcel-locker' labelText='Paczkomat' />
                   <span>12,00 zł</span>
                 </div>
               </div>
@@ -158,44 +160,60 @@ const OrderForm = () => {
             <div className='order-payment order-summary'>
               <h2>3. Metoda płatności</h2>
               <div className='payment-input'>
-                <input
+                <InputField
                   type='radio'
                   name='payment-method'
                   id='traditional-bank-transfer'
+                  value='Tradycyjny przelew bankowy'
                 />
-                <label htmlFor='traditional-bank-transfer'>
-                  Tradycyjny przelew bankowy
-                </label>
+                <LabelField
+                  id='traditional-bank-transfer'
+                  labelText='Tradycyjny przelew bankowy'
+                />
               </div>
               <div className='payment-input'>
-                <input type='radio' name='payment-method' id='transfers24' />
-                <label htmlFor='transfers24'>Przelewy24</label>
+                <InputField
+                  type='radio'
+                  name='payment-method'
+                  id='transfers24'
+                  value='Przelewy24'
+                />
+                <LabelField id='transfers24' labelText='Przelewy24' />
               </div>
               <div className='payment-input'>
-                <input type='radio' name='payment-method' id='blik' />
-                <label htmlFor='blik'>BLIK</label>
+                <InputField
+                  type='radio'
+                  name='payment-method'
+                  id='blik'
+                  value='BLIK'
+                />
+                <LabelField id='blik' labelText='BLIK' />
               </div>
             </div>
           </div>
-          <div className='order-info order-summary'>
-            <h2>4. Podsumowanie</h2>
-            <p>Wysyłka: 15,00 zł</p>
-            <h3>Do zapłaty: 30,00 zł</h3>
-            <div className='regulations'>
-              <input type='checkbox' id='regulations' />
-              <label htmlFor='regulations'>
-                Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
-              </label>
+          <div className='order-info '>
+            <div className='order-summary'>
+              <h2>4. Podsumowanie</h2>
+              <p>Wysyłka: 15,00 zł</p>
+              <h3>Do zapłaty: 30,00 zł</h3>
+              <div className='regulations'>
+                <input type='checkbox' id='regulations' />
+                <label htmlFor='regulations'>
+                  Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
+                  <span>*</span>
+                </label>
+              </div>
+              <div className='rodo'>
+                <input type='checkbox' id='rodo' />
+                <label htmlFor='rodo'>
+                  Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
+                  akceptuję{' '}
+                  <Link to='/polityka-prywatnosci'>politykę prywatności</Link>
+                  <span>*</span>
+                </label>
+              </div>
+              <button className='button'>Zamawiam</button>
             </div>
-            <div className='rodo'>
-              <input type='checkbox' id='rodo' />
-              <label htmlFor='rodo'>
-                Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
-                akceptuję{' '}
-                <Link to='/polityka-prywatnosci'>politykę prywatności</Link>
-              </label>
-            </div>
-            <button className='button'>Zamawiam</button>
           </div>
         </section>
       </main>

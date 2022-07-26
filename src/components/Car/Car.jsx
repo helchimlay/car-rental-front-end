@@ -5,7 +5,7 @@ import { routes } from '../../config/routes/routes';
 import { getCarBySlug } from '../../services/request';
 import Loader from '../Loader/Loader';
 
-import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo';
+import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo/IFrameVideo';
 import Slider from './subcomponents/Slider/Slider';
 import { Helmet } from 'react-helmet';
 const Car = () => {
@@ -78,60 +78,54 @@ const Car = () => {
           <section className='car-details'>
             <h3>Szczegóły pojazdu:</h3>
 
-            <div className='sides'>
-              <div className='left'>
-                <p>
-                  <b>Marka:</b> {thisCar.car_details.brand}
-                </p>
-                <p>
-                  <b>Model:</b> {thisCar.car_details.model}
-                </p>
-                <p>
-                  <b>Generacja:</b> {thisCar.car_details.generate}
-                </p>
-                <p>
-                  <b>Rok produkcji:</b> {thisCar.car_details.year_of_production}
-                </p>
-                <p>
-                  <b>Przebieg:</b> {thisCar.car_details.mileage} km
-                </p>
-                <p>
-                  <b>Pojemność skokowa:</b> {thisCar.car_details.displacement}{' '}
-                  cm
-                  <sup>3</sup>
-                </p>
-                <p>
-                  <b>Rodzaj paliwa:</b> {thisCar.car_details.fuel}
-                </p>
-                <p>
-                  <b>Moc:</b> {thisCar.car_details.power} km
-                </p>
-              </div>
-              <div className='right'>
-                <p>
-                  <b>Napęd:</b> {thisCar.car_details.drive}
-                </p>
-                <p>
-                  <b>Liczba drzwi:</b> {thisCar.car_details.number_of_doors}
-                </p>
-                <p>
-                  <b>Liczba miejsc:</b> {thisCar.car_details.number_of_places}
-                </p>
-                <p>
-                  <b>Kolor:</b> {thisCar.car_details.color}
-                </p>
-                <p>
-                  <b>Kraj pochodzenia:</b>{' '}
-                  {thisCar.car_details.country_of_origin}
-                </p>
-                <p>
-                  <b>Data pierwszej rejestracji:</b>{' '}
-                  {thisCar.car_details.first_registration}
-                </p>
-                <p>
-                  <b>Stan:</b> {thisCar.car_details.car_condition}
-                </p>
-              </div>
+            <div className='details'>
+              <p>
+                <b>Marka:</b> {thisCar.car_details.brand}
+              </p>
+              <p>
+                <b>Model:</b> {thisCar.car_details.model}
+              </p>
+              <p>
+                <b>Generacja:</b> {thisCar.car_details.generate}
+              </p>
+              <p>
+                <b>Rok produkcji:</b> {thisCar.car_details.year_of_production}
+              </p>
+              <p>
+                <b>Przebieg:</b> {thisCar.car_details.mileage} km
+              </p>
+              <p>
+                <b>Pojemność skokowa:</b> {thisCar.car_details.displacement} cm
+                <sup>3</sup>
+              </p>
+              <p>
+                <b>Rodzaj paliwa:</b> {thisCar.car_details.fuel}
+              </p>
+              <p>
+                <b>Moc:</b> {thisCar.car_details.power} km
+              </p>
+              <p>
+                <b>Napęd:</b> {thisCar.car_details.drive}
+              </p>
+              <p>
+                <b>Liczba drzwi:</b> {thisCar.car_details.number_of_doors}
+              </p>
+              <p>
+                <b>Liczba miejsc:</b> {thisCar.car_details.number_of_places}
+              </p>
+              <p>
+                <b>Kolor:</b> {thisCar.car_details.color}
+              </p>
+              <p>
+                <b>Kraj pochodzenia:</b> {thisCar.car_details.country_of_origin}
+              </p>
+              <p>
+                <b>Data pierwszej rejestracji:</b>{' '}
+                {thisCar.car_details.first_registration}
+              </p>
+              <p>
+                <b>Stan:</b> {thisCar.car_details.car_condition}
+              </p>
             </div>
           </section>
           <section className='car-equipment'>

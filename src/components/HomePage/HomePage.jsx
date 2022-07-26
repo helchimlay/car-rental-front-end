@@ -16,7 +16,7 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Strona główna | CarRental</title>
+        <title>CarRental - U nas wynajmiesz swój wymarzony samochód</title>
         <meta
           name='description'
           content='Jedna z najlepszych wypożyczalni samochodowych w Polsce. Odwiedź nas już teraz i sprawdź naszą ofertę!'
