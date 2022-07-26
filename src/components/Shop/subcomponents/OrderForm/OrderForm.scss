@@ -5,6 +5,12 @@ main.order {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
+    label {
+      span {
+        color: rgb(182, 9, 43);
+      }
+    }
+
     .order-payment {
       margin-top: 20px;
     }
@@ -82,10 +88,13 @@ main.order {
       .payment-input {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+
         input {
           flex-grow: 1;
           max-width: 20px;
           min-width: 20px;
+          flex: 1 1 20px;
         }
 
         label {
@@ -93,6 +102,13 @@ main.order {
           display: flex;
           justify-content: flex-start;
           padding-left: 20px;
+          flex: 1 1 100px;
+        }
+
+        small {
+          color: #333;
+          font-size: 15px;
+          padding: 5px 0;
         }
       }
 
@@ -227,6 +243,36 @@ main.order {
     section.order-form {
       grid-template-columns: unset;
       grid-template-rows: unset;
+
+      .order-summary {
+        .payment-input {
+          input {
+            flex: 1 1 20px;
+          }
+
+          label {
+            flex: 1 1 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.order {
+    section.order-form {
+      .order-summary {
+        .payment-input {
+          input {
+            flex: 1 1 20px;
+          }
+
+          label {
+            flex: 1 1 100px;
+          }
+        }
+      }
     }
   }
 }

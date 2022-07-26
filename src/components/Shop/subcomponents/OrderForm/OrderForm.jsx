@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import InputField from './subcomponents/InputField/InputField';
-import LabelField from './subcomponents/LabelField/LabelField';
 import './OrderForm.scss';
 
 const OrderForm = () => {
   const [personOption, setPersonOption] = useState('private-person');
+  const [personData, setPersonData] = useState({});
   const [addMessage, setAddMessage] = useState(false);
+  const [deliveryMethod, setDeliveryMethod] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState(null);
+  const [requiredFields, setRequiredFields] = useState({
+    street: false,
+    address: false,
+    zip: false,
+    city: false,
+  });
 
   const handleAddMessageChange = () => {
     setAddMessage(!addMessage);
@@ -15,6 +22,41 @@ const OrderForm = () => {
   const handlePersonOptionChange = e => {
     const { value } = e.target;
     setPersonOption(value);
+  };
+
+  const handleDeliveryMethodChange = e => {
+    const { value } = e.target;
+    setDeliveryMethod(value);
+  };
+
+  useEffect(() => {
+    if (deliveryMethod === 'inpost' || deliveryMethod === 'parcel-locker') {
+      setRequiredFields({
+        street: true,
+        address: true,
+        zip: true,
+        city: true,
+      });
+    } else {
+      setRequiredFields({
+        street: false,
+        address: false,
+        zip: false,
+        city: false,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deliveryMethod]);
+
+  const handlePaymentMethodChange = e => {
+    const { value } = e.target;
+    setPaymentMethod(value);
+  };
+
+  const handlePersonDataChange = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPersonData(values => ({ ...values, [name]: value }));
   };
 
   return (
@@ -46,49 +88,139 @@ const OrderForm = () => {
             {personOption === 'facture' ? (
               <>
                 <div className='factory'>
-                  <LabelField id='factory' labelText='Firma' />
-                  <InputField id='factory' type='text' class='form-control' />
+                  <label htmlFor='factory'>
+                    Firma<span>*</span>
+                  </label>
+                  <input
+                    type='text'
+                    id='factory'
+                    name='factory'
+                    className='form-control'
+                    value={personData.factory || ''}
+                    onChange={handlePersonDataChange}
+                  />
                 </div>
                 <div className='nip'>
-                  <LabelField id='nip' labelText='NIP' />
-                  <InputField id='nip' type='text' class='form-control' />
+                  <label htmlFor='nip'>
+                    NIP<span>*</span>
+                  </label>
+                  <input
+                    type='text'
+                    id='nip'
+                    name='nip'
+                    className='form-control'
+                    value={personData.nip || ''}
+                    onChange={handlePersonDataChange}
+                  />
                 </div>
               </>
             ) : null}
             <div className='name'>
-              <LabelField id='name' labelText='Imię' />
-              <InputField id='name' type='text' class='form-control' />
+              <label htmlFor='name'>
+                Imię<span>*</span>
+              </label>
+              <input
+                type='text'
+                id='name'
+                name='name'
+                className='form-control'
+                value={personData.name || ''}
+                onChange={handlePersonDataChange}
+              />
             </div>
             <div className='lastname'>
-              <LabelField id='lastname' labelText='Nazwisko' />
-              <InputField id='lastname' type='text' class='form-control' />
+              <label htmlFor='lastname'>
+                Nazwisko<span>*</span>
+              </label>
+              <input
+                type='text'
+                id='lastname'
+                name='lastname'
+                className='form-control'
+                value={personData.lastname || ''}
+                onChange={handlePersonDataChange}
+              />
             </div>
             <div className='email'>
-              <LabelField id='email' labelText='Email' />
-              <InputField id='email' type='email' class='form-control' />
+              <label htmlFor='email'>
+                Email<span>*</span>
+              </label>
+              <input
+                type='email'
+                id='email'
+                name='email'
+                className='form-control'
+                value={personData.email || ''}
+                onChange={handlePersonDataChange}
+              />
             </div>
             <div className='phone'>
-              <LabelField id='phone' labelText='Nr telefonu' />
-              <InputField id='phone' type='text' class='form-control' />
+              <label htmlFor='phone'>
+                Nr telefonu<span>*</span>
+              </label>
+              <input
+                type='text'
+                id='phone'
+                name='phone'
+                className='form-control'
+                value={personData.phone || ''}
+                onChange={handlePersonDataChange}
+              />
             </div>
             <div className='street-and-address'>
               <div className='street'>
-                <LabelField id='street' labelText='Ulica' />
-                <InputField id='street' type='text' class='form-control' />
+                <label htmlFor='street'>
+                  Ulica{requiredFields.street && <span>*</span>}
+                </label>
+                <input
+                  type='text'
+                  id='street'
+                  name='street'
+                  className='form-control'
+                  value={personData.street || ''}
+                  onChange={handlePersonDataChange}
+                />
               </div>
               <div className='address'>
-                <LabelField id='address' labelText='Nr' />
-                <InputField id='address' type='text' class='form-control' />
+                <label htmlFor='address'>
+                  Nr{requiredFields.address && <span>*</span>}
+                </label>
+                <input
+                  type='text'
+                  id='address'
+                  name='address'
+                  className='form-control'
+                  value={personData.address || ''}
+                  onChange={handlePersonDataChange}
+                />
               </div>
             </div>
             <div className='zip-and-city'>
               <div className='zip'>
-                <LabelField id='zip' labelText='Kod pocztowy' />
-                <InputField id='zip' type='text' class='form-control' />
+                <label htmlFor='zip'>
+                  Kod pocztowy{requiredFields.zip && <span>*</span>}
+                </label>
+                <input
+                  type='text'
+                  id='zip'
+                  name='zip'
+                  className='form-control'
+                  value={personData.zip || ''}
+                  onChange={handlePersonDataChange}
+                />
               </div>
               <div className='city'>
-                <LabelField id='city' labelText='Miasto' />
-                <InputField id='city' type='text' class='form-control' />
+                <label htmlFor='city'>
+                  Miasto{requiredFields.city && <span>*</span>}
+                </label>
+                <input
+                  type='text'
+                  id='city'
+                  name='city'
+                  className='form-control'
+                  value={personData.city || ''}
+                  onChange={handlePersonDataChange}
+                />
               </div>
             </div>
 
@@ -104,9 +236,11 @@ const OrderForm = () => {
             {addMessage && (
               <div className='message'>
                 <textarea
-                  name='msg'
+                  name='message'
                   id='msg'
                   className='form-control'
+                  value={personData.message || ''}
+                  onChange={handlePersonDataChange}
                 ></textarea>
               </div>
             )}
@@ -116,43 +250,46 @@ const OrderForm = () => {
               <h2>2. Metoda dostawy</h2>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <InputField
+                  <input
                     type='radio'
                     name='delivery-method'
                     id='inpost'
-                    value='Kurier InPost'
+                    value='inpost'
+                    onChange={handleDeliveryMethodChange}
                   />
                 </div>
                 <div className='label'>
-                  <LabelField id='inpost' labelText='Kurier InPost' />
+                  <label htmlFor='inpost'>Kurier InPost</label>
                   <span>15,00 zł</span>
                 </div>
               </div>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <InputField
+                  <input
                     type='radio'
                     name='delivery-method'
                     id='pickup-courier'
-                    value='Kurier pobranie'
+                    value='pickup-courier'
+                    onChange={handleDeliveryMethodChange}
                   />
                 </div>
                 <div className='label'>
-                  <LabelField id='pickup-courier' labelText='Kurier pobranie' />
+                  <label htmlFor='pickup-courier'>Kurier pobranie</label>
                   <span>15,00 zł</span>
                 </div>
               </div>
               <div className='delivery-input'>
                 <div className='radio'>
-                  <InputField
+                  <input
                     type='radio'
                     name='delivery-method'
                     id='parcel-locker'
-                    value='Paczkomat'
+                    value='parcel-locker'
+                    onChange={handleDeliveryMethodChange}
                   />
                 </div>
                 <div className='label'>
-                  <LabelField id='parcel-locker' labelText='Paczkomat' />
+                  <label htmlFor='parcel-locker'>Paczkomat</label>
                   <span>12,00 zł</span>
                 </div>
               </div>
@@ -160,38 +297,57 @@ const OrderForm = () => {
             <div className='order-payment order-summary'>
               <h2>3. Metoda płatności</h2>
               <div className='payment-input'>
-                <InputField
+                <input
                   type='radio'
                   name='payment-method'
                   id='traditional-bank-transfer'
-                  value='Tradycyjny przelew bankowy'
+                  value='traditional-bank-transfer'
+                  onChange={handlePaymentMethodChange}
                 />
-                <LabelField
-                  id='traditional-bank-transfer'
-                  labelText='Tradycyjny przelew bankowy'
-                />
+                <label htmlFor='traditional-bank-transfer'>
+                  Tradycyjny przelew bankowy
+                </label>
+                {paymentMethod === 'traditional-bank-transfer' ? (
+                  <small>
+                    Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę
+                    użyć numeru zamówienia jako tytułu płatności.
+                  </small>
+                ) : null}
               </div>
               <div className='payment-input'>
-                <InputField
+                <input
                   type='radio'
                   name='payment-method'
                   id='transfers24'
-                  value='Przelewy24'
+                  value='transfers24'
+                  onChange={handlePaymentMethodChange}
                 />
-                <LabelField id='transfers24' labelText='Przelewy24' />
+                <label htmlFor='transfers24'>Przelewy24</label>
+                {paymentMethod === 'transfers24' ? (
+                  <small>
+                    Zapłać poprzez wygodny system płatności online: blik, szybki
+                    przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24.
+                  </small>
+                ) : null}
               </div>
               <div className='payment-input'>
-                <InputField
+                <input
                   type='radio'
                   name='payment-method'
                   id='blik'
-                  value='BLIK'
+                  value='blik'
+                  onChange={handlePaymentMethodChange}
                 />
-                <LabelField id='blik' labelText='BLIK' />
+                <label htmlFor='blik'>BLIK</label>
+                {paymentMethod === 'blik' ? (
+                  <small>
+                    Zapłać poprzez wygodny system płatności online: blik
+                  </small>
+                ) : null}
               </div>
             </div>
           </div>
-          <div className='order-info '>
+          <div className='order-info'>
             <div className='order-summary'>
               <h2>4. Podsumowanie</h2>
               <p>Wysyłka: 15,00 zł</p>
