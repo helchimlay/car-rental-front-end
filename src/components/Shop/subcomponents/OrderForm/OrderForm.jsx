@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import './OrderForm.scss';
 
 const OrderForm = () => {
@@ -59,30 +60,32 @@ const OrderForm = () => {
     setPersonData(values => ({ ...values, [name]: value }));
   };
 
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data);
+
   return (
     <>
       <main className='order'>
         <section>
-          <form action='' className='order-form'>
+          <form className='order-form' onSubmit={handleSubmit(onSubmit)}>
             <div className='consumer-information order-summary'>
               <h2>1. Twoje dane</h2>
               <div className='person-options'>
                 <input
                   type='radio'
-                  id='private-person'
+                  id='person-option'
                   name='person-option'
                   value='private-person'
-                  onChange={handlePersonOptionChange}
-                  checked={personOption === 'private-person'}
+                  {...register('person-option')}
                 />
                 <label htmlFor='private-person'>Osoba prywatna</label>
+
                 <input
                   type='radio'
                   id='facture'
                   name='person-option'
                   value='facture'
-                  onChange={handlePersonOptionChange}
-                  checked={personOption === 'facture'}
+                  {...register('person-option')}
                 />
                 <label htmlFor='facture'>Chcę fakturę</label>
               </div>
@@ -93,12 +96,10 @@ const OrderForm = () => {
                       Firma<span>*</span>
                     </label>
                     <input
-                      type='text'
                       id='factory'
                       name='factory'
                       className='form-control'
-                      value={personData.factory || ''}
-                      onChange={handlePersonDataChange}
+                      {...register('factory', { required: true })}
                     />
                   </div>
                   <div className='nip'>
@@ -106,27 +107,29 @@ const OrderForm = () => {
                       NIP<span>*</span>
                     </label>
                     <input
-                      type='text'
                       id='nip'
                       name='nip'
                       className='form-control'
-                      value={personData.nip || ''}
-                      onChange={handlePersonDataChange}
+                      {...register('nip', {
+                        required: true,
+                        pattern: /^[0-9]{10}$/,
+                      })}
                     />
                   </div>
                 </>
               ) : null}
-              <div className='name'>
-                <label htmlFor='name'>
+              <div className='firstname'>
+                <label htmlFor='firstname'>
                   Imię<span>*</span>
                 </label>
                 <input
-                  type='text'
-                  id='name'
-                  name='name'
+                  id='firstname'
+                  name='firstname'
                   className='form-control'
-                  value={personData.name || ''}
-                  onChange={handlePersonDataChange}
+                  {...register('firstname', {
+                    required: true,
+                    pattern: /^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/,
+                  })}
                 />
               </div>
               <div className='lastname'>
@@ -134,12 +137,13 @@ const OrderForm = () => {
                   Nazwisko<span>*</span>
                 </label>
                 <input
-                  type='text'
                   id='lastname'
                   name='lastname'
                   className='form-control'
-                  value={personData.lastname || ''}
-                  onChange={handlePersonDataChange}
+                  {...register('lastname', {
+                    required: true,
+                    pattern: /^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/,
+                  })}
                 />
               </div>
               <div className='email'>
@@ -147,12 +151,13 @@ const OrderForm = () => {
                   Email<span>*</span>
                 </label>
                 <input
-                  type='email'
                   id='email'
                   name='email'
                   className='form-control'
-                  value={personData.email || ''}
-                  onChange={handlePersonDataChange}
+                  {...register('email', {
+                    required: true,
+                    pattern: /^[-\w\.]+@([-\w]+\.)+[a-z]+$/i,
+                  })}
                 />
               </div>
               <div className='phone'>
@@ -160,12 +165,14 @@ const OrderForm = () => {
                   Nr telefonu<span>*</span>
                 </label>
                 <input
-                  type='text'
                   id='phone'
                   name='phone'
                   className='form-control'
-                  value={personData.phone || ''}
-                  onChange={handlePersonDataChange}
+                  {...register('phone', {
+                    required: true,
+                    pattern:
+                      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im,
+                  })}
                 />
               </div>
               <div className='street-and-address'>
@@ -174,12 +181,10 @@ const OrderForm = () => {
                     Ulica{requiredFields.street && <span>*</span>}
                   </label>
                   <input
-                    type='text'
                     id='street'
                     name='street'
                     className='form-control'
-                    value={personData.street || ''}
-                    onChange={handlePersonDataChange}
+                    {...register('street')}
                   />
                 </div>
                 <div className='address'>
@@ -187,12 +192,10 @@ const OrderForm = () => {
                     Nr{requiredFields.address && <span>*</span>}
                   </label>
                   <input
-                    type='text'
                     id='address'
                     name='address'
                     className='form-control'
-                    value={personData.address || ''}
-                    onChange={handlePersonDataChange}
+                    {...register('address', { maxLength: 5 })}
                   />
                 </div>
               </div>
@@ -202,12 +205,10 @@ const OrderForm = () => {
                     Kod pocztowy{requiredFields.zip && <span>*</span>}
                   </label>
                   <input
-                    type='text'
                     id='zip'
                     name='zip'
                     className='form-control'
-                    value={personData.zip || ''}
-                    onChange={handlePersonDataChange}
+                    {...register('zip', { pattern: /^\d{2}-\d{3}$/ })}
                   />
                 </div>
                 <div className='city'>
@@ -215,12 +216,10 @@ const OrderForm = () => {
                     Miasto{requiredFields.city && <span>*</span>}
                   </label>
                   <input
-                    type='text'
                     id='city'
                     name='city'
                     className='form-control'
-                    value={personData.city || ''}
-                    onChange={handlePersonDataChange}
+                    {...register('city', { minLength: 3, maxLength: 20 })}
                   />
                 </div>
               </div>
@@ -229,20 +228,14 @@ const OrderForm = () => {
                 <input
                   type='checkbox'
                   id='msg'
-                  onChange={handleAddMessageChange}
-                  checked={addMessage}
+                  name='message'
+                  {...register('message')}
                 />
                 <label htmlFor='msg'>Dodaj wiadomość do sprzedającego</label>
               </div>
               {addMessage && (
                 <div className='message'>
-                  <textarea
-                    name='message'
-                    id='msg'
-                    className='form-control'
-                    value={personData.message || ''}
-                    onChange={handlePersonDataChange}
-                  ></textarea>
+                  <textarea {...register('msg')}></textarea>
                 </div>
               )}
             </div>
@@ -254,9 +247,8 @@ const OrderForm = () => {
                     <input
                       type='radio'
                       name='delivery-method'
-                      id='inpost'
                       value='inpost'
-                      onChange={handleDeliveryMethodChange}
+                      {...register('delivery-method')}
                     />
                   </div>
                   <div className='label'>
@@ -269,9 +261,8 @@ const OrderForm = () => {
                     <input
                       type='radio'
                       name='delivery-method'
-                      id='pickup-courier'
                       value='pickup-courier'
-                      onChange={handleDeliveryMethodChange}
+                      {...register('delivery-method')}
                     />
                   </div>
                   <div className='label'>
@@ -284,9 +275,8 @@ const OrderForm = () => {
                     <input
                       type='radio'
                       name='delivery-method'
-                      id='parcel-locker'
                       value='parcel-locker'
-                      onChange={handleDeliveryMethodChange}
+                      {...register('delivery-method')}
                     />
                   </div>
                   <div className='label'>
@@ -301,9 +291,8 @@ const OrderForm = () => {
                   <input
                     type='radio'
                     name='payment-method'
-                    id='traditional-bank-transfer'
                     value='traditional-bank-transfer'
-                    onChange={handlePaymentMethodChange}
+                    {...register('payment-method')}
                   />
                   <label htmlFor='traditional-bank-transfer'>
                     Tradycyjny przelew bankowy
@@ -319,9 +308,8 @@ const OrderForm = () => {
                   <input
                     type='radio'
                     name='payment-method'
-                    id='transfers24'
                     value='transfers24'
-                    onChange={handlePaymentMethodChange}
+                    {...register('payment-method')}
                   />
                   <label htmlFor='transfers24'>Przelewy24</label>
                   {paymentMethod === 'transfers24' ? (
@@ -336,9 +324,8 @@ const OrderForm = () => {
                   <input
                     type='radio'
                     name='payment-method'
-                    id='blik'
                     value='blik'
-                    onChange={handlePaymentMethodChange}
+                    {...register('payment-method')}
                   />
                   <label htmlFor='blik'>BLIK</label>
                   {paymentMethod === 'blik' ? (
@@ -355,14 +342,18 @@ const OrderForm = () => {
                 <p>Wysyłka: 15,00 zł</p>
                 <h3>Do zapłaty: 30,00 zł</h3>
                 <div className='regulations'>
-                  <input type='checkbox' id='regulations' />
+                  <input
+                    type='checkbox'
+                    id='regulations'
+                    {...register('regulations')}
+                  />
                   <label htmlFor='regulations'>
                     Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
                     <span>*</span>
                   </label>
                 </div>
                 <div className='rodo'>
-                  <input type='checkbox' id='rodo' />
+                  <input type='checkbox' id='rodo' {...register('rodo')} />
                   <label htmlFor='rodo'>
                     Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
                     akceptuję{' '}
@@ -370,7 +361,9 @@ const OrderForm = () => {
                     <span>*</span>
                   </label>
                 </div>
-                <button className='button'>Zamawiam</button>
+                <button type='submit' className='button'>
+                  Zamawiam
+                </button>
               </div>
             </div>
           </form>

@@ -89,7 +89,7 @@ main.car .photos {
 
 .owl-nav {
   color: white;
-  font-weight: bold;
+  font-weight: 300;
   font-size: 85px;
   line-height: 20px;
 }
@@ -127,10 +127,11 @@ li.details-list:before {
 
 main.car .details p {
   margin: 5px;
-  padding: 5px 10px;
-  border: 1px solid rgb(182, 9, 43);
-  border-radius: 2px;
-  font-size: 16px;
+  border: solid 1px rgb(182, 9, 43);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 8px 16px;
 }
 
 main.car .car-info h2 {
