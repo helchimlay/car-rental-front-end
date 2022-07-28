@@ -1,6 +1,6 @@
 main.order {
   padding: 120px 50px 60px 50px;
-  section.order-form {
+  .order-form {
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -213,7 +213,7 @@ main.order {
 
 @media screen and (min-width: 992px) {
   main.order {
-    section.order-form {
+    .order-form {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr;
 
@@ -240,7 +240,7 @@ main.order {
 
 @media screen and (max-width: 991px) {
   main.order {
-    section.order-form {
+    .order-form {
       grid-template-columns: unset;
       grid-template-rows: unset;
 
@@ -261,7 +261,7 @@ main.order {
 
 @media screen and (max-width: 576px) {
   main.order {
-    section.order-form {
+    .order-form {
       .order-summary {
         .payment-input {
           input {
