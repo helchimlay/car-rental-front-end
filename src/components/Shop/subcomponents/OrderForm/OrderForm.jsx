@@ -1,68 +1,35 @@
-import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import './OrderForm.scss';
 
 const OrderForm = () => {
-  const [personOption, setPersonOption] = useState('private-person');
-  const [personData, setPersonData] = useState({});
-  const [addMessage, setAddMessage] = useState(false);
-  const [deliveryMethod, setDeliveryMethod] = useState(null);
-  const [paymentMethod, setPaymentMethod] = useState(null);
-  const [requiredFields, setRequiredFields] = useState({
-    street: false,
-    address: false,
-    zip: false,
-    city: false,
+  const { register, control, handleSubmit } = useForm({
+    defaultValues: {
+      'person-option': 'private-person',
+      message: false,
+    },
+  });
+  const orderingPerson = useWatch({
+    control,
+    name: 'person-option',
   });
 
-  const handleAddMessageChange = () => {
-    setAddMessage(!addMessage);
-  };
+  const addMessage = useWatch({
+    control,
+    name: 'message',
+  });
 
-  const handlePersonOptionChange = e => {
-    const { value } = e.target;
-    setPersonOption(value);
-  };
+  const deliveryMethod = useWatch({
+    control,
+    name: 'delivery-method',
+  });
 
-  const handleDeliveryMethodChange = e => {
-    const { value } = e.target;
-    setDeliveryMethod(value);
-  };
+  const paymentMethod = useWatch({
+    control,
+    name: 'payment-method',
+  });
 
-  useEffect(() => {
-    if (deliveryMethod === 'pickup-courier' || deliveryMethod === 'inpost') {
-      setRequiredFields({
-        street: true,
-        address: true,
-        zip: true,
-        city: true,
-      });
-    } else {
-      setRequiredFields({
-        street: false,
-        address: false,
-        zip: false,
-        city: false,
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deliveryMethod]);
-
-  const handlePaymentMethodChange = e => {
-    const { value } = e.target;
-    setPaymentMethod(value);
-  };
-
-  const handlePersonDataChange = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setPersonData(values => ({ ...values, [name]: value }));
-  };
-
-  const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
-
   return (
     <>
       <main className='order'>
@@ -73,31 +40,28 @@ const OrderForm = () => {
               <div className='person-options'>
                 <input
                   type='radio'
-                  id='person-option'
-                  name='person-option'
+                  id='private-person'
                   value='private-person'
                   {...register('person-option')}
                 />
-                <label htmlFor='private-person'>Osoba prywatna</label>
 
+                <label htmlFor='private-person'>Osoba prywatna</label>
                 <input
                   type='radio'
                   id='facture'
-                  name='person-option'
                   value='facture'
                   {...register('person-option')}
                 />
-                <label htmlFor='facture'>Chcę fakturę</label>
+                <label htmlFor='facture'>Firma (faktura)</label>
               </div>
-              {personOption === 'facture' ? (
+              {orderingPerson === 'facture' ? (
                 <>
                   <div className='factory'>
                     <label htmlFor='factory'>
-                      Firma<span>*</span>
+                      Nazwa firmy<span>*</span>
                     </label>
                     <input
                       id='factory'
-                      name='factory'
                       className='form-control'
                       {...register('factory', { required: true })}
                     />
@@ -108,7 +72,6 @@ const OrderForm = () => {
                     </label>
                     <input
                       id='nip'
-                      name='nip'
                       className='form-control'
                       {...register('nip', {
                         required: true,
@@ -124,7 +87,6 @@ const OrderForm = () => {
                 </label>
                 <input
                   id='firstname'
-                  name='firstname'
                   className='form-control'
                   {...register('firstname', {
                     required: true,
@@ -138,7 +100,6 @@ const OrderForm = () => {
                 </label>
                 <input
                   id='lastname'
-                  name='lastname'
                   className='form-control'
                   {...register('lastname', {
                     required: true,
@@ -152,7 +113,6 @@ const OrderForm = () => {
                 </label>
                 <input
                   id='email'
-                  name='email'
                   className='form-control'
                   {...register('email', {
                     required: true,
@@ -166,7 +126,6 @@ const OrderForm = () => {
                 </label>
                 <input
                   id='phone'
-                  name='phone'
                   className='form-control'
                   {...register('phone', {
                     required: true,
@@ -178,59 +137,63 @@ const OrderForm = () => {
               <div className='street-and-address'>
                 <div className='street'>
                   <label htmlFor='street'>
-                    Ulica{requiredFields.street && <span>*</span>}
+                    Ulica{deliveryMethod !== 'parcel-locker' && <span>*</span>}
                   </label>
                   <input
                     id='street'
-                    name='street'
                     className='form-control'
-                    {...register('street')}
+                    {...register('street', {
+                      required: deliveryMethod !== 'parcel-locker',
+                    })}
                   />
                 </div>
                 <div className='address'>
                   <label htmlFor='address'>
-                    Nr{requiredFields.address && <span>*</span>}
+                    Nr{deliveryMethod !== 'parcel-locker' && <span>*</span>}
                   </label>
                   <input
                     id='address'
-                    name='address'
                     className='form-control'
-                    {...register('address', { maxLength: 5 })}
+                    {...register('address', {
+                      required: deliveryMethod !== 'parcel-locker',
+                      maxLength: 5,
+                    })}
                   />
                 </div>
               </div>
               <div className='zip-and-city'>
                 <div className='zip'>
                   <label htmlFor='zip'>
-                    Kod pocztowy{requiredFields.zip && <span>*</span>}
+                    Kod pocztowy
+                    {deliveryMethod !== 'parcel-locker' && <span>*</span>}
                   </label>
                   <input
                     id='zip'
-                    name='zip'
                     className='form-control'
-                    {...register('zip', { pattern: /^\d{2}-\d{3}$/ })}
+                    {...register('zip', {
+                      required: deliveryMethod !== 'parcel-locker',
+                      pattern: /^\d{2}-\d{3}$/,
+                    })}
                   />
                 </div>
                 <div className='city'>
                   <label htmlFor='city'>
-                    Miasto{requiredFields.city && <span>*</span>}
+                    Miasto{deliveryMethod !== 'parcel-locker' && <span>*</span>}
                   </label>
                   <input
                     id='city'
-                    name='city'
                     className='form-control'
-                    {...register('city', { minLength: 3, maxLength: 20 })}
+                    {...register('city', {
+                      required: deliveryMethod !== 'parcel-locker',
+                      minLength: 3,
+                      maxLength: 20,
+                    })}
                   />
                 </div>
               </div>
 
               <div className='msg-check'>
-                <input
-                  type='checkbox'
-                  id='msg'
-                  name='message'
-                  {...register('message')}
-                />
+                <input type='checkbox' id='msg' {...register('message')} />
                 <label htmlFor='msg'>Dodaj wiadomość do sprzedającego</label>
               </div>
               {addMessage && (
@@ -246,8 +209,8 @@ const OrderForm = () => {
                   <div className='radio'>
                     <input
                       type='radio'
-                      name='delivery-method'
                       value='inpost'
+                      id='inpost'
                       {...register('delivery-method')}
                     />
                   </div>
@@ -260,8 +223,8 @@ const OrderForm = () => {
                   <div className='radio'>
                     <input
                       type='radio'
-                      name='delivery-method'
                       value='pickup-courier'
+                      id='pickup-courier'
                       {...register('delivery-method')}
                     />
                   </div>
@@ -274,8 +237,8 @@ const OrderForm = () => {
                   <div className='radio'>
                     <input
                       type='radio'
-                      name='delivery-method'
                       value='parcel-locker'
+                      id='parcel-locker'
                       {...register('delivery-method')}
                     />
                   </div>
@@ -290,8 +253,8 @@ const OrderForm = () => {
                 <div className='payment-input'>
                   <input
                     type='radio'
-                    name='payment-method'
                     value='traditional-bank-transfer'
+                    id='traditional-bank-transfer'
                     {...register('payment-method')}
                   />
                   <label htmlFor='traditional-bank-transfer'>
@@ -307,8 +270,8 @@ const OrderForm = () => {
                 <div className='payment-input'>
                   <input
                     type='radio'
-                    name='payment-method'
                     value='transfers24'
+                    id='transfers24'
                     {...register('payment-method')}
                   />
                   <label htmlFor='transfers24'>Przelewy24</label>
@@ -323,8 +286,8 @@ const OrderForm = () => {
                 <div className='payment-input'>
                   <input
                     type='radio'
-                    name='payment-method'
                     value='blik'
+                    id='blik'
                     {...register('payment-method')}
                   />
                   <label htmlFor='blik'>BLIK</label>
