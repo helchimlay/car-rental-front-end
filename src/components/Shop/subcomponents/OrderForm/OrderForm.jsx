@@ -5,7 +5,7 @@ import LabelText from './subcomponents/LabelText';
 import InputText from './subcomponents/InputText';
 import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
-import TextAreaField from './subcomponents/TextareaField';
+import TextareaField from './subcomponents/TextareaField';
 
 const OrderForm = () => {
   const methods = useForm({
@@ -186,7 +186,7 @@ const OrderForm = () => {
                 </div>
                 {addMessage && (
                   <div className='message'>
-                    <TextAreaField id='message-content' />
+                    <TextareaField id='message-content' />
                   </div>
                 )}
               </div>
