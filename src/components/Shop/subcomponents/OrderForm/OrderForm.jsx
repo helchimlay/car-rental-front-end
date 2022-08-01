@@ -14,6 +14,21 @@ const OrderForm = () => {
     name: 'message',
   });
 
+  const purchaser = useWatch({
+    control: methods.control,
+    name: 'person-option',
+  });
+
+  const paymentMethod = useWatch({
+    control: methods.control,
+    name: 'payment-method',
+  });
+
+  const deliveryMethod = useWatch({
+    control: methods.control,
+    name: 'delivery-method',
+  });
+
   const onSubmit = data => console.log(data);
   return (
     <>
@@ -40,7 +55,7 @@ const OrderForm = () => {
                   />
                   <LabelText id='facture' text='Firma (faktura)' />
                 </div>
-                {/* {orderingPerson === 'facture' ? (
+                {purchaser === 'facture' ? (
                   <>
                     <div className='factory'>
                       <LabelText
@@ -64,7 +79,7 @@ const OrderForm = () => {
                       />
                     </div>
                   </>
-                ) : null} */}
+                ) : null}
                 <div className='firstname'>
                   <LabelText id='firstname' text='Imię' required={true} />
                   <InputText
@@ -89,6 +104,7 @@ const OrderForm = () => {
                     id='email'
                     className='form-control'
                     required={true}
+                    // eslint-disable-next-line no-useless-escape
                     pattern={/^[-\w\.]+@([-\w]+\.)+[a-z]+$/i}
                   />
                 </div>
@@ -99,11 +115,12 @@ const OrderForm = () => {
                     className='form-control'
                     required={true}
                     pattern={
+                      // eslint-disable-next-line no-useless-escape
                       /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im
                     }
                   />
                 </div>
-                {/* <div className='street-and-address'>
+                <div className='street-and-address'>
                   <div className='street'>
                     <LabelText
                       id='street'
@@ -128,8 +145,8 @@ const OrderForm = () => {
                       required={deliveryMethod !== 'parcel-locker'}
                     />
                   </div>
-                </div> */}
-                {/* <div className='zip-and-city'>
+                </div>
+                <div className='zip-and-city'>
                   <div className='zip'>
                     <LabelText
                       id='zip'
@@ -155,8 +172,7 @@ const OrderForm = () => {
                       required={deliveryMethod !== 'parcel-locker'}
                     />
                   </div>
-                </div> */}
-
+                </div>
                 <div className='msg-check'>
                   <InputCheckbox id='message' />
                   <LabelText
@@ -166,7 +182,7 @@ const OrderForm = () => {
                 </div>
                 {addMessage && (
                   <div className='message'>
-                    <TextAreaField />
+                    <TextAreaField id='message-content' />
                   </div>
                 )}
               </div>
@@ -215,7 +231,7 @@ const OrderForm = () => {
                 </div>
                 <div className='order-payment order-summary'>
                   <h2>3. Metoda płatności</h2>
-                  {/* <div className='payment-input'>
+                  <div className='payment-input'>
                     <InputRadio
                       id='traditional-bank-transfer'
                       value='traditional-bank-transfer'
@@ -259,7 +275,7 @@ const OrderForm = () => {
                         Zapłać poprzez wygodny system płatności online: blik
                       </small>
                     ) : null}
-                    </div> */}
+                  </div>
                 </div>
               </div>
               <div className='order-info'>
@@ -278,7 +294,7 @@ const OrderForm = () => {
                     <InputCheckbox id='rodo' required={true} />
                     <label htmlFor='rodo'>
                       Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
-                      akceptuję{' '}
+                      akceptuję
                       <Link to='/polityka-prywatnosci'>
                         politykę prywatności
                       </Link>

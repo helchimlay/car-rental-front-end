@@ -8,6 +8,7 @@ const InputCheckbox = ({ id, required }) => {
     },
   });
 
+  // eslint-disable-next-line no-unused-vars
   const addMessage = useWatch({
     control,
     name: 'message',
