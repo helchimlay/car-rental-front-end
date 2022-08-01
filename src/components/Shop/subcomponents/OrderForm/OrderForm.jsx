@@ -8,7 +8,11 @@ import InputRadio from './subcomponents/InputRadio';
 import TextAreaField from './subcomponents/TextareaField';
 
 const OrderForm = () => {
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      'person-option': 'private-person',
+    },
+  });
   const addMessage = useWatch({
     control: methods.control,
     name: 'message',
