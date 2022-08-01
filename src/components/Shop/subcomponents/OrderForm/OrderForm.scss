@@ -5,10 +5,8 @@ main.order {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    label {
-      span {
-        color: rgb(182, 9, 43);
-      }
+    .required {
+      color: rgb(182, 9, 43);
     }
 
     .order-payment {

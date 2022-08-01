@@ -71,15 +71,28 @@ main.car .list-equipment {
   list-style-type: none;
 }
 
-main.car ol.list-equipment li:before {
-  content: '- ';
+main.car ol.list-equipment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 main.car ol.list-equipment li {
-  padding: 10px 0 10px 0;
+  display: flex;
+  margin: 5px;
+  border: solid 1px rgb(182, 9, 43);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 8px 16px;
+  align-items: center;
+  justify-content: center;
 }
-main.car p.car-description {
-  padding: 0;
+
+main.car ol.list-equipment svg {
+  margin-right: 5px;
+  min-width: 20px;
 }
 
 main.car .photos {
