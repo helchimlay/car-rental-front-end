@@ -268,7 +268,7 @@ const OrderForm = () => {
                     <InputCheckbox id='regulations' required={true} />
                     <label htmlFor='regulations'>
                       Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
-                      <span>*</span>
+                      <span className='required'>*</span>
                     </label>
                   </div>
                   <div className='rodo'>
@@ -279,7 +279,7 @@ const OrderForm = () => {
                       <Link to='/polityka-prywatnosci'>
                         politykę prywatności
                       </Link>
-                      <span>*</span>
+                      <span className='required'>*</span>
                     </label>
                   </div>
                   <button type='submit' className='button'>
