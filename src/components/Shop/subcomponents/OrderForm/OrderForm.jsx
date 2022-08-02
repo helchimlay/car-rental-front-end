@@ -45,6 +45,16 @@ const paymentMethods = [
   },
 ];
 
+const patterns = {
+  nip: /^[0-9]{10}$/,
+  names: /^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/,
+  // eslint-disable-next-line no-useless-escape
+  email: /^[-\w\.]+@([-\w]+\.)+[a-z]+$/i,
+  // eslint-disable-next-line no-useless-escape
+  phoneNumber: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im,
+  zipCode: /^\d{2}-\d{3}$/,
+};
+
 const OrderForm = () => {
   const methods = useForm({
     defaultValues: {
@@ -117,7 +127,7 @@ const OrderForm = () => {
                         id='nip'
                         className='form-control'
                         required={true}
-                        pattern={/^[0-9]{10}$/}
+                        pattern={patterns.nip}
                       />
                     </div>
                   </>
@@ -128,7 +138,7 @@ const OrderForm = () => {
                     id='firstname'
                     className='form-control'
                     required={true}
-                    pattern={/^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/}
+                    pattern={patterns.names}
                   />
                 </div>
                 <div className='lastname'>
@@ -137,7 +147,7 @@ const OrderForm = () => {
                     id='lastname'
                     className='form-control'
                     required={true}
-                    pattern={/^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/}
+                    pattern={patterns.names}
                   />
                 </div>
                 <div className='email'>
@@ -146,8 +156,7 @@ const OrderForm = () => {
                     id='email'
                     className='form-control'
                     required={true}
-                    // eslint-disable-next-line no-useless-escape
-                    pattern={/^[-\w\.]+@([-\w]+\.)+[a-z]+$/i}
+                    pattern={patterns.email}
                   />
                 </div>
                 <div className='phone'>
@@ -156,10 +165,7 @@ const OrderForm = () => {
                     id='phone'
                     className='form-control'
                     required={true}
-                    pattern={
-                      // eslint-disable-next-line no-useless-escape
-                      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im
-                    }
+                    pattern={patterns.phoneNumber}
                   />
                 </div>
                 <div className='street-and-address'>
@@ -199,7 +205,7 @@ const OrderForm = () => {
                       id='zip'
                       className='form-control'
                       required={deliveryMethod !== 'parcel-locker'}
-                      pattern={/^\d{2}-\d{3}$/}
+                      pattern={patterns.zipCode}
                     />
                   </div>
                   <div className='city'>
