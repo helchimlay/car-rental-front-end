@@ -90,9 +90,10 @@ main.car ol.list-equipment li {
   justify-content: center;
 }
 
-main.car ol.list-equipment svg {
+main.car ol.list-equipment img {
   margin-right: 5px;
   min-width: 20px;
+  max-width: 20px;
 }
 
 main.car .photos {

@@ -7,7 +7,7 @@ const InputText = ({ id, className, required, pattern }) => {
     <input
       id={id}
       className={className}
-      {...register(`${id}`, { required: required, pattern: pattern })}
+      {...register(id, { required: required, pattern: pattern })}
     />
   );
 };

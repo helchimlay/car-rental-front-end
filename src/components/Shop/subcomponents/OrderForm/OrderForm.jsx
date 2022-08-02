@@ -7,6 +7,44 @@ import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
 import TextareaField from './subcomponents/TextareaField';
 
+const deliveryMethods = [
+  {
+    name: 'inpost',
+    text: 'Kurier InPost',
+    price: '15,00',
+  },
+  {
+    name: 'pickup-courier',
+    text: 'Kurier pobranie',
+    price: '15,00',
+  },
+  {
+    name: 'parcel-locker',
+    text: 'Paczkomat',
+    price: '12,00',
+  },
+];
+
+const paymentMethods = [
+  {
+    name: 'traditional-bank-transfer',
+    text: 'Tradycyjny przelew bankowy',
+    smallTagText:
+      'Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę użyć numeru zamówienia jako tytułu płatności',
+  },
+  {
+    name: 'transfers24',
+    text: 'Przelewy24',
+    smallTagText:
+      'Zapłać poprzez wygodny system płatności online: blik, szybki przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24.',
+  },
+  {
+    name: 'blik',
+    text: 'BLIK',
+    smallTagText: 'Zapłać poprzez wygodny system płatności online: blik',
+  },
+];
+
 const OrderForm = () => {
   const methods = useForm({
     defaultValues: {
@@ -193,93 +231,37 @@ const OrderForm = () => {
               <div className='order-delivery-and-payment'>
                 <div className='order-delivery order-summary'>
                   <h2>2. Metoda dostawy</h2>
-                  <div className='delivery-input'>
-                    <div className='radio'>
-                      <InputRadio
-                        id='inpost'
-                        value='inpost'
-                        registerName='delivery-method'
-                      />
+                  {deliveryMethods.map(method => (
+                    <div className='delivery-input' key={method.name}>
+                      <div className='radio'>
+                        <InputRadio
+                          id={method.name}
+                          value={method.name}
+                          registerName='delivery-method'
+                        />
+                      </div>
+                      <div className='label'>
+                        <LabelText id={method.name} text={method.text} />
+                        <span>{method.price}</span>
+                      </div>
                     </div>
-                    <div className='label'>
-                      <LabelText id='inpost' text='Kurier InPost' />
-                      <span>15,00 zł</span>
-                    </div>
-                  </div>
-                  <div className='delivery-input'>
-                    <div className='radio'>
-                      <InputRadio
-                        id='pickup-courier'
-                        value='pickup-courier'
-                        registerName='delivery-method'
-                      />
-                    </div>
-                    <div className='label'>
-                      <LabelText id='pickup-courier' text='Kurier pobranie' />
-                      <span>15,00 zł</span>
-                    </div>
-                  </div>
-                  <div className='delivery-input'>
-                    <div className='radio'>
-                      <InputRadio
-                        id='parcel-locker'
-                        value='parcel-locker'
-                        registerName='delivery-method'
-                      />
-                    </div>
-                    <div className='label'>
-                      <LabelText id='parcel-locker' text='Paczkomat' />
-                      <span>12,00 zł</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
                 <div className='order-payment order-summary'>
                   <h2>3. Metoda płatności</h2>
-                  <div className='payment-input'>
-                    <InputRadio
-                      id='traditional-bank-transfer'
-                      value='traditional-bank-transfer'
-                      registerName='payment-method'
-                    />
-                    <LabelText
-                      id='traditional-bank-transfer'
-                      text='Tradycyjny przelew bankowy'
-                    />
-                    {paymentMethod === 'traditional-bank-transfer' ? (
-                      <small>
-                        Prosimy o wpłatę bezpośrednio na nasze konto bankowe.
-                        Proszę użyć numeru zamówienia jako tytułu płatności.
-                      </small>
-                    ) : null}
-                  </div>
-                  <div className='payment-input'>
-                    <InputRadio
-                      id='transfers24'
-                      value='transfers24'
-                      registerName='payment-method'
-                    />
-                    <LabelText id='transfers24' text='Przelewy24' />
-                    {paymentMethod === 'transfers24' ? (
-                      <small>
-                        Zapłać poprzez wygodny system płatności online: blik,
-                        szybki przelew bankowy, karta płatnicza, PayPo, Raty
-                        Przelewy24.
-                      </small>
-                    ) : null}
-                  </div>
-                  <div className='payment-input'>
-                    <InputRadio
-                      id='blik'
-                      value='blik'
-                      registerName='payment-method'
-                    />
-                    <LabelText id='blik' text='BLIK' />
-                    {paymentMethod === 'blik' ? (
-                      <small>
-                        Zapłać poprzez wygodny system płatności online: blik
-                      </small>
-                    ) : null}
-                  </div>
+                  {paymentMethods.map(method => (
+                    <div className='payment-input' key={method.name}>
+                      <InputRadio
+                        id={method.name}
+                        value={method.name}
+                        registerName='payment-method'
+                      />
+                      <LabelText id={method.name} text={method.text} />
+                      {paymentMethod === `${method.name}` && (
+                        <small>{method.smallTagText}</small>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className='order-info'>
