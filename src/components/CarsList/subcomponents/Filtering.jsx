@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Filtering.css';
-import { getSelectOptions } from '../../../services/carsListRequests';
-import { getCarsListByFiltering } from '../../../services/carsListRequests';
+import { getSelectOptions } from '../../../services/cars/carsListRequests';
+import { getCarsListByFiltering } from '../../../services/cars/carsListRequests';
 import FilterList from './FilterList/FilterList';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 

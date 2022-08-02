@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getGadgets } from '../../services/gadgetsListRequests';
+import { getGadgets } from '../../services/shop/gadgetsListRequests';
 import GadgetsList from './subcomponents/GadgetsList/GadgetsList';
 import { Helmet } from 'react-helmet';
 import Loader from '../Loader/Loader';

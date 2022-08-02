@@ -7,8 +7,8 @@ import { useParams } from 'react-router-dom';
 import {
   getFuelsPrices,
   getLocations,
-} from '../../services/calculatorRequests';
-import { getCarBySlug } from '../../services/carRequests';
+} from '../../services/cars/calculatorRequests';
+import { getCarBySlug } from '../../services/cars/carRequests';
 import calculateCarRentPrice from './functions/calculateCarRentPrice';
 import renderSelectOptions from './functions/renderSelectOptions';
 
