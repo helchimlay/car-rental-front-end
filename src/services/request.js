@@ -65,13 +65,3 @@ export const getGadgets = async () => {
   const response = await axios.get('../jsons/gadgets.json');
   return response.data.gadgets;
 };
-
-export const getPaymentMethods = async () => {
-  const response = await axios.get('../jsons/payment_methods.json');
-  return response.data.paymentMethods;
-};
-
-export const getDeliveryMethods = async () => {
-  const response = await axios.get('../jsons/delivery_methods.json');
-  return response.data.deliveryMethods;
-};

@@ -7,8 +7,8 @@ import InputText from './subcomponents/InputText';
 import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
 import TextareaField from './subcomponents/TextareaField';
-import { getPaymentMethods } from '../../../../services/request';
-import { getDeliveryMethods } from '../../../../services/request';
+import { getPaymentMethods } from '../../../../services/orderFormMethods';
+import { getDeliveryMethods } from '../../../../services/orderFormMethods';
 
 const patterns = {
   nip: /^[0-9]{10}$/,
@@ -49,12 +49,20 @@ const OrderForm = () => {
   });
 
   useEffect(() => {
-    getPaymentMethods().then(response => {
-      setPaymentMethods(response);
-    });
-    getDeliveryMethods().then(response => {
-      setDeliveryMethods(response);
-    });
+    getPaymentMethods()
+      .then(response => {
+        setPaymentMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    getDeliveryMethods()
+      .then(response => {
+        setDeliveryMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }, []);
 
   const onSubmit = data => console.log(data);
