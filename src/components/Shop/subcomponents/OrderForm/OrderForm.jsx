@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import './OrderForm.scss';
@@ -6,44 +7,8 @@ import InputText from './subcomponents/InputText';
 import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
 import TextareaField from './subcomponents/TextareaField';
-
-const deliveryMethods = [
-  {
-    name: 'inpost',
-    description: 'Kurier InPost',
-    price: '15,00',
-  },
-  {
-    name: 'pickup-courier',
-    description: 'Kurier pobranie',
-    price: '15,00',
-  },
-  {
-    name: 'parcel-locker',
-    description: 'Paczkomat',
-    price: '12,00',
-  },
-];
-
-const paymentMethods = [
-  {
-    name: 'traditional-bank-transfer',
-    description: 'Tradycyjny przelew bankowy',
-    smallTagText:
-      'Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę użyć numeru zamówienia jako tytułu płatności',
-  },
-  {
-    name: 'transfers24',
-    description: 'Przelewy24',
-    smallTagText:
-      'Zapłać poprzez wygodny system płatności online: blik, szybki przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24.',
-  },
-  {
-    name: 'blik',
-    description: 'BLIK',
-    smallTagText: 'Zapłać poprzez wygodny system płatności online: blik',
-  },
-];
+import { getPaymentMethods } from '../../../../services/request';
+import { getDeliveryMethods } from '../../../../services/request';
 
 const patterns = {
   nip: /^[0-9]{10}$/,
@@ -56,6 +21,8 @@ const patterns = {
 };
 
 const OrderForm = () => {
+  const [paymentMethods, setPaymentMethods] = useState(null);
+  const [deliveryMethods, setDeliveryMethods] = useState(null);
   const methods = useForm({
     defaultValues: {
       'person-option': 'private-person',
@@ -81,7 +48,17 @@ const OrderForm = () => {
     name: 'delivery-method',
   });
 
+  useEffect(() => {
+    getPaymentMethods().then(response => {
+      setPaymentMethods(response);
+    });
+    getDeliveryMethods().then(response => {
+      setDeliveryMethods(response);
+    });
+  }, []);
+
   const onSubmit = data => console.log(data);
+
   return (
     <>
       <main className='order'>
@@ -237,41 +214,41 @@ const OrderForm = () => {
               <div className='order-delivery-and-payment'>
                 <div className='order-delivery order-summary'>
                   <h2>2. Metoda dostawy</h2>
-                  {deliveryMethods.map(({ name, description, price }) => {
-                    return (
-                      <div className='delivery-input' key={name}>
-                        <div className='radio'>
-                          <InputRadio
-                            id={name}
-                            value={name}
-                            registerName='delivery-method'
-                          />
+                  {deliveryMethods &&
+                    deliveryMethods.map(({ id, name, price }) => {
+                      return (
+                        <div className='delivery-input' key={id}>
+                          <div className='radio'>
+                            <InputRadio
+                              id={id}
+                              value={id}
+                              registerName='delivery-method'
+                            />
+                          </div>
+                          <div className='label'>
+                            <LabelText id={id} text={name} />
+                            <span>{price}zł</span>
+                          </div>
                         </div>
-                        <div className='label'>
-                          <LabelText id={name} text={description} />
-                          <span>{price}</span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
                 <div className='order-payment order-summary'>
                   <h2>3. Metoda płatności</h2>
-                  {paymentMethods.map(({ name, description, smallTagText }) => {
-                    return (
-                      <div className='payment-input' key={name}>
-                        <InputRadio
-                          id={name}
-                          value={name}
-                          registerName='payment-method'
-                        />
-                        <LabelText id={name} text={description} />
-                        {paymentMethod === name && (
-                          <small>{smallTagText}</small>
-                        )}
-                      </div>
-                    );
-                  })}
+                  {paymentMethods &&
+                    paymentMethods.map(({ id, name, description }) => {
+                      return (
+                        <div className='payment-input' key={id}>
+                          <InputRadio
+                            id={id}
+                            value={id}
+                            registerName='payment-method'
+                          />
+                          <LabelText id={id} text={name} />
+                          {paymentMethod === id && <small>{description}</small>}
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
               <div className='order-info'>
