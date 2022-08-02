@@ -10,17 +10,17 @@ import TextareaField from './subcomponents/TextareaField';
 const deliveryMethods = [
   {
     name: 'inpost',
-    text: 'Kurier InPost',
+    description: 'Kurier InPost',
     price: '15,00',
   },
   {
     name: 'pickup-courier',
-    text: 'Kurier pobranie',
+    description: 'Kurier pobranie',
     price: '15,00',
   },
   {
     name: 'parcel-locker',
-    text: 'Paczkomat',
+    description: 'Paczkomat',
     price: '12,00',
   },
 ];
@@ -28,19 +28,19 @@ const deliveryMethods = [
 const paymentMethods = [
   {
     name: 'traditional-bank-transfer',
-    text: 'Tradycyjny przelew bankowy',
+    description: 'Tradycyjny przelew bankowy',
     smallTagText:
       'Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę użyć numeru zamówienia jako tytułu płatności',
   },
   {
     name: 'transfers24',
-    text: 'Przelewy24',
+    description: 'Przelewy24',
     smallTagText:
       'Zapłać poprzez wygodny system płatności online: blik, szybki przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24.',
   },
   {
     name: 'blik',
-    text: 'BLIK',
+    description: 'BLIK',
     smallTagText: 'Zapłać poprzez wygodny system płatności online: blik',
   },
 ];
@@ -237,37 +237,41 @@ const OrderForm = () => {
               <div className='order-delivery-and-payment'>
                 <div className='order-delivery order-summary'>
                   <h2>2. Metoda dostawy</h2>
-                  {deliveryMethods.map(method => (
-                    <div className='delivery-input' key={method.name}>
-                      <div className='radio'>
-                        <InputRadio
-                          id={method.name}
-                          value={method.name}
-                          registerName='delivery-method'
-                        />
+                  {deliveryMethods.map(({ name, description, price }) => {
+                    return (
+                      <div className='delivery-input' key={name}>
+                        <div className='radio'>
+                          <InputRadio
+                            id={name}
+                            value={name}
+                            registerName='delivery-method'
+                          />
+                        </div>
+                        <div className='label'>
+                          <LabelText id={name} text={description} />
+                          <span>{price}</span>
+                        </div>
                       </div>
-                      <div className='label'>
-                        <LabelText id={method.name} text={method.text} />
-                        <span>{method.price}</span>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className='order-payment order-summary'>
                   <h2>3. Metoda płatności</h2>
-                  {paymentMethods.map(method => (
-                    <div className='payment-input' key={method.name}>
-                      <InputRadio
-                        id={method.name}
-                        value={method.name}
-                        registerName='payment-method'
-                      />
-                      <LabelText id={method.name} text={method.text} />
-                      {paymentMethod === `${method.name}` && (
-                        <small>{method.smallTagText}</small>
-                      )}
-                    </div>
-                  ))}
+                  {paymentMethods.map(({ name, description, smallTagText }) => {
+                    return (
+                      <div className='payment-input' key={name}>
+                        <InputRadio
+                          id={name}
+                          value={name}
+                          registerName='payment-method'
+                        />
+                        <LabelText id={name} text={description} />
+                        {paymentMethod === name && (
+                          <small>{smallTagText}</small>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className='order-info'>
