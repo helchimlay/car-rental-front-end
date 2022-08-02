@@ -5,10 +5,10 @@ import Loader from '../Loader/Loader';
 
 import { useParams } from 'react-router-dom';
 import {
-  getCarBySlug,
   getFuelsPrices,
   getLocations,
-} from '../../services/request';
+} from '../../services/calculatorRequests';
+import { getCarBySlug } from '../../services/carRequests';
 import calculateCarRentPrice from './functions/calculateCarRentPrice';
 import renderSelectOptions from './functions/renderSelectOptions';
 

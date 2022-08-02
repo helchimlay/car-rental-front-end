@@ -7,8 +7,8 @@ import InputText from './subcomponents/InputText';
 import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
 import TextareaField from './subcomponents/TextareaField';
-import { getPaymentMethods } from '../../../../services/orderFormMethods';
-import { getDeliveryMethods } from '../../../../services/orderFormMethods';
+import { getPaymentMethods } from '../../../../services/orderFormRequests';
+import { getDeliveryMethods } from '../../../../services/orderFormRequests';
 
 const patterns = {
   nip: /^[0-9]{10}$/,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './Car.scss';
 import { routes } from '../../config/routes/routes';
-import { getCarBySlug } from '../../services/request';
+import { getCarBySlug } from '../../services/carRequests';
 import Loader from '../Loader/Loader';
 import CheckCircleIcon from '../svg/checkCircle.svg';
 
