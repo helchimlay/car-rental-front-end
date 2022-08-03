@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './Car.css';
+import './Car.scss';
 import { routes } from '../../config/routes/routes';
-import { getCarBySlug } from '../../services/request';
+import { getCarBySlug } from '../../services/cars/carRequests';
 import Loader from '../Loader/Loader';
+import CheckCircleIcon from '../svg/checkCircle.svg';
 
 import IFrameVideo from './subcomponents/IFrameVideo/IFrameVideo/IFrameVideo';
 import Slider from './subcomponents/Slider/Slider';
@@ -133,7 +134,10 @@ const Car = () => {
             <ol className='list-equipment'>
               {thisCar &&
                 thisCar.car_equipment.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>
+                    <img src={CheckCircleIcon} alt='ikona ptaszka' />
+                    {item}
+                  </li>
                 ))}
             </ol>
           </section>

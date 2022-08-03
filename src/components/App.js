@@ -14,12 +14,13 @@ import Shop from './Shop/Shop';
 import OrderForm from './Shop/subcomponents/OrderForm/OrderForm';
 import Regulations from './Regulations/Regulations';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
+import ScrollToTop from '../js/scrollTop';
 
 const App = () => {
   return (
     <>
       <Nav />
-
+      <ScrollToTop />
       <Routes>
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path={routes.cars} element={<CarsList></CarsList>} />

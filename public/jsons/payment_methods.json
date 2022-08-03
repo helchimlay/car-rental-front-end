@@ -1,0 +1,19 @@
+{
+  "paymentMethods": [
+    {
+      "id": "traditional-bank-transfer",
+      "name": "Tradycyjny przelew bankowy",
+      "description": "Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę użyć numeru zamówienia jako tytułu płatności"
+    },
+    {
+      "id": "transfers24",
+      "name": "Przelewy24",
+      "description": "Zapłać poprzez wygodny system płatności online: blik, szybki przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24"
+    },
+    {
+      "id": "blik",
+      "name": "BLIK",
+      "description": "Zapłać poprzez wygodny system płatności online: blik"
+    }
+  ]
+}

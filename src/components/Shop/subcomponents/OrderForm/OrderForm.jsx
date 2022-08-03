@@ -1,379 +1,294 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import './OrderForm.scss';
+import LabelText from './subcomponents/LabelText';
+import InputText from './subcomponents/InputText';
+import InputCheckbox from './subcomponents/InputCheckbox';
+import InputRadio from './subcomponents/InputRadio';
+import TextareaField from './subcomponents/TextareaField';
+import { getPaymentMethods } from '../../../../services/shop/orderFormRequests';
+import { getDeliveryMethods } from '../../../../services/shop/orderFormRequests';
+
+const patterns = {
+  nip: /^[0-9]{10}$/,
+  names: /^[A-ZĆŁŚŻŹ{1}+[a-ząćęłńóśżź]+$/,
+  // eslint-disable-next-line no-useless-escape
+  email: /^[-\w\.]+@([-\w]+\.)+[a-z]+$/i,
+  // eslint-disable-next-line no-useless-escape
+  phoneNumber: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im,
+  zipCode: /^\d{2}-\d{3}$/,
+};
 
 const OrderForm = () => {
-  const [personOption, setPersonOption] = useState('private-person');
-  const [personData, setPersonData] = useState({});
-  const [addMessage, setAddMessage] = useState(false);
-  const [deliveryMethod, setDeliveryMethod] = useState(null);
-  const [paymentMethod, setPaymentMethod] = useState(null);
-  const [requiredFields, setRequiredFields] = useState({
-    street: false,
-    address: false,
-    zip: false,
-    city: false,
+  const [paymentMethods, setPaymentMethods] = useState(null);
+  const [deliveryMethods, setDeliveryMethods] = useState(null);
+  const methods = useForm({
+    defaultValues: {
+      'person-option': 'private-person',
+    },
+  });
+  const addMessage = useWatch({
+    control: methods.control,
+    name: 'message',
   });
 
-  const handleAddMessageChange = () => {
-    setAddMessage(!addMessage);
-  };
+  const purchaser = useWatch({
+    control: methods.control,
+    name: 'person-option',
+  });
 
-  const handlePersonOptionChange = e => {
-    const { value } = e.target;
-    setPersonOption(value);
-  };
+  const paymentMethod = useWatch({
+    control: methods.control,
+    name: 'payment-method',
+  });
 
-  const handleDeliveryMethodChange = e => {
-    const { value } = e.target;
-    setDeliveryMethod(value);
-  };
+  const deliveryMethod = useWatch({
+    control: methods.control,
+    name: 'delivery-method',
+  });
 
   useEffect(() => {
-    if (deliveryMethod === 'pickup-courier' || deliveryMethod === 'inpost') {
-      setRequiredFields({
-        street: true,
-        address: true,
-        zip: true,
-        city: true,
+    getPaymentMethods()
+      .then(response => {
+        setPaymentMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
       });
-    } else {
-      setRequiredFields({
-        street: false,
-        address: false,
-        zip: false,
-        city: false,
+    getDeliveryMethods()
+      .then(response => {
+        setDeliveryMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
       });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deliveryMethod]);
+  }, []);
 
-  const handlePaymentMethodChange = e => {
-    const { value } = e.target;
-    setPaymentMethod(value);
-  };
-
-  const handlePersonDataChange = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setPersonData(values => ({ ...values, [name]: value }));
-  };
+  const onSubmit = data => console.log(data);
 
   return (
     <>
       <main className='order'>
         <section>
-          <form action='' className='order-form'>
-            <div className='consumer-information order-summary'>
-              <h2>1. Twoje dane</h2>
-              <div className='person-options'>
-                <input
-                  type='radio'
-                  id='private-person'
-                  name='person-option'
-                  value='private-person'
-                  onChange={handlePersonOptionChange}
-                  checked={personOption === 'private-person'}
-                />
-                <label htmlFor='private-person'>Osoba prywatna</label>
-                <input
-                  type='radio'
-                  id='facture'
-                  name='person-option'
-                  value='facture'
-                  onChange={handlePersonOptionChange}
-                  checked={personOption === 'facture'}
-                />
-                <label htmlFor='facture'>Chcę fakturę</label>
-              </div>
-              {personOption === 'facture' ? (
-                <>
-                  <div className='factory'>
-                    <label htmlFor='factory'>
-                      Firma<span>*</span>
-                    </label>
-                    <input
-                      type='text'
-                      id='factory'
-                      name='factory'
+          <FormProvider {...methods}>
+            <form
+              className='order-form'
+              onSubmit={methods.handleSubmit(onSubmit)}
+            >
+              <div className='consumer-information order-summary'>
+                <h2>1. Twoje dane</h2>
+                <div className='person-options'>
+                  <InputRadio
+                    id='private-person'
+                    value='private-person'
+                    registerName='person-option'
+                  />
+                  <LabelText id='private-person' text='Osoba prywatna' />
+                  <InputRadio
+                    id='facture'
+                    value='facture'
+                    registerName='person-option'
+                  />
+                  <LabelText id='facture' text='Firma (faktura)' />
+                </div>
+                {purchaser === 'facture' ? (
+                  <>
+                    <div className='factory'>
+                      <LabelText
+                        id='factory'
+                        text='Nazwa firmy'
+                        required={true}
+                      />
+                      <InputText
+                        id='factory'
+                        className='form-control'
+                        required={true}
+                      />
+                    </div>
+                    <div className='nip'>
+                      <LabelText id='nip' text='NIP' required={true} />
+                      <InputText
+                        id='nip'
+                        className='form-control'
+                        required={true}
+                        pattern={patterns.nip}
+                      />
+                    </div>
+                  </>
+                ) : null}
+                <div className='firstname'>
+                  <LabelText id='firstname' text='Imię' required={true} />
+                  <InputText
+                    id='firstname'
+                    className='form-control'
+                    required={true}
+                    pattern={patterns.names}
+                  />
+                </div>
+                <div className='lastname'>
+                  <LabelText id='lastname' text='Nazwisko' required={true} />
+                  <InputText
+                    id='lastname'
+                    className='form-control'
+                    required={true}
+                    pattern={patterns.names}
+                  />
+                </div>
+                <div className='email'>
+                  <LabelText id='email' text='Email' required={true} />
+                  <InputText
+                    id='email'
+                    className='form-control'
+                    required={true}
+                    pattern={patterns.email}
+                  />
+                </div>
+                <div className='phone'>
+                  <LabelText id='phone' text='Nr telefonu' required={true} />
+                  <InputText
+                    id='phone'
+                    className='form-control'
+                    required={true}
+                    pattern={patterns.phoneNumber}
+                  />
+                </div>
+                <div className='street-and-address'>
+                  <div className='street'>
+                    <LabelText
+                      id='street'
+                      text='Ulica'
+                      required={deliveryMethod !== 'parcel-locker'}
+                    />
+                    <InputText
+                      id='street'
                       className='form-control'
-                      value={personData.factory || ''}
-                      onChange={handlePersonDataChange}
+                      required={deliveryMethod !== 'parcel-locker'}
                     />
                   </div>
-                  <div className='nip'>
-                    <label htmlFor='nip'>
-                      NIP<span>*</span>
-                    </label>
-                    <input
-                      type='text'
-                      id='nip'
-                      name='nip'
+                  <div className='address'>
+                    <LabelText
+                      id='address'
+                      text='Nr'
+                      required={deliveryMethod !== 'parcel-locker'}
+                    />
+                    <InputText
+                      id='address'
                       className='form-control'
-                      value={personData.nip || ''}
-                      onChange={handlePersonDataChange}
+                      required={deliveryMethod !== 'parcel-locker'}
                     />
                   </div>
-                </>
-              ) : null}
-              <div className='name'>
-                <label htmlFor='name'>
-                  Imię<span>*</span>
-                </label>
-                <input
-                  type='text'
-                  id='name'
-                  name='name'
-                  className='form-control'
-                  value={personData.name || ''}
-                  onChange={handlePersonDataChange}
-                />
-              </div>
-              <div className='lastname'>
-                <label htmlFor='lastname'>
-                  Nazwisko<span>*</span>
-                </label>
-                <input
-                  type='text'
-                  id='lastname'
-                  name='lastname'
-                  className='form-control'
-                  value={personData.lastname || ''}
-                  onChange={handlePersonDataChange}
-                />
-              </div>
-              <div className='email'>
-                <label htmlFor='email'>
-                  Email<span>*</span>
-                </label>
-                <input
-                  type='email'
-                  id='email'
-                  name='email'
-                  className='form-control'
-                  value={personData.email || ''}
-                  onChange={handlePersonDataChange}
-                />
-              </div>
-              <div className='phone'>
-                <label htmlFor='phone'>
-                  Nr telefonu<span>*</span>
-                </label>
-                <input
-                  type='text'
-                  id='phone'
-                  name='phone'
-                  className='form-control'
-                  value={personData.phone || ''}
-                  onChange={handlePersonDataChange}
-                />
-              </div>
-              <div className='street-and-address'>
-                <div className='street'>
-                  <label htmlFor='street'>
-                    Ulica{requiredFields.street && <span>*</span>}
-                  </label>
-                  <input
-                    type='text'
-                    id='street'
-                    name='street'
-                    className='form-control'
-                    value={personData.street || ''}
-                    onChange={handlePersonDataChange}
-                  />
                 </div>
-                <div className='address'>
-                  <label htmlFor='address'>
-                    Nr{requiredFields.address && <span>*</span>}
-                  </label>
-                  <input
-                    type='text'
-                    id='address'
-                    name='address'
-                    className='form-control'
-                    value={personData.address || ''}
-                    onChange={handlePersonDataChange}
-                  />
-                </div>
-              </div>
-              <div className='zip-and-city'>
-                <div className='zip'>
-                  <label htmlFor='zip'>
-                    Kod pocztowy{requiredFields.zip && <span>*</span>}
-                  </label>
-                  <input
-                    type='text'
-                    id='zip'
-                    name='zip'
-                    className='form-control'
-                    value={personData.zip || ''}
-                    onChange={handlePersonDataChange}
-                  />
-                </div>
-                <div className='city'>
-                  <label htmlFor='city'>
-                    Miasto{requiredFields.city && <span>*</span>}
-                  </label>
-                  <input
-                    type='text'
-                    id='city'
-                    name='city'
-                    className='form-control'
-                    value={personData.city || ''}
-                    onChange={handlePersonDataChange}
-                  />
-                </div>
-              </div>
-
-              <div className='msg-check'>
-                <input
-                  type='checkbox'
-                  id='msg'
-                  onChange={handleAddMessageChange}
-                  checked={addMessage}
-                />
-                <label htmlFor='msg'>Dodaj wiadomość do sprzedającego</label>
-              </div>
-              {addMessage && (
-                <div className='message'>
-                  <textarea
-                    name='message'
-                    id='msg'
-                    className='form-control'
-                    value={personData.message || ''}
-                    onChange={handlePersonDataChange}
-                  ></textarea>
-                </div>
-              )}
-            </div>
-            <div className='order-delivery-and-payment'>
-              <div className='order-delivery order-summary'>
-                <h2>2. Metoda dostawy</h2>
-                <div className='delivery-input'>
-                  <div className='radio'>
-                    <input
-                      type='radio'
-                      name='delivery-method'
-                      id='inpost'
-                      value='inpost'
-                      onChange={handleDeliveryMethodChange}
+                <div className='zip-and-city'>
+                  <div className='zip'>
+                    <LabelText
+                      id='zip'
+                      text='Kod pocztowy'
+                      required={deliveryMethod !== 'parcel-locker'}
+                    />
+                    <InputText
+                      id='zip'
+                      className='form-control'
+                      required={deliveryMethod !== 'parcel-locker'}
+                      pattern={patterns.zipCode}
                     />
                   </div>
-                  <div className='label'>
-                    <label htmlFor='inpost'>Kurier InPost</label>
-                    <span>15,00 zł</span>
-                  </div>
-                </div>
-                <div className='delivery-input'>
-                  <div className='radio'>
-                    <input
-                      type='radio'
-                      name='delivery-method'
-                      id='pickup-courier'
-                      value='pickup-courier'
-                      onChange={handleDeliveryMethodChange}
+                  <div className='city'>
+                    <LabelText
+                      id='city'
+                      text='Miasto'
+                      required={deliveryMethod !== 'parcel-locker'}
+                    />
+                    <InputText
+                      id='city'
+                      className='form-control'
+                      required={deliveryMethod !== 'parcel-locker'}
                     />
                   </div>
-                  <div className='label'>
-                    <label htmlFor='pickup-courier'>Kurier pobranie</label>
-                    <span>15,00 zł</span>
-                  </div>
                 </div>
-                <div className='delivery-input'>
-                  <div className='radio'>
-                    <input
-                      type='radio'
-                      name='delivery-method'
-                      id='parcel-locker'
-                      value='parcel-locker'
-                      onChange={handleDeliveryMethodChange}
-                    />
+                <div className='msg-check'>
+                  <InputCheckbox id='message' />
+                  <LabelText
+                    id='message'
+                    text='Dodaj wiadomość do sprzedającego'
+                  />
+                </div>
+                {addMessage && (
+                  <div className='message'>
+                    <TextareaField id='message-content' />
                   </div>
-                  <div className='label'>
-                    <label htmlFor='parcel-locker'>Paczkomat</label>
-                    <span>12,00 zł</span>
-                  </div>
+                )}
+              </div>
+              <div className='order-delivery-and-payment'>
+                <div className='order-delivery order-summary'>
+                  <h2>2. Metoda dostawy</h2>
+                  {deliveryMethods &&
+                    deliveryMethods.map(({ id, name, price }) => {
+                      return (
+                        <div className='delivery-input' key={id}>
+                          <div className='radio'>
+                            <InputRadio
+                              id={id}
+                              value={id}
+                              registerName='delivery-method'
+                            />
+                          </div>
+                          <div className='label'>
+                            <LabelText id={id} text={name} />
+                            <span>{price}zł</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+                <div className='order-payment order-summary'>
+                  <h2>3. Metoda płatności</h2>
+                  {paymentMethods &&
+                    paymentMethods.map(({ id, name, description }) => {
+                      return (
+                        <div className='payment-input' key={id}>
+                          <InputRadio
+                            id={id}
+                            value={id}
+                            registerName='payment-method'
+                          />
+                          <LabelText id={id} text={name} />
+                          {paymentMethod === id && <small>{description}</small>}
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
-              <div className='order-payment order-summary'>
-                <h2>3. Metoda płatności</h2>
-                <div className='payment-input'>
-                  <input
-                    type='radio'
-                    name='payment-method'
-                    id='traditional-bank-transfer'
-                    value='traditional-bank-transfer'
-                    onChange={handlePaymentMethodChange}
-                  />
-                  <label htmlFor='traditional-bank-transfer'>
-                    Tradycyjny przelew bankowy
-                  </label>
-                  {paymentMethod === 'traditional-bank-transfer' ? (
-                    <small>
-                      Prosimy o wpłatę bezpośrednio na nasze konto bankowe.
-                      Proszę użyć numeru zamówienia jako tytułu płatności.
-                    </small>
-                  ) : null}
-                </div>
-                <div className='payment-input'>
-                  <input
-                    type='radio'
-                    name='payment-method'
-                    id='transfers24'
-                    value='transfers24'
-                    onChange={handlePaymentMethodChange}
-                  />
-                  <label htmlFor='transfers24'>Przelewy24</label>
-                  {paymentMethod === 'transfers24' ? (
-                    <small>
-                      Zapłać poprzez wygodny system płatności online: blik,
-                      szybki przelew bankowy, karta płatnicza, PayPo, Raty
-                      Przelewy24.
-                    </small>
-                  ) : null}
-                </div>
-                <div className='payment-input'>
-                  <input
-                    type='radio'
-                    name='payment-method'
-                    id='blik'
-                    value='blik'
-                    onChange={handlePaymentMethodChange}
-                  />
-                  <label htmlFor='blik'>BLIK</label>
-                  {paymentMethod === 'blik' ? (
-                    <small>
-                      Zapłać poprzez wygodny system płatności online: blik
-                    </small>
-                  ) : null}
+              <div className='order-info'>
+                <div className='order-summary'>
+                  <h2>4. Podsumowanie</h2>
+                  <p>Wysyłka: 15,00 zł</p>
+                  <h3>Do zapłaty: 30,00 zł</h3>
+                  <div className='regulations'>
+                    <InputCheckbox id='regulations' required={true} />
+                    <label htmlFor='regulations'>
+                      Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
+                      <span className='required'>*</span>
+                    </label>
+                  </div>
+                  <div className='rodo'>
+                    <InputCheckbox id='rodo' required={true} />
+                    <label htmlFor='rodo'>
+                      Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
+                      akceptuję
+                      <Link to='/polityka-prywatnosci'>
+                        politykę prywatności
+                      </Link>
+                      <span className='required'>*</span>
+                    </label>
+                  </div>
+                  <button type='submit' className='button'>
+                    Zamawiam
+                  </button>
                 </div>
               </div>
-            </div>
-            <div className='order-info'>
-              <div className='order-summary'>
-                <h2>4. Podsumowanie</h2>
-                <p>Wysyłka: 15,00 zł</p>
-                <h3>Do zapłaty: 30,00 zł</h3>
-                <div className='regulations'>
-                  <input type='checkbox' id='regulations' />
-                  <label htmlFor='regulations'>
-                    Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
-                    <span>*</span>
-                  </label>
-                </div>
-                <div className='rodo'>
-                  <input type='checkbox' id='rodo' />
-                  <label htmlFor='rodo'>
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych oraz
-                    akceptuję{' '}
-                    <Link to='/polityka-prywatnosci'>politykę prywatności</Link>
-                    <span>*</span>
-                  </label>
-                </div>
-                <button className='button'>Zamawiam</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </FormProvider>
         </section>
       </main>
     </>

@@ -5,10 +5,8 @@ main.order {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    label {
-      span {
-        color: rgb(182, 9, 43);
-      }
+    .required {
+      color: rgb(182, 9, 43);
     }
 
     .order-payment {
@@ -135,6 +133,21 @@ main.order {
           min-height: 150px;
           margin-bottom: 0;
           font-family: 'Poppins', sans-serif;
+          padding: 0.6rem 0.6rem;
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 300;
+          color: rgb(9, 9, 9);
+          background-color: #fafafa;
+          border: 1px solid #e2dcdc;
+          border-radius: 2px;
+
+          &:focus {
+            color: rgb(9, 9, 9);
+            background-color: #fff;
+            border-color: blue;
+            outline: none;
+          }
         }
       }
 
@@ -206,6 +219,7 @@ main.order {
       .city {
         display: flex;
         flex-direction: column;
+        flex-grow: 2;
       }
     }
   }
@@ -263,6 +277,7 @@ main.order {
   main.order {
     .order-form {
       .order-summary {
+        font-size: 15px;
         .payment-input {
           input {
             flex: 1 1 20px;
